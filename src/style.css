@@ -1,0 +1,57 @@
+@keyframes spin {
+  from {transform: rotate(0deg)}
+  to {transform: rotate(360deg)}
+}
+
+.wheel-container {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  animation-name: spin;
+  animation-duration: 3s;
+}
+
+.wheel-container > div {
+  --gap-size: 1px;
+  /* 
+  3 < n < 8:  50% - tan(90-120) * 50% 
+  n > 8:      50% * (1 + tan(360deg/N))
+  */
+  --piece-offset: 78.665%; 
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background-color: blue;
+  clip-path: polygon(
+    calc(50% + var(--gap-size) / 2) calc(50% - var(--gap-size) / 2),
+    calc(50% + var(--gap-size) / 2) 0%,
+    100% 0%,
+    100% calc(var(--piece-offset) - var(--gap-size) / 2),
+    calc(50% + var(--gap-size) / 2) calc(50% - var(--gap-size) / 2)
+  );
+}
+
+.wheel-container > div > div {
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  transform: rotate(-30deg);
+}
+
+.wheel-container > .one {
+  transform: rotate(0deg);
+}
+
+.wheel-container > .two {
+  transform: rotate(120deg);
+}
+
+.wheel-container > .three {
+  transform: rotate(240deg);
+}
