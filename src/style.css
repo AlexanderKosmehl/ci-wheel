@@ -1,16 +1,10 @@
-@keyframes spin {
-  from {transform: rotate(0deg)}
-  to {transform: rotate(360deg)}
-}
-
 .wheel-container {
   height: 200px;
   width: 200px;
   position: relative;
   display: inline-block;
   overflow: hidden;
-  animation-name: spin;
-  animation-duration: 3s;
+  transition: 2s;
 }
 
 .wheel-container > div {
