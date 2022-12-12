@@ -20,7 +20,9 @@ function renderWheel(labels: string[]) {
 }
 
 function getElementAtDegree(degree: number) {
-  const indexAtDegree = Math.floor(((degree + 90) % 360) / (360 / listEntries.length));
+  const segmentAngle = (360 / listEntries.length);
+  const preparedAngle = (degree - segmentAngle / 2) % 360;
+  const indexAtDegree = Math.floor((360 - preparedAngle) / segmentAngle);
   console.log(listEntries[indexAtDegree]);
 }
 
