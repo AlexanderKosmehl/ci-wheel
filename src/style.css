@@ -2,6 +2,7 @@
   height: 200px;
   width: 200px;
   background-color: gray;
+  overflow: hidden;
 }
 
 .wheel {
