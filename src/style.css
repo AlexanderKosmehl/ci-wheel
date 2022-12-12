@@ -1,3 +1,9 @@
+#wheel-container {
+  height: 200px;
+  width: 200px;
+  background-color: gray;
+}
+
 .wheel {
   height: 200px;
   width: 200px;
