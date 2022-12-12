@@ -32,9 +32,15 @@ function renderList(labels: string[]) {
 
   listElement.textContent = '';
 
-  labels.forEach((label) => {
+  labels.forEach((label, labelIndex) => {
     const newListEntry = document.createElement<'li'>('li');
     newListEntry.textContent = label;
+    newListEntry.addEventListener('click', () => {
+      listEntries.splice(labelIndex, 1);
+      renderList(listEntries);
+      renderWheel(listEntries);
+    });
+
     listElement.appendChild(newListEntry);
   });
 }
