@@ -8,7 +8,8 @@ const inputButton = document.querySelector<HTMLButtonElement>('#list-input-butto
 const spinButton = document.querySelector<HTMLButtonElement>('#spin-button');
 
 let currentAngle = 0;
-const listEntries: string[] = [];
+const urlSearchParams = new URLSearchParams(window.location.search);
+const listEntries: string[] = urlSearchParams.get('entries')?.split(',') || [];
 
 function renderWheel(labels: string[]) {
   if (!wheelContainer || !labels) return;
@@ -60,6 +61,9 @@ function handleInput() {
   listEntries.push(listInput.value);
   listInput.value = '';
 
+  urlSearchParams.set('entries', listEntries.join(','));
+  window.history.replaceState({}, '', `${window.location.pathname}?${urlSearchParams}`);
+
   renderList(listEntries);
   renderWheel(listEntries);
 }
@@ -70,3 +74,6 @@ listInput?.addEventListener('keydown', (event: KeyboardEvent) => {
   handleInput();
 });
 inputButton?.addEventListener('click', handleInput);
+
+renderList(listEntries);
+renderWheel(listEntries);
