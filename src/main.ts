@@ -7,7 +7,7 @@ const listInput = document.querySelector<HTMLInputElement>('#list-input');
 const inputButton = document.querySelector<HTMLButtonElement>('#list-input-button');
 const spinButton = document.querySelector<HTMLButtonElement>('#spin-button');
 
-let degree = 0;
+let currentAngle = 0;
 const listEntries: string[] = [];
 
 function renderWheel(labels: string[]) {
@@ -16,15 +16,22 @@ function renderWheel(labels: string[]) {
   wheelContainer.textContent = '';
   wheelContainer.appendChild(generateWheel(labels));
 
-  degree = 0;
+  currentAngle = 0;
+}
+
+function getElementAtDegree(degree: number) {
+  const indexAtDegree = Math.floor(((degree + 90) % 360) / (360 / listEntries.length));
+  console.log(listEntries[indexAtDegree]);
 }
 
 spinButton?.addEventListener('click', () => {
   const spinner = document.querySelector('.wheel') as HTMLDivElement;
   if (!spinner) return;
 
-  degree += 720 + Math.random() * 360;
-  spinner.style.transform = `rotate(${degree}deg)`;
+  currentAngle += 720 + Math.random() * 360;
+  spinner.style.transform = `rotate(${currentAngle}deg)`;
+
+  getElementAtDegree(currentAngle);
 });
 
 function renderList(labels: string[]) {
