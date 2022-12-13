@@ -1,6 +1,5 @@
 import { SPIN_DURATION_IN_SEC, WHEEL_GAP_IN_PX } from '../config';
 
-const spinButton = document.querySelector<HTMLButtonElement>('#spin-button');
 const wheelContainer = document.querySelector<HTMLDivElement>('#wheel-container');
 
 function createSegmentRotationString(
@@ -74,13 +73,6 @@ function generateWheel(labels: string[]) {
   return wheelElement;
 }
 
-function getElementAtDegree(degree: number, entries: string[]) {
-  const segmentAngle = 360 / entries.length;
-  const preparedAngle = (degree - segmentAngle / 2) % 360;
-  const indexAtDegree = Math.floor((360 - preparedAngle) / segmentAngle);
-  return entries[indexAtDegree];
-}
-
 export default class SpinnerComponent {
   labels: string[];
 
@@ -88,31 +80,60 @@ export default class SpinnerComponent {
 
   currentAngle = 0;
 
-  constructor(labels: string[], changeHandler: () => void) {
+  private wheelComponent?: HTMLDivElement;
+
+  private boundEventHandler?: () => void;
+
+  spinnerCallback: (selectedLabel: string) => void;
+
+  constructor(
+    labels: string[],
+    changeHandler: () => void,
+    spinnerCallback: (selectedLabel: string) => void,
+  ) {
     this.labels = labels;
     this.changeHandler = changeHandler;
-
-    spinButton?.addEventListener('click', () => {
-      const spinner = document.querySelector('.wheel') as HTMLDivElement;
-      if (!spinner) return;
-
-      this.currentAngle += 720 + Math.random() * 360;
-      spinner.style.transform = `rotate(${this.currentAngle}deg)`;
-
-      spinButton.disabled = true;
-      setTimeout(() => {
-        spinButton.disabled = false;
-      }, SPIN_DURATION_IN_SEC * 1000);
-      getElementAtDegree(this.currentAngle, this.labels);
-    });
+    this.spinnerCallback = spinnerCallback;
   }
 
   renderWheel() {
     if (!wheelContainer || !this.labels) return;
 
     wheelContainer.textContent = '';
-    wheelContainer.appendChild(generateWheel(this.labels));
+    const newWheelComponent = generateWheel(this.labels);
+    this.wheelComponent = newWheelComponent;
+    wheelContainer.appendChild(newWheelComponent);
+
+    this.boundEventHandler = this.handleWheelClick.bind(this);
+    this.wheelComponent.addEventListener('click', this.boundEventHandler);
+
+    const wheelTick = document.createElement<'div'>('div');
+    wheelTick.classList.add('wheel-tick');
+    wheelContainer.appendChild(wheelTick);
 
     this.currentAngle = 0;
+  }
+
+  handleWheelClick() {
+    if (!this.wheelComponent) return;
+
+    this.currentAngle += 720 + Math.random() * 360;
+    this.wheelComponent.style.transform = `rotate(${this.currentAngle}deg)`;
+
+    if (this.boundEventHandler) {
+      this.wheelComponent.removeEventListener('click', this.boundEventHandler);
+    }
+    setTimeout(() => {
+      this.spinnerCallback(this.getCurrentLabel());
+      if (!this.boundEventHandler) return;
+      this.wheelComponent?.addEventListener('click', this.boundEventHandler);
+    }, SPIN_DURATION_IN_SEC * 1000);
+  }
+
+  private getCurrentLabel() {
+    const segmentAngle = 360 / this.labels.length;
+    const preparedAngle = (this.currentAngle - segmentAngle / 2) % 360;
+    const indexAtDegree = Math.floor((360 - preparedAngle) / segmentAngle);
+    return this.labels[indexAtDegree];
   }
 }
