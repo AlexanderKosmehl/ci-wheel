@@ -1,13 +1,37 @@
+body {
+  margin: 0px;
+}
+
+.header {
+  background-color: #FCE800;
+  padding: 0.5rem;
+}
+
+.header > h1 {
+  margin: 0;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.spinner-main-container {
+
+}
+
 #wheel-container {
-  height: 200px;
-  width: 200px;
-  background-color: gray;
+  max-height: 30rem;
+  max-width: 30rem;
   overflow: hidden;
+  padding: 20px;
+  position: relative;
+  margin: 0 auto;
 }
 
 .wheel {
-  height: 200px;
-  width: 200px;
+  width: 100%;
+  aspect-ratio: 1/1;
   position: relative;
   display: inline-block;
   border-radius: 50%;
@@ -26,7 +50,19 @@
   align-items: center;
 }
 
+.wheel-tick {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: #BBBBBB;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  z-index: 5;
+  top: 50%;
+  bottom: 50%;
+  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+}
+
 .wheel-label {
   margin-right: 20px;
 }
-

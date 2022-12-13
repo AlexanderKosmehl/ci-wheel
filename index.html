@@ -8,14 +8,16 @@
     <script type="module" src="/src/main.ts" defer></script>
   </head>
   <body>
+    <header class="header">
+      <h1>
+        CI Spinner</header>
+      </h1>
     <div id="app">
-      <h1>Hallo CI</h1>
-      <div id="wheel-container">
-        
+      <div class="spinner-main-container">
+        <div id="wheel-container"></div>
       </div>
-      <button id="spin-button">Spin</button>
       <div class="list-container">
-        <h1>Projekte</h1>
+        <h2>Projekte</h2>
         <input type="text" id="list-input">
         <button id="list-input-button">Hinzufügen</button>
         <ul id="list"></ul>
