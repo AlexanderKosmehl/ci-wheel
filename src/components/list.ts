@@ -40,7 +40,7 @@ export default class ListComponent {
   }
 
   handleInput() {
-    if (!listInput) return;
+    if (!listInput?.value) return;
 
     this.listEntries.push(listInput.value);
     listInput.value = '';
