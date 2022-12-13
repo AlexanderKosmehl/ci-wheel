@@ -12,7 +12,6 @@
   display: inline-block;
   border-radius: 50%;
   overflow: hidden;
-  transition: 2s;
 }
 
 .wheel-segment {
