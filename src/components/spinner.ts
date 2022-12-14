@@ -51,7 +51,7 @@ function createSegmentClipPathString(numberOfSegments: number) {
 function generateWheelSegments(labels: string[]) {
   return labels.map((label, labelIndex) => {
     const segmentElement = document.createElement<'div'>('div');
-    segmentElement.classList.add('wheel-segment');
+    segmentElement.classList.add(styles.segment);
 
     const labelElement = document.createElement<'span'>('span');
     labelElement.classList.add(styles.label);
@@ -105,6 +105,7 @@ export default class SpinnerComponent {
     if (!wheelContainer || !this.labels) return;
 
     wheelContainer.textContent = '';
+
     const newWheelComponent = generateWheel(this.labels);
     this.wheelComponent = newWheelComponent;
     wheelContainer.appendChild(newWheelComponent);
@@ -113,7 +114,7 @@ export default class SpinnerComponent {
     this.wheelComponent.addEventListener('click', this.boundEventHandler);
 
     const tickShadow = document.createElement<'div'>('div');
-    tickShadow.classList.add(styles['tick-shadow']);
+    tickShadow.classList.add(styles.tickShadow);
 
     const wheelTick = document.createElement<'div'>('div');
     wheelTick.classList.add(styles.tick);
