@@ -1,0 +1,39 @@
+.list-container {
+  padding: 2rem;
+}
+
+.list {
+  padding: 0;
+}
+
+.input-bar {
+  display: flex;
+}
+
+.input {
+  flex: 1;
+  border: 2px solid black;
+  border-radius: 10rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.input-button {
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 10rem;
+  font-size: 1rem;
+}
+
+.list-entry {
+  list-style-type: none;
+  font-size: 1rem;
+}
+
+.element-container {
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 10rem;
+  margin-top: 0.5rem;
+}
