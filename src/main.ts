@@ -1,15 +1,16 @@
 import ListComponent from './components/list';
 import SpinnerComponent from './components/spinner';
+import { getSearchParams, updateSearchParams } from './components/util/searchParamHelper';
 import './style.css';
 
-const urlSearchParams = new URLSearchParams(window.location.search);
-const listEntries: string[] = urlSearchParams.get('entries')?.split(',') || [];
+const listEntries: string[] = getSearchParams() || [];
 
 const changeHandler: (() => void)[] = [];
 
 const handleChanges = () => {
   changeHandler.forEach((handler) => handler());
 };
+changeHandler.push(() => { updateSearchParams(listEntries); });
 
 const spinnerCallback = (selectedLabel: string) => {
   console.log(selectedLabel);

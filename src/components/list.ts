@@ -28,8 +28,6 @@ export default class ListComponent {
 
   changeHandler: () => void;
 
-  urlSearchParams = new URLSearchParams(window.location.search);
-
   constructor(listEntries: string[], changeHandler: () => void) {
     this.listEntries = listEntries;
     this.changeHandler = changeHandler;
@@ -66,9 +64,6 @@ export default class ListComponent {
 
     this.listEntries.push(listInput.value);
     listInput.value = '';
-
-    this.urlSearchParams.set('entries', this.listEntries.join(','));
-    window.history.replaceState({}, '', `${window.location.pathname}?${this.urlSearchParams}`);
 
     this.changeHandler();
   }
