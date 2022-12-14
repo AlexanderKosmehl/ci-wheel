@@ -1,4 +1,5 @@
 import ListComponent from './components/list';
+import ModalComponent from './components/modal';
 import SpinnerComponent from './components/spinner';
 import { getSearchParams, updateSearchParams } from './components/util/searchParamHelper';
 import './style.css';
@@ -12,8 +13,14 @@ const handleChanges = () => {
 };
 changeHandler.push(() => { updateSearchParams(listEntries); });
 
+const modal = new ModalComponent();
+
 const spinnerCallback = (selectedLabel: string) => {
-  console.log(selectedLabel);
+  modal.show(selectedLabel, () => {
+    const selectedElementIndex = listEntries.findIndex((entry) => entry === selectedLabel);
+    listEntries.splice(selectedElementIndex, 1);
+    handleChanges();
+  });
 };
 
 const spinner = new SpinnerComponent(listEntries, handleChanges, spinnerCallback);
