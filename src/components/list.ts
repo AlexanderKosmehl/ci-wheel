@@ -14,6 +14,7 @@ listInput?.classList.add(styles.input);
 
 const inputButton = document.querySelector<HTMLButtonElement>('#list-input-button');
 inputButton?.classList.add(styles.inputButton);
+if (inputButton) inputButton.disabled = true;
 
 function generateListElement(label: string) {
   const elementContainer = document.createElement<'div'>('div');
@@ -36,6 +37,11 @@ export default class ListComponent {
       if (event.key !== 'Enter') return;
 
       this.handleInput();
+    });
+    listInput?.addEventListener('keydown', () => {
+      if (!inputButton) return;
+
+      inputButton.disabled = listInput.value === '';
     });
     inputButton?.addEventListener('click', () => this.handleInput());
   }
@@ -64,6 +70,7 @@ export default class ListComponent {
 
     this.listEntries.push(listInput.value);
     listInput.value = '';
+    if (inputButton) inputButton.disabled = true;
 
     this.changeHandler();
   }
