@@ -1,2 +1,2 @@
-jest.config.cjs
-postcss.config.cjs
+*.config.js
+*.config.cjs
