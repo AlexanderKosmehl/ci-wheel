@@ -21,7 +21,7 @@ export default class ListComponent {
     inputButton?.addEventListener('click', () => this.handleInput);
   }
 
-  renderList() {
+  render() {
     if (!listElement) return;
 
     listElement.textContent = '';

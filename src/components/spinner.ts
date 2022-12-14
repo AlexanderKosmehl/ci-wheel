@@ -1,6 +1,8 @@
-import { SPIN_DURATION_IN_SEC, WHEEL_GAP_IN_PX } from '../config';
+import styles from './spinner.module.css';
+import { SEGMENT_COLORS, SPIN_DURATION_IN_SEC, WHEEL_GAP_IN_PX } from '../config';
 
 const wheelContainer = document.querySelector<HTMLDivElement>('#wheel-container');
+wheelContainer?.classList.add(styles.container);
 
 function createSegmentRotationString(
   segmentIndex: number,
@@ -52,19 +54,22 @@ function generateWheelSegments(labels: string[]) {
     segmentElement.classList.add('wheel-segment');
 
     const labelElement = document.createElement<'span'>('span');
-    labelElement.classList.add('wheel-label');
+    labelElement.classList.add(styles.label);
     labelElement.textContent = label;
 
     segmentElement.appendChild(labelElement);
+    segmentElement.classList.add(styles.segment);
     segmentElement.style.transform = createSegmentRotationString(labelIndex, labels.length);
     segmentElement.style.clipPath = createSegmentClipPathString(labels.length);
+    segmentElement.style.backgroundColor = SEGMENT_COLORS[labelIndex % SEGMENT_COLORS.length];
+
     return segmentElement;
   });
 }
 
 function generateWheel(labels: string[]) {
   const wheelElement = document.createElement<'div'>('div');
-  wheelElement.classList.add('wheel');
+  wheelElement.classList.add(styles.wheel);
   wheelElement.style.transition = `${SPIN_DURATION_IN_SEC}s`;
 
   const wheelSegmentElements = generateWheelSegments(labels);
@@ -96,7 +101,7 @@ export default class SpinnerComponent {
     this.spinnerCallback = spinnerCallback;
   }
 
-  renderWheel() {
+  render() {
     if (!wheelContainer || !this.labels) return;
 
     wheelContainer.textContent = '';
@@ -107,9 +112,13 @@ export default class SpinnerComponent {
     this.boundEventHandler = this.handleWheelClick.bind(this);
     this.wheelComponent.addEventListener('click', this.boundEventHandler);
 
+    const tickShadow = document.createElement<'div'>('div');
+    tickShadow.classList.add(styles['tick-shadow']);
+
     const wheelTick = document.createElement<'div'>('div');
-    wheelTick.classList.add('wheel-tick');
-    wheelContainer.appendChild(wheelTick);
+    wheelTick.classList.add(styles.tick);
+    tickShadow.appendChild(wheelTick);
+    wheelContainer.appendChild(tickShadow);
 
     this.currentAngle = 0;
   }

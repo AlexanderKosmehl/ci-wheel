@@ -16,14 +16,14 @@ const spinnerCallback = (selectedLabel: string) => {
 };
 
 const spinner = new SpinnerComponent(listEntries, handleChanges, spinnerCallback);
-changeHandler.push(() => spinner.renderWheel());
+changeHandler.push(() => spinner.render());
 
 const list = new ListComponent(listEntries, handleChanges);
-changeHandler.push(() => list.renderList());
+changeHandler.push(() => list.render());
 
-const initializeWheel = () => {
-  spinner.renderWheel();
-  list.renderList();
+const initializeSpinner = () => {
+  spinner.render();
+  list.render();
 };
 
-initializeWheel();
+initializeSpinner();
