@@ -18,7 +18,7 @@ export default class ListComponent {
 
       this.handleInput();
     });
-    inputButton?.addEventListener('click', () => this.handleInput);
+    inputButton?.addEventListener('click', () => this.handleInput());
   }
 
   render() {
