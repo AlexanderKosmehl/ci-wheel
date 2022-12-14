@@ -102,9 +102,12 @@ export default class SpinnerComponent {
   }
 
   render() {
-    if (!wheelContainer || !this.labels) return;
+    if (!wheelContainer) return;
 
+    // Always clearing the text content to remove the tick when no element is displayed
     wheelContainer.textContent = '';
+
+    if (this.labels.length === 0) return;
 
     const newWheelComponent = generateWheel(this.labels);
     this.wheelComponent = newWheelComponent;
