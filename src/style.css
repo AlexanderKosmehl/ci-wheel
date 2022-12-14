@@ -1,14 +1,16 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .header {
-  background-color: #FCE800;
+  background-color: #fce800;
   padding: 0.5rem;
 }
 
@@ -18,5 +20,11 @@ body {
 
 #app {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 720px) {
+  #app {
+    grid-template-columns: 2fr 1fr;
+  }
 }
