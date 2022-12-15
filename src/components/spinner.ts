@@ -1,152 +1,40 @@
+import { SPIN_DURATION_IN_SEC } from '../config';
 import styles from './spinner.module.css';
-import { SEGMENT_COLORS, SPIN_DURATION_IN_SEC, WHEEL_GAP_IN_PX } from '../config';
+import generateSpinnerSegments from './spinnerSegments';
 
-const wheelContainer = document.querySelector<HTMLDivElement>('#wheel-container');
-wheelContainer?.classList.add(styles.container);
-
-function createSegmentRotationString(
-  segmentIndex: number,
-  numberOfSegments: number,
-) {
-  return `rotate(${segmentIndex * (360 / numberOfSegments)}deg)`;
+interface SpinnerParams {
+  labels: string[]
+  spinCallback: (result: string) => void
 }
 
-function createSegmentClipPathString(numberOfSegments: number) {
-  let polygonString = '';
-
-  if (numberOfSegments === 2) {
-    polygonString = `polygon(
-      calc(50% + ${WHEEL_GAP_IN_PX}px) 0%,
-      100% 0%,
-      100% 100%,
-      calc(50% + ${WHEEL_GAP_IN_PX}px) 100%
-    )`;
-  } else if (numberOfSegments === 3) {
-    polygonString = `polygon(
-      calc(50% + ${WHEEL_GAP_IN_PX / 2}px) 50%,
-      calc(100% - 21.13% + ${WHEEL_GAP_IN_PX / 2}px) 0%,
-      100% 0%,
-      100% 100%,
-      calc(100% - 21.13% + ${WHEEL_GAP_IN_PX / 2}px) 100%
-    )`;
-  } else if (numberOfSegments === 4) {
-    polygonString = `polygon(
-      calc(50% + ${WHEEL_GAP_IN_PX / 2}px) 50%,
-      100% calc(${WHEEL_GAP_IN_PX / 2}px),
-      100% calc(100% - ${WHEEL_GAP_IN_PX / 2}px)
-    )`;
-  } else if (numberOfSegments > 4) {
-    const angleInRad = (360 / numberOfSegments / 2) * (Math.PI / 180);
-    const offsetTan = Math.tan(angleInRad);
-
-    polygonString = `polygon(
-      calc(50% + ${WHEEL_GAP_IN_PX / 2}px) 50%,
-      100% calc(50% - ${offsetTan} * (50% - ${WHEEL_GAP_IN_PX / 2}px)),
-      100% calc(50% + ${offsetTan} * (50% - ${WHEEL_GAP_IN_PX / 2}px))
-    )`;
-  }
-  return polygonString;
+function getLabelByAngle(labels: string[], angle: number) {
+  const segmentAngle = 360 / labels.length;
+  const preparedAngle = (angle - segmentAngle / 2) % 360;
+  const indexAtDegree = Math.floor((360 - preparedAngle) / segmentAngle);
+  return labels[indexAtDegree];
 }
 
-function generateWheelSegments(labels: string[]) {
-  return labels.map((label, labelIndex) => {
-    const segmentElement = document.createElement<'div'>('div');
-    segmentElement.classList.add(styles.segment);
+export default function generateSpinner({ labels, spinCallback }: SpinnerParams) {
+  const spinner = document.createElement<'div'>('div');
+  spinner.classList.add(styles.spinner);
+  spinner.style.transition = `${SPIN_DURATION_IN_SEC}s`;
 
-    const labelElement = document.createElement<'span'>('span');
-    labelElement.classList.add(styles.label);
-    labelElement.textContent = label;
+  const newSpinnerSegments = generateSpinnerSegments(labels);
+  newSpinnerSegments.forEach((segment) => spinner.appendChild(segment));
 
-    segmentElement.appendChild(labelElement);
-    segmentElement.classList.add(styles.segment);
-    segmentElement.style.transform = createSegmentRotationString(labelIndex, labels.length);
-    segmentElement.style.clipPath = createSegmentClipPathString(labels.length);
-    segmentElement.style.backgroundColor = SEGMENT_COLORS[labelIndex % SEGMENT_COLORS.length];
+  let currentAngle = 0;
 
-    return segmentElement;
-  });
-}
+  function clickListener() {
+    currentAngle += 720 + Math.random() * 360;
+    spinner.style.transform = `rotate(${currentAngle}deg)`;
 
-function generateWheel(labels: string[]) {
-  const wheelElement = document.createElement<'div'>('div');
-  wheelElement.classList.add(styles.wheel);
-  wheelElement.style.transition = `${SPIN_DURATION_IN_SEC}s`;
-
-  const wheelSegmentElements = generateWheelSegments(labels);
-  wheelSegmentElements.forEach((segmentElement) => wheelElement.appendChild(segmentElement));
-
-  return wheelElement;
-}
-
-export default class SpinnerComponent {
-  labels: string[];
-
-  changeHandler: () => void;
-
-  currentAngle = 0;
-
-  private wheelComponent?: HTMLDivElement;
-
-  private boundEventHandler?: () => void;
-
-  spinnerCallback: (selectedLabel: string) => void;
-
-  constructor(
-    labels: string[],
-    changeHandler: () => void,
-    spinnerCallback: (selectedLabel: string) => void,
-  ) {
-    this.labels = labels;
-    this.changeHandler = changeHandler;
-    this.spinnerCallback = spinnerCallback;
-  }
-
-  render() {
-    if (!wheelContainer) return;
-
-    // Always clearing the text content to remove the tick when no element is displayed
-    wheelContainer.textContent = '';
-
-    if (this.labels.length === 0) return;
-
-    const newWheelComponent = generateWheel(this.labels);
-    this.wheelComponent = newWheelComponent;
-    wheelContainer.appendChild(newWheelComponent);
-
-    this.boundEventHandler = this.handleWheelClick.bind(this);
-    this.wheelComponent.addEventListener('click', this.boundEventHandler);
-
-    const tickShadow = document.createElement<'div'>('div');
-    tickShadow.classList.add(styles.tickShadow);
-
-    const wheelTick = document.createElement<'div'>('div');
-    wheelTick.classList.add(styles.tick);
-    tickShadow.appendChild(wheelTick);
-    wheelContainer.appendChild(tickShadow);
-
-    this.currentAngle = 0;
-  }
-
-  handleWheelClick() {
-    if (!this.wheelComponent) return;
-
-    this.currentAngle += 720 + Math.random() * 360;
-    this.wheelComponent.style.transform = `rotate(${this.currentAngle}deg)`;
-
-    if (this.boundEventHandler) {
-      this.wheelComponent.removeEventListener('click', this.boundEventHandler);
-    }
+    spinner.removeEventListener('click', clickListener);
     setTimeout(() => {
-      this.spinnerCallback(this.getCurrentLabel());
-      if (!this.boundEventHandler) return;
-      this.wheelComponent?.addEventListener('click', this.boundEventHandler);
+      spinCallback(getLabelByAngle(labels, currentAngle));
+      spinner.addEventListener('click', clickListener);
     }, SPIN_DURATION_IN_SEC * 1000);
   }
+  spinner.addEventListener('click', clickListener);
 
-  private getCurrentLabel() {
-    const segmentAngle = 360 / this.labels.length;
-    const preparedAngle = (this.currentAngle - segmentAngle / 2) % 360;
-    const indexAtDegree = Math.floor((360 - preparedAngle) / segmentAngle);
-    return this.labels[indexAtDegree];
-  }
+  return spinner;
 }

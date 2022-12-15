@@ -1,0 +1,16 @@
+.segment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.label {
+  margin-right: 2.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
