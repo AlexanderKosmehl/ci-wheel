@@ -11,27 +11,15 @@ export default function generateListComponent({
   newElementCallback,
   initialElements = [],
 }: ListComponentParams) {
-  let updateList: (listElements: string[]) => void;
   const listElements = initialElements;
 
   const newListComponent = document.createElement<'div'>('div');
   newListComponent.classList.add(styles.mainContainer);
 
-  const inputBar = generateInputBar({
-    newElementCallback: (newElement: string) => {
-      listElements.push(newElement);
-      if (updateList) updateList(listElements);
-
-      newElementCallback(newElement);
-    },
-  });
-  newListComponent.appendChild(inputBar);
-
   const listContainer = document.createElement<'ul'>('ul');
   listContainer.classList.add(styles.listContainer);
-  newListComponent.appendChild(listContainer);
 
-  updateList = (listEntries: string[]) => {
+  function updateList(listEntries: string[]) {
     listContainer.textContent = '';
     listEntries.forEach((element, index) => {
       listContainer.appendChild(generateListElement({
@@ -42,8 +30,20 @@ export default function generateListComponent({
         },
       }));
     });
-  };
+  }
   updateList(initialElements);
+
+  const inputBar = generateInputBar({
+    newElementCallback: (newElement: string) => {
+      listElements.push(newElement);
+      if (updateList) updateList(listElements);
+
+      newElementCallback(newElement);
+    },
+  });
+
+  newListComponent.appendChild(inputBar);
+  newListComponent.appendChild(listContainer);
 
   return newListComponent;
 }
