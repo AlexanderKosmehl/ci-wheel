@@ -1,8 +1,8 @@
-import ListComponent from './components/list';
 import ModalComponent from './components/modal';
 import SpinnerComponent from './components/spinner';
 import { getSearchParams, updateSearchParams } from './util/searchParamHelper';
 import './style.css';
+import generateListComponent from './components/list';
 
 const listEntries: string[] = getSearchParams() || [];
 
@@ -26,12 +26,16 @@ const spinnerCallback = (selectedLabel: string) => {
 const spinner = new SpinnerComponent(listEntries, handleChanges, spinnerCallback);
 changeHandler.push(() => spinner.render());
 
-const list = new ListComponent(listEntries, handleChanges);
-changeHandler.push(() => list.render());
+document.querySelector('#list-container')?.appendChild(generateListComponent({
+  newElementCallback: (newElement: string) => {
+    listEntries.push(newElement);
+    handleChanges();
+  },
+  initialElements: listEntries,
+}));
 
 const initializeSpinner = () => {
   spinner.render();
-  list.render();
 };
 
 initializeSpinner();

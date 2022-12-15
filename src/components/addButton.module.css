@@ -1,0 +1,7 @@
+.add-button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+  border-radius: 10rem;
+  font-size: 1rem;
+}

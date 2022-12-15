@@ -1,0 +1,7 @@
+.input {
+  flex: 1;
+  border: 2px solid black;
+  border-radius: 10rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}

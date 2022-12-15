@@ -7,7 +7,7 @@ interface ListElementParams {
 }
 
 export default function generateListElement({ label, onDelete }: ListElementParams) {
-  const newListElement = document.createElement<'div'>('div');
+  const newListElement = document.createElement<'li'>('li');
   newListElement.classList.add(styles.container);
 
   const elementLabel = document.createElement<'span'>('span');

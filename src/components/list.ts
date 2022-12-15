@@ -1,72 +1,49 @@
+import generateInputBar from './inputBar';
 import styles from './list.module.css';
 import generateListElement from './listEntry';
 
-const listContainer = document.querySelector<HTMLDivElement>('#list-container');
-listContainer?.classList.add(styles.listContainer);
+interface ListComponentParams {
+  newElementCallback: (newElement: string) => void
+  initialElements?: string[]
+}
 
-const listElement = document.querySelector<HTMLUListElement>('#list');
-listElement?.classList.add(styles.list);
+export default function generateListComponent({
+  newElementCallback,
+  initialElements = [],
+}: ListComponentParams) {
+  let updateList: (listElements: string[]) => void;
+  const listElements = initialElements;
 
-const inputBar = document.querySelector<HTMLDivElement>('#input-bar');
-inputBar?.classList.add(styles.inputBar);
+  const newListComponent = document.createElement<'div'>('div');
+  newListComponent.classList.add(styles.mainContainer);
 
-const listInput = document.querySelector<HTMLInputElement>('#list-input');
-listInput?.classList.add(styles.input);
+  const inputBar = generateInputBar({
+    newElementCallback: (newElement: string) => {
+      listElements.push(newElement);
+      if (updateList) updateList(listElements);
 
-const inputButton = document.querySelector<HTMLButtonElement>('#list-input-button');
-inputButton?.classList.add(styles.inputButton);
-if (inputButton) inputButton.disabled = true;
+      newElementCallback(newElement);
+    },
+  });
+  newListComponent.appendChild(inputBar);
 
-export default class ListComponent {
-  listEntries: string[];
+  const listContainer = document.createElement<'ul'>('ul');
+  listContainer.classList.add(styles.listContainer);
+  newListComponent.appendChild(listContainer);
 
-  changeHandler: () => void;
-
-  constructor(listEntries: string[], changeHandler: () => void) {
-    this.listEntries = listEntries;
-    this.changeHandler = changeHandler;
-
-    listInput?.addEventListener('keydown', (event: KeyboardEvent) => {
-      if (event.key !== 'Enter') return;
-
-      this.handleInput();
-    });
-    listInput?.addEventListener('keydown', () => {
-      if (!inputButton) return;
-
-      inputButton.disabled = listInput.value === '';
-    });
-    inputButton?.addEventListener('click', () => this.handleInput());
-  }
-
-  render() {
-    if (!listElement) return;
-
-    listElement.textContent = '';
-
-    this.listEntries.forEach((entry, entryIndex) => {
-      const newListEntry = document.createElement<'li'>('li');
-      newListEntry.classList.add(styles.listEntry);
-      newListEntry.appendChild(generateListElement({
-        label: entry,
+  updateList = (listEntries: string[]) => {
+    listContainer.textContent = '';
+    listEntries.forEach((element, index) => {
+      listContainer.appendChild(generateListElement({
+        label: element,
         onDelete: () => {
-          this.listEntries.splice(entryIndex, 1);
-
-          this.changeHandler();
+          listEntries.splice(index, 1);
+          updateList(listEntries);
         },
       }));
-
-      listElement.appendChild(newListEntry);
     });
-  }
+  };
+  updateList(initialElements);
 
-  handleInput() {
-    if (!listInput?.value) return;
-
-    this.listEntries.push(listInput.value);
-    listInput.value = '';
-    if (inputButton) inputButton.disabled = true;
-
-    this.changeHandler();
-  }
+  return newListComponent;
 }
