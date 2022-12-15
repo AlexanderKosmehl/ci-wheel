@@ -16,10 +16,20 @@ const inputButton = document.querySelector<HTMLButtonElement>('#list-input-butto
 inputButton?.classList.add(styles.inputButton);
 if (inputButton) inputButton.disabled = true;
 
-function generateListElement(label: string) {
+function generateListElement(label: string, onClick: () => void) {
   const elementContainer = document.createElement<'div'>('div');
   elementContainer.classList.add(styles.elementContainer);
-  elementContainer.textContent = label;
+
+  const elementLabel = document.createElement<'span'>('span');
+  elementLabel.classList.add(styles.elementLabel);
+  elementLabel.textContent = label;
+  elementContainer.appendChild(elementLabel);
+
+  const elementDeleteButton = document.createElement<'button'>('button');
+  elementDeleteButton.classList.add(styles.elementDeleteButton);
+  elementDeleteButton.textContent = 'X';
+  elementDeleteButton.onclick = onClick;
+  elementContainer.appendChild(elementDeleteButton);
 
   return elementContainer;
 }
@@ -54,12 +64,11 @@ export default class ListComponent {
     this.listEntries.forEach((entry, entryIndex) => {
       const newListEntry = document.createElement<'li'>('li');
       newListEntry.classList.add(styles.listEntry);
-      newListEntry.appendChild(generateListElement(entry));
-      newListEntry.addEventListener('click', () => {
+      newListEntry.appendChild(generateListElement(entry, () => {
         this.listEntries.splice(entryIndex, 1);
 
         this.changeHandler();
-      });
+      }));
 
       listElement.appendChild(newListEntry);
     });
