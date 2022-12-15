@@ -1,7 +1,7 @@
 import ListComponent from './components/list';
 import ModalComponent from './components/modal';
 import SpinnerComponent from './components/spinner';
-import { getSearchParams, updateSearchParams } from './components/util/searchParamHelper';
+import { getSearchParams, updateSearchParams } from './util/searchParamHelper';
 import './style.css';
 
 const listEntries: string[] = getSearchParams() || [];
