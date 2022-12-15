@@ -1,3 +1,4 @@
+import { updateSearchParams } from '../util/searchParamHelper';
 import generateInputBar from './inputBar';
 import styles from './list.module.css';
 import generateListElement from './listEntry';
@@ -21,6 +22,9 @@ export default function generateListComponent({
 
   function updateList(listEntries: string[]) {
     listContainer.textContent = '';
+
+    updateSearchParams(listEntries);
+
     listEntries.forEach((element, index) => {
       listContainer.appendChild(generateListElement({
         label: element,
