@@ -4,15 +4,15 @@ import styles from './list.module.css';
 import generateListElement from './listEntry';
 
 interface ListComponentParams {
-  newElementCallback: (newElement: string) => void
+  listChangeCallback: (updatedList: string[]) => void
   initialElements?: string[]
 }
 
 export default function generateListComponent({
-  newElementCallback,
+  listChangeCallback,
   initialElements = [],
 }: ListComponentParams) {
-  const listElements = initialElements;
+  const listElements = [...initialElements];
 
   const newListComponent = document.createElement<'div'>('div');
   newListComponent.classList.add(styles.mainContainer);
@@ -31,6 +31,7 @@ export default function generateListComponent({
         onDelete: () => {
           listEntries.splice(index, 1);
           updateList(listEntries);
+          listChangeCallback([...listEntries]);
         },
       }));
     });
@@ -42,7 +43,7 @@ export default function generateListComponent({
       listElements.push(newElement);
       if (updateList) updateList(listElements);
 
-      newElementCallback(newElement);
+      listChangeCallback([...listElements]);
     },
   });
 

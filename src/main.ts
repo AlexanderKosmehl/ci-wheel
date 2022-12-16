@@ -1,19 +1,17 @@
-import { getSearchParams, updateSearchParams } from './util/searchParamHelper';
 import './style.css';
+import { getSearchParams } from './util/searchParamHelper';
 import generateListComponent from './components/list';
 import generateSpinnerComponent from './components/spinnerContainer';
 import generateModal from './components/modal';
 
-const listEntries: string[] = getSearchParams() || [];
+let listEntries: string[] = getSearchParams() || [];
 
-const changeHandler: (() => void)[] = [];
+const updateHandler: (() => void)[] = [];
+function handleUpdates() {
+  updateHandler.forEach((handler) => handler());
+}
 
-const handleChanges = () => {
-  changeHandler.forEach((handler) => handler());
-};
-changeHandler.push(() => { updateSearchParams(listEntries); });
-
-const spinnerCallback = (selectedLabel: string) => {
+const spinCallback = (selectedLabel: string) => {
   const modalContainer = document.querySelector('#modal-container');
   if (!modalContainer) return;
 
@@ -25,7 +23,7 @@ const spinnerCallback = (selectedLabel: string) => {
     onDelete: () => {
       const selectedElementIndex = listEntries.findIndex((entry) => entry === selectedLabel);
       listEntries.splice(selectedElementIndex, 1);
-      handleChanges();
+      handleUpdates();
       modalContainer.textContent = '';
     },
   }));
@@ -33,16 +31,16 @@ const spinnerCallback = (selectedLabel: string) => {
 
 const { newSpinnerContainer, updateSpinner } = generateSpinnerComponent({
   initialLabels: getSearchParams() || [],
-  spinCallback: spinnerCallback,
+  spinCallback,
 });
-changeHandler.push(() => updateSpinner(listEntries));
+updateHandler.push(() => updateSpinner(listEntries));
 
 document.querySelector('#spinner-container')?.appendChild(newSpinnerContainer);
 
 document.querySelector('#list-container')?.appendChild(generateListComponent({
-  newElementCallback: (newElement: string) => {
-    listEntries.push(newElement);
-    handleChanges();
+  listChangeCallback: (updatedList: string[]) => {
+    listEntries = updatedList;
+    updateSpinner(listEntries);
   },
   initialElements: listEntries,
 }));
