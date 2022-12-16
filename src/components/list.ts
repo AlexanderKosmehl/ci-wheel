@@ -20,28 +20,28 @@ export default function generateListComponent({
   const listContainer = document.createElement<'ul'>('ul');
   listContainer.classList.add(styles.listContainer);
 
-  function updateList(listEntries: string[]) {
+  function updateList() {
     listContainer.textContent = '';
 
-    updateSearchParams(listEntries);
+    updateSearchParams(listElements);
 
-    listEntries.forEach((element, index) => {
+    listElements.forEach((element, index) => {
       listContainer.appendChild(generateListElement({
         label: element,
         onDelete: () => {
-          listEntries.splice(index, 1);
-          updateList(listEntries);
-          listChangeCallback([...listEntries]);
+          listElements.splice(index, 1);
+          updateList();
+          listChangeCallback([...listElements]);
         },
       }));
     });
   }
-  updateList(initialElements);
+  updateList();
 
   const inputBar = generateInputBar({
     newElementCallback: (newElement: string) => {
       listElements.push(newElement);
-      updateList(listElements);
+      updateList();
 
       listChangeCallback([...listElements]);
     },
