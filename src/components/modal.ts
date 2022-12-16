@@ -1,11 +1,21 @@
 import styles from './modal.module.css';
+import closeIcon from '../icons/x-icon.svg';
+import deleteIcon from '../icons/trash-icon.svg';
+import generateIconButton from './iconButton';
 
-function generateModalContent(
-  closeButtonCallback: () => void,
-  removeButtonCallback: () => void,
-) {
+interface ModalParams {
+  label: string
+  onClose: () => void
+  onDelete: () => void
+}
+
+export default function generateModal({ label, onClose, onDelete }: ModalParams) {
+  const modalContainer = document.createElement<'div'>('div');
+  modalContainer.classList.add(styles.container);
+
   const modalContent = document.createElement<'div'>('div');
   modalContent.classList.add(styles.content);
+  modalContainer.appendChild(modalContent);
 
   const header = document.createElement<'div'>('div');
   header.classList.add(styles.header);
@@ -15,10 +25,11 @@ function generateModalContent(
   headerText.textContent = 'Ergebnis:';
   header.appendChild(headerText);
 
-  const closeButton = document.createElement<'button'>('button');
-  closeButton.classList.add(styles.closeButton);
-  closeButton.textContent = 'Schließen';
-  closeButton.onclick = closeButtonCallback;
+  const closeButton = generateIconButton({
+    iconURL: closeIcon,
+    onClick: onClose,
+    classes: [styles.closeIcon],
+  });
   header.appendChild(closeButton);
   modalContent.appendChild(header);
 
@@ -27,57 +38,16 @@ function generateModalContent(
 
   const resultLabel = document.createElement<'h3'>('h3');
   resultLabel.classList.add(styles.resultLabel);
+  resultLabel.textContent = label;
 
-  const removeButton = document.createElement<'button'>('button');
-  removeButton.classList.add(styles.resultButton);
-  removeButton.textContent = 'Entfernen';
-  removeButton.onclick = removeButtonCallback;
+  const removeButton = generateIconButton({
+    iconURL: deleteIcon,
+    onClick: onDelete,
+  });
 
   resultElement.appendChild(resultLabel);
   resultElement.appendChild(removeButton);
   modalContent.appendChild(resultElement);
 
-  return { modalContent, resultLabel };
-}
-
-export default class ModalComponent {
-  modalContainer: HTMLDivElement | null;
-
-  resultLabel?: HTMLHeadingElement;
-
-  removeCallback?: () => void;
-
-  constructor() {
-    this.modalContainer = document.querySelector<HTMLDivElement>('#spinner-modal');
-    this.modalContainer?.classList.add(styles.modal);
-
-    const { modalContent, resultLabel } = generateModalContent(
-      () => this.hide(),
-      () => this.removeAndHide(),
-    );
-    this.resultLabel = resultLabel;
-
-    this.modalContainer?.appendChild(modalContent);
-  }
-
-  show(label: string, removeCallback: () => void) {
-    if (!this.resultLabel || !this.modalContainer) return;
-
-    this.resultLabel.textContent = label;
-    this.modalContainer.style.display = 'flex';
-
-    this.removeCallback = removeCallback;
-  }
-
-  hide() {
-    if (!this.modalContainer) return;
-
-    this.modalContainer.style.display = 'none';
-  }
-
-  removeAndHide() {
-    if (this.removeCallback) this.removeCallback();
-
-    this.hide();
-  }
+  return modalContainer;
 }

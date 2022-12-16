@@ -1,5 +1,6 @@
-import generateDeleteButton from './deleteButton';
+import generateIconButton from './iconButton';
 import styles from './listEntry.module.css';
+import deleteIconURL from '../icons/trash-icon.svg';
 
 interface ListElementParams {
   label: string,
@@ -15,7 +16,11 @@ export default function generateListElement({ label, onDelete }: ListElementPara
   elementLabel.textContent = label;
   newListElement.appendChild(elementLabel);
 
-  const deleteButton = generateDeleteButton({ onClick: onDelete, classes: [styles.deleteButton] });
+  const deleteButton = generateIconButton({
+    iconURL: deleteIconURL,
+    onClick: onDelete,
+    classes: [styles.deleteButton],
+  });
   newListElement.appendChild(deleteButton);
 
   return newListElement;

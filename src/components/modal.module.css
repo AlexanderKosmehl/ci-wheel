@@ -1,5 +1,5 @@
-.modal {
-  display: none;
+.container {
+  display: flex;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -22,17 +22,21 @@
   gap: 0.5rem;
 }
 
+.close-icon {
+  border: none;
+  background-color: white;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header-text {
   margin: 0;
-}
-
-.close-button {
-
 }
 
 .result-element {
@@ -46,10 +50,3 @@
 .result-label {
   margin: 0px;
 }
-
-.result-button {
-
-}
-
-
-

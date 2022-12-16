@@ -1,8 +1,8 @@
-import ModalComponent from './components/modal';
 import { getSearchParams, updateSearchParams } from './util/searchParamHelper';
 import './style.css';
 import generateListComponent from './components/list';
 import generateSpinnerComponent from './components/spinnerContainer';
+import generateModal from './components/modal';
 
 const listEntries: string[] = getSearchParams() || [];
 
@@ -13,14 +13,22 @@ const handleChanges = () => {
 };
 changeHandler.push(() => { updateSearchParams(listEntries); });
 
-const modal = new ModalComponent();
-
 const spinnerCallback = (selectedLabel: string) => {
-  modal.show(selectedLabel, () => {
-    const selectedElementIndex = listEntries.findIndex((entry) => entry === selectedLabel);
-    listEntries.splice(selectedElementIndex, 1);
-    handleChanges();
-  });
+  const modalContainer = document.querySelector('#modal-container');
+  if (!modalContainer) return;
+
+  modalContainer.appendChild(generateModal({
+    label: selectedLabel,
+    onClose: () => {
+      modalContainer.textContent = '';
+    },
+    onDelete: () => {
+      const selectedElementIndex = listEntries.findIndex((entry) => entry === selectedLabel);
+      listEntries.splice(selectedElementIndex, 1);
+      handleChanges();
+      modalContainer.textContent = '';
+    },
+  }));
 };
 
 const { newSpinnerContainer, updateSpinner } = generateSpinnerComponent({
