@@ -9,13 +9,21 @@
 }
 
 .label {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .delete-button {
+  height: 1.75rem;
+  width: 1.75rem;
   visibility: hidden;
 }
 
 .container:hover .delete-button {
   visibility: visible;
+}
+
+@media screen and (min-width: 720px) {
+  .label {
+    font-size: 1.25rem;
+  }
 }

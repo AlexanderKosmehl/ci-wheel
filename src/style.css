@@ -23,7 +23,7 @@ body {
   grid-template-columns: 1fr;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1280px) {
   #app {
     grid-template-columns: 2fr 1fr;
   }

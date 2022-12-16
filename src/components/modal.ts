@@ -43,6 +43,7 @@ export default function generateModal({ label, onClose, onDelete }: ModalParams)
   const removeButton = generateIconButton({
     iconURL: deleteIcon,
     onClick: onDelete,
+    classes: [styles.deleteIcon],
   });
 
   resultElement.appendChild(resultLabel);

@@ -1,3 +1,14 @@
 .container {
   display: flex;
 }
+
+.add-button {
+  margin-left: 0.5rem;
+  padding: 0.25rem;
+  max-height: 3rem;
+  aspect-ratio: 1 / 1;
+}
+
+.add-button:disabled > img {
+  filter: opacity(20%);
+}

@@ -1,6 +1,7 @@
-import generateAddButton from './addButton';
+import generateIconButton from './iconButton';
 import styles from './inputBar.module.css';
 import generateTextInput from './textInput';
+import addIcon from '../icons/+-icon.svg';
 
 interface InputBarParams {
   newElementCallback: (newElement: string) => void
@@ -36,8 +37,10 @@ export default function generateInputBar({ newElementCallback }: InputBarParams)
   });
   newInputBar.appendChild(inputField);
 
-  addButton = generateAddButton({
+  addButton = generateIconButton({
+    iconURL: addIcon,
     onClick: addItem,
+    classes: [styles.addButton],
   });
   addButton.disabled = true;
   newInputBar.appendChild(addButton);

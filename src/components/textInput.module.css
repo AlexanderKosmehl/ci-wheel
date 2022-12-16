@@ -1,7 +1,14 @@
 .input {
   flex: 1;
+  min-width: 0px;
   border: 2px solid black;
   border-radius: 10rem;
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 720px) {
+  .input {
+    font-size: 1.25rem;
+  }
 }
