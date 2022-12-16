@@ -34,7 +34,8 @@ export default function generateSpinner({ labels, spinCallback }: SpinnerParams)
       spinner.addEventListener('click', clickListener);
     }, SPIN_DURATION_IN_SEC * 1000);
   }
-  spinner.addEventListener('click', clickListener);
+
+  if (labels.length > 0) spinner.addEventListener('click', clickListener);
 
   return spinner;
 }

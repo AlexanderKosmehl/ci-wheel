@@ -23,7 +23,7 @@ export default function generateSpinnerComponent({
     });
     newSpinnerContainer.appendChild(spinner);
 
-    if (!newLabels) return;
+    if (newLabels.length === 0) return;
     const tick = generateSpinnerTick();
     newSpinnerContainer.appendChild(tick);
   }
