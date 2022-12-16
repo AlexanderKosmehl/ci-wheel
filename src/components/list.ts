@@ -41,7 +41,7 @@ export default function generateListComponent({
   const inputBar = generateInputBar({
     newElementCallback: (newElement: string) => {
       listElements.push(newElement);
-      if (updateList) updateList(listElements);
+      updateList(listElements);
 
       listChangeCallback([...listElements]);
     },
