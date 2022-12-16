@@ -1,4 +1,4 @@
-import './style.css';
+import './global.css';
 import { getSearchParams } from './util/searchParamHelper';
 import generateListComponent from './components/list';
 import generateSpinnerComponent from './components/spinnerContainer';
