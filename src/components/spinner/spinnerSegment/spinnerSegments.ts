@@ -1,4 +1,4 @@
-import { SEGMENT_COLORS, WHEEL_GAP_IN_PX } from '../config';
+import { SEGMENT_COLORS, WHEEL_GAP_IN_PX } from '../../../config';
 import styles from './spinnerSegments.module.css';
 
 function createSegmentRotationString(

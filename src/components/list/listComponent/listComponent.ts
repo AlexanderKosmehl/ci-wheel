@@ -1,7 +1,7 @@
-import { updateSearchParams } from '../util/searchParamHelper';
-import generateInputBar from './inputBar';
-import styles from './list.module.css';
-import generateListElement from './listEntry';
+import { updateSearchParams } from '../../../util/searchParamHelper';
+import generateInputBar from '../../atoms/inputBar/inputBar';
+import generateListElement from '../listEntry/listEntry';
+import styles from './listComponent.module.css';
 
 interface ListComponentParams {
   listChangeCallback: (updatedList: string[]) => void
@@ -26,14 +26,16 @@ export default function generateListComponent({
     updateSearchParams(listElements);
 
     listElements.forEach((element, index) => {
-      listContainer.appendChild(generateListElement({
-        label: element,
-        onDelete: () => {
-          listElements.splice(index, 1);
-          updateList();
-          listChangeCallback([...listElements]);
-        },
-      }));
+      listContainer.appendChild(
+        generateListElement({
+          label: element,
+          onDelete: () => {
+            listElements.splice(index, 1);
+            updateList();
+            listChangeCallback([...listElements]);
+          },
+        }),
+      );
     });
   }
   updateList();

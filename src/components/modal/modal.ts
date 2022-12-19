@@ -1,7 +1,7 @@
 import styles from './modal.module.css';
-import closeIcon from '../icons/x-icon.svg';
-import deleteIcon from '../icons/trash-icon.svg';
-import generateIconButton from './iconButton';
+import closeIcon from '../../icons/x-icon.svg';
+import deleteIcon from '../../icons/trash-icon.svg';
+import generateIconButton from '../atoms/iconButton/iconButton';
 
 interface ModalParams {
   label: string

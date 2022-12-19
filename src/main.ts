@@ -1,8 +1,8 @@
+import generateListComponent from './components/list/listComponent/listComponent';
+import generateModal from './components/modal/modal';
+import generateSpinnerComponent from './components/spinner/spinnerContainer/spinnerContainer';
 import './global.css';
 import { getSearchParams } from './util/searchParamHelper';
-import generateListComponent from './components/list';
-import generateSpinnerComponent from './components/spinnerContainer';
-import generateModal from './components/modal';
 
 const spinnerContainer = document.querySelector('#spinner-container');
 const listContainer = document.querySelector('#list-container');
@@ -15,18 +15,20 @@ let updateSpinner: (labels: string[]) => void;
 function spinCallback(selectedLabel: string) {
   if (!modalContainer) return;
 
-  modalContainer.appendChild(generateModal({
-    label: selectedLabel,
-    onClose: () => {
-      modalContainer.textContent = '';
-    },
-    onDelete: () => {
-      const selectedElementIndex = listEntries.findIndex((entry) => entry === selectedLabel);
-      listEntries.splice(selectedElementIndex, 1);
-      modalContainer.textContent = '';
-      if (updateSpinner) updateSpinner(listEntries);
-    },
-  }));
+  modalContainer.appendChild(
+    generateModal({
+      label: selectedLabel,
+      onClose: () => {
+        modalContainer.textContent = '';
+      },
+      onDelete: () => {
+        const selectedElementIndex = listEntries.findIndex((entry) => entry === selectedLabel);
+        listEntries.splice(selectedElementIndex, 1);
+        modalContainer.textContent = '';
+        if (updateSpinner) updateSpinner(listEntries);
+      },
+    }),
+  );
 }
 
 updateSpinner = (labels: string[]) => {

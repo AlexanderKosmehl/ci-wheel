@@ -1,4 +1,4 @@
-import generateButton from './button';
+import generateButton from '../button/button';
 import styles from './iconButton.module.css';
 
 interface IconButtonParams {

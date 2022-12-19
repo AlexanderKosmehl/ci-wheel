@@ -1,7 +1,7 @@
-import generateIconButton from './iconButton';
+import generateIconButton from '../iconButton/iconButton';
 import styles from './inputBar.module.css';
-import generateTextInput from './textInput';
-import addIcon from '../icons/+-icon.svg';
+import generateTextInput from '../textInput/textInput';
+import addIcon from '../../../icons/+-icon.svg';
 
 interface InputBarParams {
   newElementCallback: (newElement: string) => void

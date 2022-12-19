@@ -1,6 +1,6 @@
-import generateIconButton from './iconButton';
 import styles from './listEntry.module.css';
-import deleteIconURL from '../icons/trash-icon.svg';
+import generateIconButton from '../../atoms/iconButton/iconButton';
+import deleteIconURL from '../../../icons/trash-icon.svg';
 
 interface ListElementParams {
   label: string,

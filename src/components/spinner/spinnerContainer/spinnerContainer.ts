@@ -1,6 +1,6 @@
-import generateSpinner from './spinner';
+import generateSpinner from '../spinnerComponent/spinnerComponent';
+import generateSpinnerTick from '../spinnerTick/spinnerTick';
 import styles from './spinnerContainer.module.css';
-import generateSpinnerTick from './spinnerTick';
 
 interface SpinnerComponentParams {
   initialLabels: string[]
