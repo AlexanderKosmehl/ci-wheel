@@ -14,21 +14,18 @@ export default function generateSpinnerComponent({
   const newSpinnerContainer = document.createElement<'div'>('div');
   newSpinnerContainer.classList.add(styles.container);
 
-  function updateSpinner(newLabels: string[]) {
-    newSpinnerContainer.textContent = '';
+  newSpinnerContainer.textContent = '';
 
-    const spinner = generateSpinner({
-      labels: newLabels,
-      spinCallback,
-    });
-    newSpinnerContainer.appendChild(spinner);
+  const spinner = generateSpinner({
+    labels: initialLabels,
+    spinCallback,
+  });
+  newSpinnerContainer.appendChild(spinner);
 
-    if (newLabels.length === 0) return;
+  if (initialLabels.length !== 0) {
     const tick = generateSpinnerTick();
     newSpinnerContainer.appendChild(tick);
   }
 
-  updateSpinner(initialLabels);
-
-  return { newSpinnerContainer, updateSpinner };
+  return newSpinnerContainer;
 }
