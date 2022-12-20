@@ -1,4 +1,4 @@
-import generateSpinner from '../spinnerComponent/spinnerComponent';
+import generateSpinner from '../spinner/spinner';
 import generateSpinnerTick from '../spinnerTick/spinnerTick';
 import styles from './spinnerContainer.module.css';
 
