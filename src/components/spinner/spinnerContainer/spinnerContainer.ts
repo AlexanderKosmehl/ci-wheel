@@ -3,12 +3,12 @@ import generateSpinnerTick from '../spinnerTick/spinnerTick';
 import styles from './spinnerContainer.module.css';
 
 interface SpinnerComponentParams {
-  initialLabels: string[]
+  labels: string[]
   spinCallback: (result: string) => void
 }
 
 export default function generateSpinnerComponent({
-  initialLabels,
+  labels,
   spinCallback,
 }: SpinnerComponentParams) {
   const newSpinnerContainer = document.createElement<'div'>('div');
@@ -17,12 +17,12 @@ export default function generateSpinnerComponent({
   newSpinnerContainer.textContent = '';
 
   const spinner = generateSpinner({
-    labels: initialLabels,
+    labels,
     spinCallback,
   });
   newSpinnerContainer.appendChild(spinner);
 
-  if (initialLabels.length !== 0) {
+  if (labels.length !== 0) {
     const tick = generateSpinnerTick();
     newSpinnerContainer.appendChild(tick);
   }

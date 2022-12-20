@@ -37,7 +37,7 @@ updateSpinner = (labels: string[]) => {
   spinnerContainer.textContent = '';
   spinnerContainer.appendChild(
     generateSpinnerComponent({
-      initialLabels: labels,
+      labels,
       spinCallback,
     }),
   );
