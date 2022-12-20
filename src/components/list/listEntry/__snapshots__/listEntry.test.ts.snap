@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateListEntry generates component correctly 1`] = `
+<li
+  class="container"
+>
+  <span
+    class="label"
+  >
+    Test
+  </span>
+  <button
+    class="button deleteButton"
+  >
+    <img
+      class="icon"
+      src="test-file-stub"
+    />
+  </button>
+</li>
+`;

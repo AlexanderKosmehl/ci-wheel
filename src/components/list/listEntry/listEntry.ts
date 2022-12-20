@@ -2,12 +2,12 @@ import styles from './listEntry.module.css';
 import generateIconButton from '../../atoms/iconButton/iconButton';
 import deleteIconURL from '../../../icons/trash-icon.svg';
 
-interface ListElementParams {
+interface ListEntryParams {
   label: string,
   onDelete: () => void,
 }
 
-export default function generateListElement({ label, onDelete }: ListElementParams) {
+export default function generateListEntry({ label, onDelete }: ListEntryParams) {
   const newListElement = document.createElement<'li'>('li');
   newListElement.classList.add(styles.container);
 

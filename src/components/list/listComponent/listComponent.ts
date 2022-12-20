@@ -1,6 +1,6 @@
 import { updateSearchParams } from '../../../util/searchParamHelper';
 import generateInputBar from '../../atoms/inputBar/inputBar';
-import generateListElement from '../listEntry/listEntry';
+import generateListEntry from '../listEntry/listEntry';
 import styles from './listComponent.module.css';
 
 interface ListComponentParams {
@@ -27,7 +27,7 @@ export default function generateListComponent({
 
     listElements.forEach((element, index) => {
       listContainer.appendChild(
-        generateListElement({
+        generateListEntry({
           label: element,
           onDelete: () => {
             listElements.splice(index, 1);
