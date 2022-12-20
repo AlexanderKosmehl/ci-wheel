@@ -23,13 +23,13 @@ describe('generateModal', () => {
     if (!closeButton) throw Error('No closeButton rendered!');
 
     closeButton.click();
-    expect(onCloseCallback.mock.calls.length).toBe(1);
+    expect(onCloseCallback).toBeCalled();
   });
 
   it('adds working onDelete callback', () => {
     if (!deleteButton) throw Error('No deleteButton rendered!');
 
     deleteButton.click();
-    expect(onDeleteCallback.mock.calls.length).toBe(1);
+    expect(onDeleteCallback).toBeCalled();
   });
 });

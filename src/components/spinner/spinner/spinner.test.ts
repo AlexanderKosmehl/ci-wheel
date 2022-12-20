@@ -26,7 +26,7 @@ describe('generateSpinner', () => {
 
     jest.advanceTimersByTime(SPIN_DURATION_IN_SEC * 1000);
 
-    expect(spinCallback.mock.calls.length).toBe(1);
-    expect(labels.includes(spinCallback.mock.calls[0][0])).toBe(true);
+    expect(spinCallback).toBeCalled();
+    expect(labels).toContain(spinCallback.mock.calls[0][0]);
   });
 });

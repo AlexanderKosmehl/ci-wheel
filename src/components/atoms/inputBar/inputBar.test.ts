@@ -20,12 +20,14 @@ describe('generateButton', () => {
   it('adds working callback', () => {
     if (!inputField || !inputButton) throw Error('Missing Inputs!');
 
-    inputField.value = 'Test';
+    const testValue = 'test';
+
+    inputField.value = testValue;
     inputField.dispatchEvent(new Event('keyup'));
     inputButton.click();
 
     expect(inputField.textContent).toBe('');
-    expect(newElementCallback.mock.calls.length).toBe(1);
-    expect(newElementCallback.mock.calls[0][0]).toBe('Test');
+    expect(newElementCallback).toBeCalled();
+    expect(newElementCallback).toBeCalledWith(testValue);
   });
 });

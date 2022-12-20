@@ -19,6 +19,6 @@ describe('iconButton', () => {
 
   it('adds working clickListener', () => {
     button.click();
-    expect(onClick.mock.calls.length).toBe(1);
+    expect(onClick).toBeCalled();
   });
 });

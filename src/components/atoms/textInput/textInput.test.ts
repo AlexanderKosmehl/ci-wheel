@@ -21,6 +21,6 @@ describe('generateButton', () => {
     inputBar.value = 'Test';
     inputBar.dispatchEvent(new Event('keyup'));
 
-    expect(onKeyPress.mock.calls.length).toBe(1);
+    expect(onKeyPress).toBeCalled();
   });
 });

@@ -27,7 +27,7 @@ describe('generateListComponent', () => {
     inputField.dispatchEvent(new Event('keyup'));
     inputButton.click();
 
-    expect(listChangeCallback.mock.calls.length).toBe(1);
-    expect(listChangeCallback.mock.calls[0][0]).toEqual([...initialElements, 'Test3']);
+    expect(listChangeCallback).toBeCalled();
+    expect(listChangeCallback).toBeCalledWith([...initialElements, 'Test3']);
   });
 });

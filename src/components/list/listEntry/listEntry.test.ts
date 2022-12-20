@@ -21,6 +21,6 @@ describe('generateListEntry', () => {
 
     deleteButton.click();
 
-    expect(onDelete.mock.calls.length).toBe(1);
+    expect(onDelete).toBeCalled();
   });
 });
