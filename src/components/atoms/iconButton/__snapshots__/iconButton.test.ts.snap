@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iconButton generates the component 1`] = `
+<button
+  class="button class class2"
+>
+  <img
+    class="icon"
+    src="test-file-stub"
+  />
+</button>
+`;

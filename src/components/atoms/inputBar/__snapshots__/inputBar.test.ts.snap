@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateButton generates component correctly 1`] = `
+<div
+  class="container"
+>
+  <input
+    class="input"
+    placeholder="Neuer Eintrag"
+    type="text"
+  />
+  <button
+    class="button addButton"
+    disabled=""
+  >
+    <img
+      class="icon"
+      src="test-file-stub"
+    />
+  </button>
+</div>
+`;
