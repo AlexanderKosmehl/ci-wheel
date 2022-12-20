@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateModal generates component correctly 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="content"
+  >
+    <div
+      class="header"
+    >
+      <h2
+        class="headerText"
+      >
+        Ergebnis:
+      </h2>
+      <button
+        class="button closeIcon"
+      >
+        <img
+          class="icon"
+          src="test-file-stub"
+        />
+      </button>
+    </div>
+    <div
+      class="resultElement"
+    >
+      <h3
+        class="resultLabel"
+      >
+        Test
+      </h3>
+      <button
+        class="button deleteIcon"
+      >
+        <img
+          class="icon"
+          src="test-file-stub"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
