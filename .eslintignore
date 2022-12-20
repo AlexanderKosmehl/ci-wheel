@@ -1,2 +1,3 @@
 *.config.js
 *.config.cjs
+/__mocks__/
