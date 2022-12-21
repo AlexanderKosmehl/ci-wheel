@@ -1,4 +1,5 @@
 import styles from './spinnerButton.module.css';
+import texts from './spinnerButton.text';
 
 interface SpinnerButtonProps {
   onClick: () => void
@@ -10,7 +11,7 @@ export default function generateSpinnerButton({ onClick }: SpinnerButtonProps) {
 
   const button = document.createElement<'button'>('button');
   button.classList.add(styles.button);
-  button.textContent = 'Spin';
+  button.textContent = texts.buttonText;
   button.onclick = onClick;
 
   buttonWrapper.appendChild(button);
