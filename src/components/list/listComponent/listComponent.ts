@@ -1,5 +1,5 @@
 import { updateSearchParams } from '../../../util/searchParamHelper';
-import generateInputBar from '../../atoms/inputBar/inputBar';
+import generateInputBar from '../inputBar/inputBar';
 import generateListEntry from '../listEntry/listEntry';
 import styles from './listComponent.module.css';
 

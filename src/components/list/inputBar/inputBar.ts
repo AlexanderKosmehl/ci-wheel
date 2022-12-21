@@ -1,6 +1,7 @@
-import generateIconButton from '../iconButton/iconButton';
+import generateIconButton from '../../atoms/iconButton/iconButton';
 import styles from './inputBar.module.css';
-import generateTextInput from '../textInput/textInput';
+import texts from './inputBar.text';
+import generateTextInput from '../../atoms/textInput/textInput';
 import addIcon from '../../../icons/+-icon.svg';
 
 interface InputBarParams {
@@ -25,7 +26,7 @@ export default function generateInputBar({ newElementCallback }: InputBarParams)
   }
 
   inputField = generateTextInput({
-    placeholder: 'Neuer Eintrag',
+    placeholder: texts.inputPlaceholder,
     onKeyPress: (event: KeyboardEvent) => {
       if (event.key === 'Enter') {
         addItem();
