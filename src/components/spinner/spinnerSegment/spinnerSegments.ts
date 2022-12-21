@@ -18,21 +18,7 @@ function createSegmentClipPathString(numberOfSegments: number) {
       100% 100%,
       calc(50% + ${WHEEL_GAP_IN_PX}px) 100%
     )`;
-  } else if (numberOfSegments === 3) {
-    polygonString = `polygon(
-      calc(50% + ${WHEEL_GAP_IN_PX / 2}px) 50%,
-      calc(100% - 21.13% + ${WHEEL_GAP_IN_PX / 2}px) 0%,
-      100% 0%,
-      100% 100%,
-      calc(100% - 21.13% + ${WHEEL_GAP_IN_PX / 2}px) 100%
-    )`;
-  } else if (numberOfSegments === 4) {
-    polygonString = `polygon(
-      calc(50% + ${WHEEL_GAP_IN_PX / 2}px) 50%,
-      100% calc(${WHEEL_GAP_IN_PX / 2}px),
-      100% calc(100% - ${WHEEL_GAP_IN_PX / 2}px)
-    )`;
-  } else if (numberOfSegments > 4) {
+  } else if (numberOfSegments >= 3) {
     const angleInRad = (360 / numberOfSegments / 2) * (Math.PI / 180);
     const offsetTan = Math.tan(angleInRad);
 
