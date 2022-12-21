@@ -46,5 +46,14 @@ exports[`generateSpinnerComponent generates component correctly 1`] = `
       class="tick"
     />
   </div>
+  <div
+    class="wrapper"
+  >
+    <button
+      class="button"
+    >
+      Spin
+    </button>
+  </div>
 </div>
 `;
