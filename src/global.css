@@ -4,18 +4,40 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'AdelleSans Light';
+  src: url(/AdelleSans_Light.otf);
+}
+@font-face {
+  font-family: 'AdelleSans SemiBold';
+  src: url(/AdelleSans_SemiBold.otf);
+}
+
 body {
   margin: 0rem;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'AdelleSans Light';
+  background-color: #F6F6F6;
 }
 
 .header {
-  background-color: #fce800;
+  background-color: #fff;
   padding: 0.5rem;
+  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.header-logo {
+  height: 2.5rem;
 }
 
 .header-title {
-  margin: 0rem;
+  margin: 0.5rem 1rem 0rem 1rem;
+  color: #5f575a;
+  font-size: 1.5rem;
+  font-family: 'AdelleSans Light';
 }
 
 #app {

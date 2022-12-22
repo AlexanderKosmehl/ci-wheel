@@ -7,6 +7,9 @@
 
 .tick-shadow {
   filter: drop-shadow(0rem 0rem 0.125rem rgb(0 0 0 / 0.4));
+  width: 2rem;
+  height: 2rem;
+  transform: translateY(-50%);
   position: absolute;
   top: 50%;
   bottom: 50%;
