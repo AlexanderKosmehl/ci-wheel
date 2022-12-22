@@ -10,20 +10,22 @@
 }
 
 .label {
-  margin-right: 2.5rem;
-  font-size: 1.25rem;
+  margin-right: 1.5rem;
+  font-size: 0.75rem;
   font-weight: bold;
   padding-top: 0.25rem;
+  text-align: center;
+  max-width: calc(50% - 3rem - 1.5rem);
 }
 
 @media screen and (min-width: 720px) {
   .label {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .label {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 }

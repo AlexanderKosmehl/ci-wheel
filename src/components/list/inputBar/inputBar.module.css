@@ -1,5 +1,7 @@
 .container {
   display: flex;
+  padding: 0.5rem 2rem;
+  background-color: #FCE800;
 }
 
 .add-button {
@@ -7,8 +9,15 @@
   padding: 0.25rem;
   max-height: 3rem;
   aspect-ratio: 1 / 1;
+  background-color: white;
 }
 
-.add-button:disabled {
+.add-button:disabled > * {
   filter: opacity(20%);
+}
+
+@media screen and (min-width: 960px) {
+  .container {
+    padding: 1rem 2rem;
+  }
 }

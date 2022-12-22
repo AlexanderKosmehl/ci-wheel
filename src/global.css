@@ -26,6 +26,7 @@ body {
   background-color: #fff;
   padding: 0.5rem;
   box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+  z-index: 10;
 
   display: flex;
   justify-content: start;
@@ -33,7 +34,7 @@ body {
 }
 
 .header-logo {
-  height: 2.5rem;
+  height: 3.125rem;
 }
 
 .header-title {
@@ -50,7 +51,7 @@ body {
   min-height: 0;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 960px) {
   #app {
     grid-template-columns: 2fr 1fr;
   }

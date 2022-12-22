@@ -1,14 +1,17 @@
 .main-container {
-  padding: 2rem;
   list-style-type: none;
+  background-color: #fff;
 
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
   min-height: 0;
+  
+  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
 }
 
 .list-container {
-  margin: 1rem 0 0 0;
-  padding: 0rem;
+  margin: 0;
+  padding: 0rem 2rem;
   overflow: auto;
 }
