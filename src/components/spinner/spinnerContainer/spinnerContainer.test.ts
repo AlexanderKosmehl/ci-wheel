@@ -13,7 +13,7 @@ describe('generateSpinnerComponent', () => {
     labels,
     spinCallback,
   });
-  const spinner = spinnerComponent.querySelector<HTMLDivElement>('.spinner');
+  const button = spinnerComponent.querySelector<HTMLButtonElement>('button');
 
   // Callback is called after a delay
   jest.useFakeTimers();
@@ -23,9 +23,9 @@ describe('generateSpinnerComponent', () => {
   });
 
   it('adds working callback', () => {
-    if (!spinner) throw Error('No spinner rendered!');
+    if (!button) throw Error('No button rendered!');
 
-    spinner.click();
+    button.click();
 
     jest.advanceTimersByTime(SPIN_DURATION_IN_SEC * 1000);
 
