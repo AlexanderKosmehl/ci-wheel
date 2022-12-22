@@ -9,6 +9,6 @@
   aspect-ratio: 1 / 1;
 }
 
-.add-button:disabled > img {
+.add-button:disabled {
   filter: opacity(20%);
 }

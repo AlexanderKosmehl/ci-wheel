@@ -1,3 +1,4 @@
+import { SPIN_DURATION_IN_SEC } from '../../../config';
 import styles from './spinnerButton.module.css';
 import texts from './spinnerButton.text';
 
@@ -12,7 +13,18 @@ export default function generateSpinnerButton({ onClick }: SpinnerButtonProps) {
   const button = document.createElement<'button'>('button');
   button.classList.add(styles.button);
   button.textContent = texts.buttonText;
-  button.onclick = onClick;
+
+  function onClickWrapper() {
+    button.removeEventListener('click', onClickWrapper);
+    button.disabled = true;
+    onClick();
+
+    setTimeout(() => {
+      button.addEventListener('click', onClickWrapper);
+      button.disabled = false;
+    }, SPIN_DURATION_IN_SEC * 1000);
+  }
+  button.addEventListener('click', onClickWrapper);
 
   buttonWrapper.appendChild(button);
 

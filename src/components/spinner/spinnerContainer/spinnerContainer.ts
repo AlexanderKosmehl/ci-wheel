@@ -32,18 +32,15 @@ export default function generateSpinnerComponent({
 
   let currentAngle = 0;
 
-  function clickListener() {
+  function spinnerButtonCallback() {
     currentAngle += 720 + Math.random() * 360;
     spinner.style.transform = `rotate(${currentAngle}deg)`;
 
-    spinner.removeEventListener('click', clickListener);
-    setTimeout(() => {
-      spinCallback(getLabelByAngle(labels, currentAngle));
-      spinner.addEventListener('click', clickListener);
-    }, SPIN_DURATION_IN_SEC * 1000);
+    setTimeout(
+      () => spinCallback(getLabelByAngle(labels, currentAngle)),
+      SPIN_DURATION_IN_SEC * 1000,
+    );
   }
-
-  if (labels.length > 0) spinner.addEventListener('click', clickListener);
 
   // Hide additional features if there are no labels on the wheel
   if (labels.length !== 0) {
@@ -51,7 +48,7 @@ export default function generateSpinnerComponent({
     newSpinnerContainer.appendChild(tick);
 
     const button = generateSpinnerButton({
-      onClick: clickListener,
+      onClick: spinnerButtonCallback,
     });
     newSpinnerContainer.appendChild(button);
   }
