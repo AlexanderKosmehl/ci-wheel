@@ -5,18 +5,21 @@
 }
 
 @font-face {
-  font-family: 'AdelleSans Light';
+  font-family: "AdelleSans Light";
   src: url(/AdelleSans_Light.otf);
 }
 @font-face {
-  font-family: 'AdelleSans SemiBold';
+  font-family: "AdelleSans SemiBold";
   src: url(/AdelleSans_SemiBold.otf);
 }
 
 body {
   margin: 0rem;
-  font-family: 'AdelleSans Light';
-  background-color: #F6F6F6;
+  font-family: "AdelleSans Light";
+  background-color: #f6f6f6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -37,16 +40,30 @@ body {
   margin: 0.5rem 1rem 0rem 1rem;
   color: #5f575a;
   font-size: 1.5rem;
-  font-family: 'AdelleSans Light';
+  font-family: "AdelleSans Light";
 }
 
 #app {
   display: grid;
   grid-template-columns: 1fr;
+  flex-grow: 1;
+  min-height: 0;
 }
 
 @media screen and (min-width: 1280px) {
   #app {
     grid-template-columns: 2fr 1fr;
   }
+}
+
+#spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#list-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }

@@ -1,9 +1,14 @@
 .main-container {
   padding: 2rem;
   list-style-type: none;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .list-container {
-  margin-top: 1rem;
+  margin: 1rem 0 0 0;
   padding: 0rem;
+  overflow: auto;
 }

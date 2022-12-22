@@ -1,6 +1,7 @@
 .container {
   max-height: 35rem;
   max-width: 35rem;
+  flex-grow: 1;
   overflow: hidden;
   padding: 1.25rem;
   position: relative;
