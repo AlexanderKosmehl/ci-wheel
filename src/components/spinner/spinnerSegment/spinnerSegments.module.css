@@ -15,7 +15,8 @@
   font-weight: bold;
   padding-top: 0.25rem;
   text-align: center;
-  max-width: calc(50% - 3rem - 1.5rem);
+  /* Remaining space - half of the spin button - margin right */
+  width: calc(50% - 3rem - 1.5rem);
 }
 
 @media screen and (min-width: 720px) {
