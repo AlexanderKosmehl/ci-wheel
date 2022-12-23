@@ -3,6 +3,7 @@ import generateSpinner from '../spinner/spinner';
 import generateSpinnerButton from '../spinnerButton/spinnerButton';
 import generateSpinnerTick from '../spinnerTick/spinnerTick';
 import styles from './spinnerContainer.module.css';
+import texts from './spinnerContainer.text';
 
 function getLabelByAngle(labels: string[], angle: number) {
   const segmentAngle = 360 / labels.length;
@@ -28,8 +29,6 @@ export default function generateSpinnerComponent({
   const spinner = generateSpinner({
     labels,
   });
-  newSpinnerContainer.appendChild(spinner);
-
   let currentAngle = 0;
 
   function spinnerButtonCallback() {
@@ -42,8 +41,10 @@ export default function generateSpinnerComponent({
     );
   }
 
-  // Hide additional features if there are no labels on the wheel
+  // Display placeholder if there are no labels on the wheel
   if (labels.length !== 0) {
+    newSpinnerContainer.appendChild(spinner);
+
     const tick = generateSpinnerTick();
     newSpinnerContainer.appendChild(tick);
 
@@ -51,6 +52,11 @@ export default function generateSpinnerComponent({
       onClick: spinnerButtonCallback,
     });
     newSpinnerContainer.appendChild(button);
+  } else {
+    const placeholder = document.createElement<'span'>('span');
+    placeholder.classList.add(styles.placeholder);
+    placeholder.textContent = texts.placeholderText;
+    newSpinnerContainer.appendChild(placeholder);
   }
 
   return newSpinnerContainer;
