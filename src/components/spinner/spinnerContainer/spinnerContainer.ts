@@ -1,4 +1,4 @@
-import { SPIN_DURATION_IN_SEC } from '../../../config';
+import { MIN_SPINS_IN_DEG, SPIN_DURATION_IN_SEC } from '../../../config';
 import generateSpinner from '../spinner/spinner';
 import generateSpinnerButton from '../spinnerButton/spinnerButton';
 import generateSpinnerTick from '../spinnerTick/spinnerTick';
@@ -32,7 +32,7 @@ export default function generateSpinnerComponent({
   let currentAngle = 0;
 
   function spinnerButtonCallback() {
-    currentAngle += 720 + Math.random() * 360;
+    currentAngle += MIN_SPINS_IN_DEG + Math.random() * 360;
     spinner.style.transform = `rotate(${currentAngle}deg)`;
 
     setTimeout(
