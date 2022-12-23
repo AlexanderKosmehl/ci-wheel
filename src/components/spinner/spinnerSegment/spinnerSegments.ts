@@ -1,4 +1,6 @@
-import { SEGMENT_COLORS, WHEEL_GAP_IN_PX } from '../../../config';
+import {
+  SEGMENT_COLORS, SPINNER_TICK_OFFSET_IN_REM, SPIN_BUTTON_SIZE_IN_REM, WHEEL_GAP_IN_PX,
+} from '../../../config';
 import styles from './spinnerSegments.module.css';
 
 function createSegmentRotationString(
@@ -31,7 +33,25 @@ function createSegmentClipPathString(numberOfSegments: number) {
   return polygonString;
 }
 
+function convertRemToPixels(rem: number) {
+  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
+
+function calculateSufficientHightLocation(numberOfSegments: number) {
+  if (numberOfSegments < 3) return convertRemToPixels(SPIN_BUTTON_SIZE_IN_REM);
+
+  const remainingAngle = 180 - 90 - (360 / numberOfSegments / 2);
+  const angleInRad = remainingAngle * (Math.PI / 180);
+  const requiredHight = convertRemToPixels(1.75 / 2);
+
+  return Math.max(
+    convertRemToPixels(SPIN_BUTTON_SIZE_IN_REM),
+    Math.tan(angleInRad) * requiredHight,
+  );
+}
+
 export default function generateSpinnerSegments(labels: string[]) {
+  const sufficientHightLocation = calculateSufficientHightLocation(labels.length);
   return labels.map((label, labelIndex) => {
     const segmentElement = document.createElement<'div'>('div');
     segmentElement.classList.add(styles.segment);
@@ -39,6 +59,7 @@ export default function generateSpinnerSegments(labels: string[]) {
     const labelElement = document.createElement<'span'>('span');
     labelElement.classList.add(styles.label);
     labelElement.textContent = label;
+    labelElement.style.width = `calc(50% - ${SPINNER_TICK_OFFSET_IN_REM}rem - ${sufficientHightLocation}px)`;
 
     segmentElement.appendChild(labelElement);
     segmentElement.style.transform = createSegmentRotationString(labelIndex, labels.length);
