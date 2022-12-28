@@ -1,7 +1,7 @@
 import {
   describe, expect, it, jest,
 } from '@jest/globals';
-import generateModal from './modal';
+import generateModal from './spinResultModal';
 
 describe('generateModal', () => {
   const onCloseCallback = jest.fn(() => {});

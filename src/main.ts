@@ -1,5 +1,5 @@
 import generateListComponent from './components/list/listComponent/listComponent';
-import generateModal from './components/modal/modal';
+import generateModal from './components/modal/spinResultModal/spinResultModal';
 import generateSpinnerComponent from './components/spinner/spinnerContainer/spinnerContainer';
 import './global.css';
 import { getSearchParams } from './util/searchParamHelper';

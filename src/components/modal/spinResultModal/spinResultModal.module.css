@@ -1,0 +1,17 @@
+.delete-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.result-element {
+  background-color: #bbb;
+  border-radius: 10rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-label {
+  margin: 0rem;
+}
