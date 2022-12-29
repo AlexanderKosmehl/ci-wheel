@@ -19,6 +19,7 @@ exports[`generateSpinnerComponent generates component correctly 1`] = `
     >
       <span
         class="label"
+        style="width: calc(50% - 1.5rem - 48px);"
       >
         Test
       </span>
@@ -34,6 +35,7 @@ exports[`generateSpinnerComponent generates component correctly 1`] = `
     >
       <span
         class="label"
+        style="width: calc(50% - 1.5rem - 48px);"
       >
         Test2
       </span>
