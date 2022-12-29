@@ -42,6 +42,7 @@ body {
   color: #5f575a;
   font-size: 1.5rem;
   font-family: "AdelleSans Light";
+  user-select: none;
 }
 
 #app {
