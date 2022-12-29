@@ -17,15 +17,20 @@
 .delete-button {
   height: 1.75rem;
   width: 1.75rem;
-  visibility: hidden;
-}
-
-.container:hover .delete-button {
-  visibility: visible;
 }
 
 @media screen and (min-width: 720px) {
   .label {
     font-size: 1.25rem;
+  }
+}
+
+@media (hover: hover) {
+  .delete-button {
+    visibility: hidden;
+  }
+
+  .container:hover .delete-button {
+    visibility: visible;
   }
 }
