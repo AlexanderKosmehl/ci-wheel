@@ -13,7 +13,7 @@ exports[`generateModal generates component correctly 1`] = `
       <h2
         class="headerText"
       >
-        Ergebnis:
+        Title
       </h2>
       <button
         class="button closeIcon"
@@ -24,22 +24,8 @@ exports[`generateModal generates component correctly 1`] = `
         />
       </button>
     </div>
-    <div
-      class="resultElement"
-    >
-      <h3
-        class="resultLabel"
-      >
-        Test
-      </h3>
-      <button
-        class="button deleteIcon"
-      >
-        <img
-          class="icon"
-          src="test-file-stub"
-        />
-      </button>
+    <div>
+      Content
     </div>
   </div>
 </div>
