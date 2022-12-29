@@ -34,7 +34,8 @@ function createSegmentClipPathString(numberOfSegments: number) {
 }
 
 function convertRemToPixels(rem: number) {
-  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  const fontSize = getComputedStyle(document.documentElement).fontSize || '16px';
+  return rem * parseFloat(fontSize);
 }
 
 function calculateSufficientHightLocation(numberOfSegments: number) {
