@@ -13,5 +13,7 @@
 .list-container {
   margin: 0;
   padding: 0rem 2rem;
+  
+  flex: 1;
   overflow: auto;
 }

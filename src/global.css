@@ -64,7 +64,7 @@ body {
   align-items: center;
 }
 
-#list-container {
+#sidebar {
   display: flex;
   flex-direction: column;
   min-height: 0;

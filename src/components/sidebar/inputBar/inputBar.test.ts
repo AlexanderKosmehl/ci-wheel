@@ -8,7 +8,7 @@ describe('generateButton', () => {
   const newElementCallback = jest.fn((_newElement: string) => {});
 
   const inputBar = generateInputBar({
-    newElementCallback,
+    newEntryCallback: newElementCallback,
   });
   const inputField = inputBar.querySelector<HTMLInputElement>('div > input');
   const inputButton = inputBar.querySelector<HTMLButtonElement>('div > button');
