@@ -1,5 +1,5 @@
 import { MIN_SPINS_IN_DEG, SPIN_DURATION_IN_SEC } from '../../../config';
-import generateSpinner from '../spinner/spinner';
+import generateSpinner from '../spinner';
 import generateSpinnerButton from '../spinnerButton/spinnerButton';
 import generateSpinnerTick from '../spinnerTick/spinnerTick';
 import styles from './spinnerContainer.module.css';

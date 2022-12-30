@@ -8,5 +8,5 @@ export function updateSearchParams(entries: string[]) {
 export function getSearchParams() {
   return urlSearchParams.get('entries')
     ?.split('~')
-    .filter((entry) => entry !== '');
+    .filter((entry) => entry !== '') || [];
 }

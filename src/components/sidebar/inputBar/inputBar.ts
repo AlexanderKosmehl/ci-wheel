@@ -5,10 +5,10 @@ import generateTextInput from '../../atoms/textInput/textInput';
 import addIcon from '../../../icons/+-icon.svg';
 
 interface InputBarParams {
-  newElementCallback: (newElement: string) => void
+  newEntryCallback: (newElement: string) => void
 }
 
-export default function generateInputBar({ newElementCallback }: InputBarParams) {
+export default function generateInputBar({ newEntryCallback }: InputBarParams) {
   const newInputBar = document.createElement<'div'>('div');
   newInputBar.classList.add(styles.container);
 
@@ -18,7 +18,7 @@ export default function generateInputBar({ newElementCallback }: InputBarParams)
   function addItem() {
     if (!inputField || inputField.value === '') return;
 
-    newElementCallback(inputField.value);
+    newEntryCallback(inputField.value);
     inputField.value = '';
 
     if (!addButton) return;

@@ -1,0 +1,25 @@
+.importModalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.import-textarea {
+  min-height: 10rem;
+}
+
+.import-button-wrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.import-button {
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 0.125rem solid black;
+  border-radius: 10rem;
+}
+
+.import-button:hover {
+  background-color: #f4f4f4;
+}

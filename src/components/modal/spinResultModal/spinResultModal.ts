@@ -4,13 +4,17 @@ import generateIconButton from '../../atoms/iconButton/iconButton';
 import generateModal from '../modalBase/modalBase';
 import texts from './spinResultModal.text';
 
-interface ModalParams {
+interface SpinResultModalParams {
   label: string
   onClose: () => void
   onDelete: () => void
 }
 
-export default function generateSpinResultModal({ label, onClose, onDelete }: ModalParams) {
+export default function generateSpinResultModal({
+  label,
+  onClose,
+  onDelete,
+}: SpinResultModalParams) {
   const resultElement = document.createElement<'div'>('div');
   resultElement.classList.add(styles.resultElement);
 

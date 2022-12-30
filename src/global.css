@@ -64,8 +64,10 @@ body {
   align-items: center;
 }
 
-#list-container {
+#sidebar {
+  background-color: white;
   display: flex;
   flex-direction: column;
+  flex: 1;
   min-height: 0;
 }

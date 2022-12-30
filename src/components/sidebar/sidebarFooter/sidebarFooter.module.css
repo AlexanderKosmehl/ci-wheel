@@ -1,0 +1,20 @@
+.container {
+  background-color: #83777b;
+  display: flex;
+  padding: 0.5rem 2rem;
+  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+  z-index: 5;
+  gap: 1rem;
+}
+
+.footer-button {
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 0.125rem solid black;
+  border-radius: 10rem;
+  flex: 1;
+}
+
+.footer-button:hover {
+  background-color: #f4f4f4;
+}
