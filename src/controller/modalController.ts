@@ -25,6 +25,6 @@ export function openSpinResultModal(resultLabel: string) {
   );
 }
 
-export function openTextEditModal() {}
+export function openImportModal() {}
 
 export function openArchiveModal() {}

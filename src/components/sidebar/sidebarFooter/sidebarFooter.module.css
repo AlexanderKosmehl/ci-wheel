@@ -1,5 +1,5 @@
 .container {
-  background-color: #83777B;
+  background-color: #83777b;
   display: flex;
   padding: 0.5rem 2rem;
   box-shadow: 0 0 14px rgb(0 0 0 / 20%);
@@ -8,6 +8,13 @@
 }
 
 .footer-button {
-  background-color: red;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  background-color: #fff;
+  border: 0.125rem solid black;
+  border-radius: 10rem;
   flex: 1;
+}
+
+.footer-button:hover {
+  background-color: #f4f4f4;
 }
