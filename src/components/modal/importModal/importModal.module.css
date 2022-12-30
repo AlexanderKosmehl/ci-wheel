@@ -14,4 +14,12 @@
 }
 
 .import-button {
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 0.125rem solid black;
+  border-radius: 10rem;
+}
+
+.import-button:hover {
+  background-color: #f4f4f4;
 }

@@ -1,7 +1,8 @@
 import generateImportModal from '../components/modal/importModal/importModal';
 import generateSpinResultModal from '../components/modal/spinResultModal/spinResultModal';
 import { getSearchParams, updateSearchParams } from '../util/searchParamHelper';
-import { initializeSidebar, updateList } from './sidebarController';
+// eslint-disable-next-line import/no-cycle
+import { updateList } from './sidebarController';
 // eslint-disable-next-line import/no-cycle
 import { removeLabelFromSpinner, updateSpinnerLabels } from './spinnerController';
 
