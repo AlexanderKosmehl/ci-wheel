@@ -43,7 +43,8 @@ export function openImportModal() {
       onImport: (importText: string) => {
         const importedEntries = importText
           .split('\n')
-          .map((entry) => entry.trim());
+          .map((entry) => entry.trim())
+          .filter((entry) => entry !== '');
 
         const updatedEntries = [...getSearchParams(), ...importedEntries];
 
