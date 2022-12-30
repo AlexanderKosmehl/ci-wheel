@@ -13,23 +13,21 @@ function deleteExistingSidebar() {
   sidebarContainer.textContent = '';
 }
 
-let entryList: string[] = [];
-
-function updateDependencies() {
-  updateSearchParams(entryList);
-  updateSpinnerLabels(entryList);
+function updateDependencies(listEntries: string[]) {
+  updateSearchParams(listEntries);
+  updateSpinnerLabels(listEntries);
 }
 
-export function updateList() {
+export function updateList(listEntries: string[]) {
   const list = sidebarContainer?.querySelector('ul');
   if (!list) return;
 
   list.replaceWith(generateListComponent({
-    listEntries: [...entryList],
+    listEntries,
     entryRemovalCallback: (removedEntry: string) => {
-      entryList = entryList.filter((entry) => entry !== removedEntry);
-      updateList();
-      updateDependencies();
+      const updatedList = listEntries.filter((entry) => entry !== removedEntry);
+      updateList(updatedList);
+      updateDependencies(updatedList);
     },
   }));
 }
@@ -37,22 +35,21 @@ export function updateList() {
 export function initializeSidebar(listEntries: string[]) {
   if (!sidebarContainer) return;
 
-  entryList = listEntries;
   deleteExistingSidebar();
 
   sidebarContainer.appendChild(generateInputBar({
     newEntryCallback: (newEntry: string) => {
-      entryList = [...entryList, newEntry];
-      updateList();
-      updateDependencies();
+      const updatedList = [...listEntries, newEntry];
+      updateList(updatedList);
+      updateDependencies(updatedList);
     },
   }));
   sidebarContainer.appendChild(generateListComponent({
     listEntries,
     entryRemovalCallback: (removedEntry: string) => {
-      entryList = entryList.filter((entry) => entry !== removedEntry);
-      updateList();
-      updateDependencies();
+      const updatedList = listEntries.filter((entry) => entry !== removedEntry);
+      updateList(updatedList);
+      updateDependencies(updatedList);
     },
   }));
   sidebarContainer.appendChild(generateSidebarFooter({

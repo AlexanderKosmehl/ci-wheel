@@ -1,0 +1,17 @@
+.importModalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.import-textarea {
+  min-height: 10rem;
+}
+
+.import-button-wrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.import-button {
+}

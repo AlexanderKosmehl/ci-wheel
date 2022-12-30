@@ -1,6 +1,9 @@
+import generateImportModal from '../components/modal/importModal/importModal';
 import generateSpinResultModal from '../components/modal/spinResultModal/spinResultModal';
+import { getSearchParams, updateSearchParams } from '../util/searchParamHelper';
+import { initializeSidebar, updateList } from './sidebarController';
 // eslint-disable-next-line import/no-cycle
-import { removeLabelFromSpinner } from './spinnerController';
+import { removeLabelFromSpinner, updateSpinnerLabels } from './spinnerController';
 
 const modalContainer = document.querySelector('#modal-container');
 
@@ -12,6 +15,8 @@ function closeModal() {
 
 export function openSpinResultModal(resultLabel: string) {
   if (!modalContainer) return;
+
+  closeModal();
 
   modalContainer.appendChild(
     generateSpinResultModal({
@@ -25,6 +30,29 @@ export function openSpinResultModal(resultLabel: string) {
   );
 }
 
-export function openImportModal() {}
+export function openImportModal() {
+  if (!modalContainer) return;
+
+  closeModal();
+
+  modalContainer.appendChild(
+    generateImportModal({
+      onClose: closeModal,
+      onImport: (importText: string) => {
+        const importedEntries = importText
+          .split('\n')
+          .map((entry) => entry.trim());
+
+        const updatedEntries = [...getSearchParams(), ...importedEntries];
+
+        updateSearchParams(updatedEntries);
+        updateSpinnerLabels(updatedEntries);
+        updateList(updatedEntries);
+
+        closeModal();
+      },
+    }),
+  );
+}
 
 export function openArchiveModal() {}
