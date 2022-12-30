@@ -2,9 +2,10 @@
   background-color: #83777b;
   display: flex;
   padding: 0.5rem 2rem;
-  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
   z-index: 5;
   gap: 1rem;
+  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+  z-index: 5;
 }
 
 .footer-button {

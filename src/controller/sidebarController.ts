@@ -1,7 +1,7 @@
 import generateInputBar from '../components/sidebar/inputBar/inputBar';
 import generateListComponent from '../components/sidebar/list/listComponent/listComponent';
 import generateSidebarFooter from '../components/sidebar/sidebarFooter/sidebarFooter';
-import { updateSearchParams } from '../util/searchParamHelper';
+import { getSearchParams, updateSearchParams } from '../util/searchParamHelper';
 import { openArchiveModal, openImportModal } from './modalController';
 import { updateSpinnerLabels } from './spinnerController';
 
@@ -39,7 +39,7 @@ export function initializeSidebar(listEntries: string[]) {
 
   sidebarContainer.appendChild(generateInputBar({
     newEntryCallback: (newEntry: string) => {
-      const updatedList = [...listEntries, newEntry];
+      const updatedList = [...getSearchParams(), newEntry];
       updateList(updatedList);
       updateDependencies(updatedList);
     },

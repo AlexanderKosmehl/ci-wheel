@@ -70,4 +70,5 @@ body {
   flex-direction: column;
   flex: 1;
   min-height: 0;
+  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
 }

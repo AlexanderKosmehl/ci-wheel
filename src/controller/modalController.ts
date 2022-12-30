@@ -1,3 +1,4 @@
+import generateArchiveModal from '../components/modal/archiveModal/archiveModal';
 import generateImportModal from '../components/modal/importModal/importModal';
 import generateSpinResultModal from '../components/modal/spinResultModal/spinResultModal';
 import { getSearchParams, updateSearchParams } from '../util/searchParamHelper';
@@ -42,7 +43,8 @@ export function openImportModal() {
       onImport: (importText: string) => {
         const importedEntries = importText
           .split('\n')
-          .map((entry) => entry.trim());
+          .map((entry) => entry.trim())
+          .filter((entry) => entry !== '');
 
         const updatedEntries = [...getSearchParams(), ...importedEntries];
 
@@ -56,4 +58,14 @@ export function openImportModal() {
   );
 }
 
-export function openArchiveModal() {}
+export function openArchiveModal() {
+  if (!modalContainer) return;
+
+  closeModal();
+
+  modalContainer.appendChild(
+    generateArchiveModal({
+      onClose: closeModal,
+    }),
+  );
+}
