@@ -7,9 +7,6 @@ interface SpinnerButtonProps {
 }
 
 export default function generateSpinnerButton({ onClick }: SpinnerButtonProps) {
-  const buttonWrapper = document.createElement<'div'>('div');
-  buttonWrapper.classList.add(styles.wrapper);
-
   const button = document.createElement<'button'>('button');
   button.classList.add(styles.button);
   button.textContent = texts.buttonText;
@@ -26,7 +23,5 @@ export default function generateSpinnerButton({ onClick }: SpinnerButtonProps) {
   }
   button.addEventListener('click', onClickWrapper);
 
-  buttonWrapper.appendChild(button);
-
-  return buttonWrapper;
+  return button;
 }
