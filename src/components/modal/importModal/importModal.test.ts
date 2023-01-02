@@ -5,7 +5,6 @@ import generateImportModal from './importModal';
 
 describe('generateImportModal', () => {
   const onClose = jest.fn(() => {});
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onImport = jest.fn((_importText: string) => {});
 
   const importModal = generateImportModal({

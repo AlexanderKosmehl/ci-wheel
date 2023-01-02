@@ -4,7 +4,6 @@ import {
 import generateInputBar from './inputBar';
 
 describe('generateButton', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const newElementCallback = jest.fn((_newElement: string) => {});
 
   const inputBar = generateInputBar({

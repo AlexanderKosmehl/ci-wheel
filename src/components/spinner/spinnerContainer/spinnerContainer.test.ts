@@ -5,7 +5,6 @@ import { SPIN_DURATION_IN_SEC } from '../../../config';
 import generateSpinnerComponent from './spinnerContainer';
 
 describe('generateSpinnerComponent', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const spinCallback = jest.fn((_result: string) => {});
   const labels = ['Test', 'Test2'];
 

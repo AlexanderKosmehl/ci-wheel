@@ -4,7 +4,6 @@ import {
 import generateListComponent from './listComponent';
 
 describe('generateListComponent', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const entryRemovalCallback = jest.fn((_removedEntry: string) => {});
   const listEntries = ['Test', 'Test2'];
 

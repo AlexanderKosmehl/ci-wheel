@@ -4,7 +4,6 @@ import {
 import generateTextInput from './textInput';
 
 describe('generateButton', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onKeyPress = jest.fn((_event: KeyboardEvent) => {});
 
   const inputBar = generateTextInput({
