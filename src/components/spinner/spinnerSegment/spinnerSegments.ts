@@ -60,6 +60,7 @@ export default function generateSpinnerSegments(labels: string[]) {
     const labelElement = document.createElement<'span'>('span');
     labelElement.classList.add(styles.label);
     labelElement.textContent = label;
+    labelElement.title = label;
     labelElement.style.width = `calc(50% - ${SPINNER_TICK_OFFSET_IN_REM}rem - ${sufficientHightLocation}px)`;
 
     segmentElement.appendChild(labelElement);
