@@ -2,9 +2,7 @@ import generateArchiveModal from '../components/modal/archiveModal/archiveModal'
 import generateImportModal from '../components/modal/importModal/importModal';
 import generateSpinResultModal from '../components/modal/spinResultModal/spinResultModal';
 import { getSearchParams, updateSearchParams } from '../util/searchParamHelper';
-// eslint-disable-next-line import/no-cycle
 import { updateList } from './sidebarController';
-// eslint-disable-next-line import/no-cycle
 import { removeLabelFromSpinner, updateSpinnerLabels } from './spinnerController';
 
 const modalContainer = document.querySelector('#modal-container');
