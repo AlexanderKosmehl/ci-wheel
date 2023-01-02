@@ -7,7 +7,8 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "airbnb",
-        "airbnb-typescript/base"
+        "airbnb-typescript/base",
+        "plugin:storybook/recommended"
     ],
     "overrides": [
         {
