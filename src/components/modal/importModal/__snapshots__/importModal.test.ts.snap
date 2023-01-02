@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateImportModal generates component correctly 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="content"
+  >
+    <div
+      class="header"
+    >
+      <h2
+        class="headerText"
+      >
+        Import
+      </h2>
+      <button
+        class="button closeIcon"
+      >
+        <img
+          class="icon"
+          src="test-file-stub"
+        />
+      </button>
+    </div>
+    <div
+      class="importModalContainer"
+    >
+      <textarea
+        class="importTextarea"
+      />
+      <div
+        class="importButtonWrapper"
+      >
+        <button
+          class="importButton"
+        >
+          Importieren
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

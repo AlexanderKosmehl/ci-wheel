@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateSidebarFooter generates component correctly 1`] = `
+<div
+  class="container"
+>
+  <button
+    class="footerButton"
+  >
+    Import
+  </button>
+  <button
+    class="footerButton"
+  >
+    Archiv
+  </button>
+</div>
+`;

@@ -5,29 +5,25 @@ import generateListComponent from './listComponent';
 
 describe('generateListComponent', () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const listChangeCallback = jest.fn((_updatedList: string[]) => {});
-  const initialElements = ['Test', 'Test2'];
+  const entryRemovalCallback = jest.fn((_removedEntry: string) => {});
+  const listEntries = ['Test', 'Test2'];
 
   const listComponent = generateListComponent({
-    initialElements,
-    listChangeCallback,
+    listEntries,
+    entryRemovalCallback,
   });
-
-  const inputField = listComponent.querySelector<HTMLInputElement>('div > div > input');
-  const inputButton = listComponent.querySelector<HTMLButtonElement>('div > div > button');
 
   it('generates component correctly', () => {
     expect(listComponent).toMatchSnapshot();
   });
 
-  it('adds working callback', () => {
-    if (!inputField || !inputButton) throw Error('Missing Inputs!');
+  it('adds working removal callback', () => {
+    const listElement = listComponent.querySelector<HTMLLIElement>('li');
 
-    inputField.value = 'Test3';
-    inputField.dispatchEvent(new Event('keyup'));
-    inputButton.click();
+    if (!listElement) throw Error('No list entries rendered!');
 
-    expect(listChangeCallback).toBeCalled();
-    expect(listChangeCallback).toBeCalledWith([...initialElements, 'Test3']);
+    listElement.querySelector<HTMLButtonElement>('.deleteButton')?.click();
+    expect(entryRemovalCallback).toBeCalled();
+    expect(entryRemovalCallback).toBeCalledWith('Test');
   });
 });

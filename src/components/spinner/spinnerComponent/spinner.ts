@@ -1,5 +1,5 @@
-import { SPIN_DURATION_IN_SEC } from '../../config';
-import generateSpinnerSegments from './spinnerSegment/spinnerSegments';
+import { SPIN_DURATION_IN_SEC } from '../../../config';
+import generateSpinnerSegments from '../spinnerSegment/spinnerSegments';
 import styles from './spinner.module.css';
 
 interface SpinnerParams {

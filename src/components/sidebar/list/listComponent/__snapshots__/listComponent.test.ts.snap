@@ -1,64 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`generateListComponent generates component correctly 1`] = `
-<div
-  class="mainContainer"
+<ul
+  class="listContainer"
 >
-  <div
+  <li
     class="container"
   >
-    <input
-      class="input"
-      placeholder="Neuer Eintrag"
-      type="text"
-    />
+    <span
+      class="label"
+    >
+      Test
+    </span>
     <button
-      class="button addButton"
-      disabled=""
+      class="button deleteButton"
     >
       <img
         class="icon"
         src="test-file-stub"
       />
     </button>
-  </div>
-  <ul
-    class="listContainer"
+  </li>
+  <li
+    class="container"
   >
-    <li
-      class="container"
+    <span
+      class="label"
     >
-      <span
-        class="label"
-      >
-        Test
-      </span>
-      <button
-        class="button deleteButton"
-      >
-        <img
-          class="icon"
-          src="test-file-stub"
-        />
-      </button>
-    </li>
-    <li
-      class="container"
+      Test2
+    </span>
+    <button
+      class="button deleteButton"
     >
-      <span
-        class="label"
-      >
-        Test2
-      </span>
-      <button
-        class="button deleteButton"
-      >
-        <img
-          class="icon"
-          src="test-file-stub"
-        />
-      </button>
-    </li>
-  </ul>
-</div>
+      <img
+        class="icon"
+        src="test-file-stub"
+      />
+    </button>
+  </li>
+</ul>
 `;
