@@ -14,14 +14,17 @@
 
 <body>
   <header class="header">
-    <img class="header-logo" src="/CI Logo.png" alt="CI Logo">
-    <h1 class="header-title">
-      Wheel
-    </h1>
+    <div class="logo-title-wrapper">
+      <img class="header-logo" src="/CI Logo.png" alt="CI Logo">
+      <h1 class="header-title">
+        Wheel
+      </h1>
+    </div>
+    <button id="display-sidebar-button">Sidebar</button>
   </header>
   <div id="app">
     <div id="spinner-container"></div>
-    <aside id="sidebar">
+    <aside id="sidebar" class="sidebar-hidden">
       <div id="list-container"></div>
       <div id="sidebar-footer"></div>
     </aside>

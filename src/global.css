@@ -27,10 +27,14 @@ body {
   padding: 0.5rem;
   box-shadow: 0 0 14px rgb(0 0 0 / 20%);
   z-index: 10;
-
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
+}
+
+.logo-title-wrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 .header-logo {
@@ -46,16 +50,10 @@ body {
 }
 
 #app {
-  display: grid;
-  grid-template-columns: 1fr;
   flex-grow: 1;
   min-height: 0;
-}
-
-@media screen and (min-width: 960px) {
-  #app {
-    grid-template-columns: 2fr 1fr;
-  }
+  position: relative;
+  overflow: hidden;
 }
 
 #spinner-container {
@@ -71,4 +69,31 @@ body {
   flex: 1;
   min-height: 0;
   box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+}
+
+.sidebar-hidden {
+  transform: translateX(100%);
+}
+
+@media screen and (min-width: 960px) {
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 30rem;
+  }
+
+  #sidebar {
+    position: static;
+    transform: none;
+  }
+
+  #display-sidebar-button {
+    display: none;
+  }
 }

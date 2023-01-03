@@ -6,6 +6,10 @@ import { openArchiveModal, openImportModal } from './modalController';
 import { updateSpinnerLabels } from './spinnerController';
 
 const sidebarContainer = document.querySelector<HTMLDivElement>('#sidebar');
+const displaySidebarButton = document.querySelector<HTMLButtonElement>('#display-sidebar-button');
+displaySidebarButton?.addEventListener('click', () => {
+  sidebarContainer?.classList.toggle('sidebar-hidden');
+});
 
 function deleteExistingSidebar() {
   if (!sidebarContainer) return;
