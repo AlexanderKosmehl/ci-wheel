@@ -1,5 +1,5 @@
 .button {
-  position:absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -17,6 +17,10 @@
   font-family: "AdelleSans";
 }
 
-.button:hover {
+.button:hover:not(:disabled) {
   background-color: #f4f4f4;
+}
+
+.button:disabled {
+  color: #a2a2a2;
 }
