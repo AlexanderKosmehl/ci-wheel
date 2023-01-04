@@ -13,7 +13,7 @@
   transition: 0.3s;
 }
 
-.sidebar-hidden {
+.sidebar[hidden] {
   transform: translateX(100%);
 }
 
@@ -23,7 +23,7 @@
     transform: none;
   }
 
-  .sidebar-hidden {
+  .sidebar[hidden] {
     transform: none;
   }
 }

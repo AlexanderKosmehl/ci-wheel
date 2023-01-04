@@ -33,6 +33,10 @@
   border-radius: 0;
 }
 
+.display-sidebar {
+  transform: none;
+}
+
 @media screen and (min-width: 960px) {
   .sidebar-toggle {
     display: none;
