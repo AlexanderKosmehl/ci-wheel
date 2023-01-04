@@ -4,11 +4,7 @@ import menuURL from '../../assets/menu.svg';
 import texts from './header.text';
 import generateIconButton from '../atoms/iconButton/iconButton';
 
-interface HeaderParams {
-  onSidebarToggle: () => void
-}
-
-export default function generateHeader({ onSidebarToggle }: HeaderParams) {
+export default function generateHeader() {
   const header = document.createElement<'header'>('header');
   header.classList.add(styles.header);
 
@@ -25,7 +21,12 @@ export default function generateHeader({ onSidebarToggle }: HeaderParams) {
 
   const sidebarToggle = generateIconButton({
     iconURL: menuURL,
-    onClick: onSidebarToggle,
+    onClick: () => {
+      const sidebar = document.querySelector<HTMLDivElement>('#sidebar');
+      if (!sidebar) return;
+
+      sidebar.toggleAttribute('hidden');
+    },
     classes: [styles.sidebarToggle],
   });
 
