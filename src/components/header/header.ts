@@ -1,6 +1,7 @@
 import styles from './header.module.css';
 import logoURL from '../../assets/CI Logo.png';
 import menuURL from '../../assets/menu.svg';
+import closeURL from '../../assets/angle-right.svg';
 import texts from './header.text';
 import generateIconButton from '../atoms/iconButton/iconButton';
 
@@ -19,22 +20,41 @@ export default function generateHeader() {
   title.classList.add(styles.headerTitle);
   title.textContent = texts.title;
 
-  const sidebarToggle = generateIconButton({
-    iconURL: menuURL,
-    onClick: () => {
-      const sidebar = document.querySelector<HTMLDivElement>('#sidebar');
-      if (!sidebar) return;
+  let closeSidebarIcon: HTMLButtonElement;
+  let openSidebarIcon: HTMLButtonElement;
 
-      sidebar.toggleAttribute('hidden');
-    },
+  const toggleSidebar = () => {
+    const sidebar = document.querySelector<HTMLDivElement>('#sidebar');
+    if (!sidebar) return;
+
+    sidebar.toggleAttribute('hidden');
+    openSidebarIcon?.classList.toggle(styles.hidden);
+    closeSidebarIcon.classList.toggle(styles.hidden);
+  };
+
+  const menuButtonWrapper = document.createElement<'div'>('div');
+  menuButtonWrapper.classList.add(styles.menuButtonWrapper);
+
+  openSidebarIcon = generateIconButton({
+    iconURL: menuURL,
+    onClick: toggleSidebar,
     classes: [styles.sidebarToggle],
   });
+
+  closeSidebarIcon = generateIconButton({
+    iconURL: closeURL,
+    onClick: toggleSidebar,
+    classes: [styles.sidebarToggle, styles.hidden],
+  });
+
+  menuButtonWrapper.appendChild(openSidebarIcon);
+  menuButtonWrapper.appendChild(closeSidebarIcon);
 
   wrapper.appendChild(logo);
   wrapper.appendChild(title);
 
   header.appendChild(wrapper);
-  header.appendChild(sidebarToggle);
+  header.appendChild(menuButtonWrapper);
 
   return header;
 }

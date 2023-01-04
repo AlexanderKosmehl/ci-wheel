@@ -25,12 +25,27 @@
   user-select: none;
 }
 
-.sidebar-toggle {
+.menu-button-wrapper {
   height: 3rem;
   width: 3rem;
+  position: relative;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border: none;
   background-color: transparent;
-  border-radius: 0;
+  transition: all .3s ease-in-out;
+}
+
+.hidden {
+  transform: translateX(50%);
+  opacity: 0;
+  scale: 0;
 }
 
 .display-sidebar {
