@@ -1,3 +1,4 @@
+import { getSearchParams } from '../../../util/searchParamHelper';
 import generateHeader from '../../header/header';
 import generateModalContainer from '../../modal/modalContainer/modalContainer';
 import generateSidebar from '../../sidebar/sidebarComponent/sidebar';
@@ -5,50 +6,45 @@ import generateSpinnerComponent from '../../spinner/spinnerContainer/spinnerCont
 import styles from './indexPage.module.css';
 
 export default function generateIndexPage() {
+  const initialValues = getSearchParams();
+
   const indexPage = document.createElement<'div'>('div');
   indexPage.classList.add(styles.indexPage);
+
+  const header = generateHeader();
+  indexPage.appendChild(header);
+
+  const mainContainer = document.createElement<'div'>('div');
+  mainContainer.classList.add(styles.mainContainer);
 
   const {
     modalContainer, openSpinResultModal, openImportModal, openArchiveModal,
   } = generateModalContainer();
 
-  let spinnerContainer;
+  const spinnerContainer = document.createElement<'div'>('div');
 
   const updateSpinner = (newEntries: string[]) => {
-    spinnerContainer = generateSpinnerComponent({
+    spinnerContainer.textContent = '';
+    spinnerContainer.appendChild(generateSpinnerComponent({
       labels: newEntries,
       spinCallback: (result: string) => {
         openSpinResultModal(result, () => {
           updateSpinner(newEntries.filter((entry) => entry !== result));
         });
       },
-    });
+    }));
   };
-  updateSpinner(['Test']);
-
-  const { sidebar, toggleSidebar } = generateSidebar({
-    listEntries: [] as string[],
-    listChangeCallback: () => {},
-    importOnClick: () => {
-      openImportModal((importedEntries) => {
-        updateSpinner(importedEntries);
-      });
-    },
-    archiveOnClick: () => {
-      openArchiveModal();
-    },
-  });
-
-  const header = generateHeader({
-    onSidebarToggle: toggleSidebar,
-  });
-  indexPage.appendChild(header);
-
-  const mainContainer = document.createElement<'div'>('div');
-  mainContainer.classList.add(styles.mainContainer);
-
   mainContainer.appendChild(spinnerContainer);
-  mainContainer.appendChild(sidebar);
+  updateSpinner(initialValues);
+
+  mainContainer.appendChild(generateSidebar({
+    listEntries: initialValues,
+    listChangeCallback: (updatedList: string[]) => {
+      updateSpinner(updatedList);
+    },
+    openImportModal,
+    openArchiveModal,
+  }));
 
   indexPage.appendChild(mainContainer);
   indexPage.appendChild(modalContainer);

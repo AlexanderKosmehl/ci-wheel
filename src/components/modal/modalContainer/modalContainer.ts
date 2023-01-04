@@ -1,4 +1,3 @@
-import { getSearchParams } from '../../../util/searchParamHelper';
 import generateArchiveModal from '../archiveModal/archiveModal';
 import generateImportModal from '../importModal/importModal';
 import generateSpinResultModal from '../spinResultModal/spinResultModal';
@@ -37,9 +36,7 @@ export default function generateModalContainer() {
             .map((entry) => entry.trim())
             .filter((entry) => entry !== '');
 
-          const updatedEntries = [...getSearchParams(), ...importedEntries];
-
-          importCallback(updatedEntries);
+          importCallback(importedEntries);
           closeModal();
         },
       }),
