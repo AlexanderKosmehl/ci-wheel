@@ -15,9 +15,3 @@
   font-size: 2.5rem;
   font-weight: bold;
 }
-
-.spinner-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

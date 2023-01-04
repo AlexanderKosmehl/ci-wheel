@@ -15,6 +15,12 @@
   justify-content: center;
 }
 
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (min-width: 960px) {
   .main-container {
     display: grid;

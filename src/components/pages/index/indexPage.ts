@@ -22,6 +22,7 @@ export default function generateIndexPage() {
   } = generateModalContainer();
 
   const spinnerContainer = document.createElement<'div'>('div');
+  spinnerContainer.classList.add(styles.spinnerWrapper);
 
   const updateSpinner = (newEntries: string[]) => {
     spinnerContainer.textContent = '';
