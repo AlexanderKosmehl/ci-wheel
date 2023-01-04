@@ -6,8 +6,12 @@ import './global.css';
 import { getSearchParams } from './util/searchParamHelper';
 import { updateSpinnerLabels } from './controller/spinnerController';
 import { initializeSidebar } from './controller/sidebarController';
+import generateIndexPage from './components/pages/index/indexPage';
 
 const listEntries: string[] = getSearchParams() || [];
 
 updateSpinnerLabels(listEntries);
 initializeSidebar(listEntries);
+
+const appContainer = document.querySelector<HTMLDivElement>('#app');
+appContainer?.appendChild(generateIndexPage());

@@ -21,8 +21,12 @@ export default function generateSpinnerComponent({
   labels,
   spinCallback,
 }: SpinnerComponentParams) {
+  const spinnerWrapper = document.createElement<'div'>('div');
+  spinnerWrapper.classList.add(styles.spinnerWrapper);
+
   const newSpinnerContainer = document.createElement<'div'>('div');
   newSpinnerContainer.classList.add(styles.container);
+  spinnerWrapper.appendChild(newSpinnerContainer);
 
   newSpinnerContainer.textContent = '';
 
@@ -59,5 +63,5 @@ export default function generateSpinnerComponent({
     newSpinnerContainer.appendChild(placeholder);
   }
 
-  return newSpinnerContainer;
+  return spinnerWrapper;
 }

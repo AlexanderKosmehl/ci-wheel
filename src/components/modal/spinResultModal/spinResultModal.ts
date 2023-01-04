@@ -1,5 +1,5 @@
 import styles from './spinResultModal.module.css';
-import deleteIcon from '../../../icons/trash-icon.svg';
+import deleteIcon from '../../../assets/trash-icon.svg';
 import generateIconButton from '../../atoms/iconButton/iconButton';
 import generateModal from '../modalBase/modalBase';
 import texts from './spinResultModal.text';
