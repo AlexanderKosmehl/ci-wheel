@@ -25,11 +25,16 @@ export default function generateSidebar({
   const updateSidebar = (updatedEntries: string[]) => {
     sidebar.textContent = '';
 
+    const updateDependencies = (newList: string[]) => {
+      updateSearchParams(newList);
+      updateSidebar(newList);
+      listChangeCallback(newList);
+    };
+
     sidebar.appendChild(generateInputBar({
       newEntryCallback: (newEntry: string) => {
         const newList = [...updatedEntries, newEntry];
-        updateSidebar(newList);
-        listChangeCallback(newList);
+        updateDependencies(newList);
       },
     }));
 
@@ -37,8 +42,7 @@ export default function generateSidebar({
       listEntries: updatedEntries,
       entryRemovalCallback: (removedEntry: string) => {
         const newList = updatedEntries.filter((entry) => entry !== removedEntry);
-        updateSidebar(newList);
-        listChangeCallback(newList);
+        updateDependencies(newList);
       },
     }));
 
@@ -46,10 +50,7 @@ export default function generateSidebar({
       importOnClick: () => {
         openImportModal((importedEntries) => {
           const newList = [...updatedEntries, ...importedEntries];
-
-          updateSearchParams(newList);
-          updateSidebar(newList);
-          listChangeCallback(newList);
+          updateDependencies(newList);
         });
       },
       archiveOnClick: () => {
