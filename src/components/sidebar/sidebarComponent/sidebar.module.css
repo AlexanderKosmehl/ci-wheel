@@ -1,0 +1,29 @@
+.sidebar {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+}
+
+.sidebar[hidden] {
+  transform: translateX(100%);
+}
+
+@media screen and (min-width: 960px) {
+  .sidebar {
+    position: static;
+    transform: none;
+  }
+
+  .sidebar[hidden] {
+    transform: none;
+  }
+}

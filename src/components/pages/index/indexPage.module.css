@@ -1,0 +1,29 @@
+.index-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  height: 100vh;
+}
+
+.main-container {
+  position: relative;
+  flex-grow: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 960px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+  }
+}

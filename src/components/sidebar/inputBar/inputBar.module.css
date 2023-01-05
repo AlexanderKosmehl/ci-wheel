@@ -8,10 +8,11 @@
 
 .add-button {
   margin-left: 0.5rem;
-  padding: 0.25rem;
   max-height: 3rem;
   aspect-ratio: 1 / 1;
   background-color: white;
+  border: 0.125rem solid black;
+  border-radius: 100%;
 }
 
 .add-button:disabled > * {

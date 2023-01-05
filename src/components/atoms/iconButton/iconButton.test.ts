@@ -2,7 +2,7 @@ import {
   describe, expect, it, jest,
 } from '@jest/globals';
 import generateIconButton from './iconButton';
-import addIconUrl from '../../../icons/+-Icon.svg';
+import addIconUrl from '../../../assets/+-Icon.svg';
 
 describe('iconButton', () => {
   const onClick = jest.fn(() => {});
