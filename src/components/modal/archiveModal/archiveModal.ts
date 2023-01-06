@@ -45,7 +45,9 @@ export default function generateArchiveModal({
   archiveColumn.appendChild(archiveListContainer);
   archiveModalContainer.appendChild(archiveColumn);
 
-  currentEntries.forEach((entry) => {
+  let currentEntryList = [...currentEntries];
+
+  currentEntryList.forEach((entry) => {
     const newEntryElement = document.createElement<'li'>('li');
     newEntryElement.classList.add(styles.entry, dragClass);
     newEntryElement.textContent = entry;
@@ -53,8 +55,8 @@ export default function generateArchiveModal({
     currentListContainer.appendChild(newEntryElement);
   });
 
-  const archivedEntries = getArchiveEntries();
-  archivedEntries.forEach((entry) => {
+  let archivedEntryList = getArchiveEntries();
+  archivedEntryList.forEach((entry) => {
     const newEntryElement = document.createElement<'li'>('li');
     newEntryElement.classList.add(styles.entry, dragClass);
     newEntryElement.textContent = entry;
@@ -74,12 +76,18 @@ export default function generateArchiveModal({
 
     if (event.newContainer === currentListContainer) {
       // From archive to current
-      updateArchiveEntries(archivedEntries.filter((entry) => entry !== changedElement));
-      updateCurrentEntries([...currentEntries, changedElement]);
+      currentEntryList = [...currentEntryList, changedElement];
+      updateCurrentEntries(currentEntryList);
+
+      archivedEntryList = archivedEntryList.filter((entry) => entry !== changedElement);
+      updateArchiveEntries(archivedEntryList);
     } else {
       // From current to archive
-      updateArchiveEntries([...archivedEntries, changedElement]);
-      updateCurrentEntries(currentEntries.filter((entry) => entry !== changedElement));
+      currentEntryList = currentEntryList.filter((entry) => entry !== changedElement);
+      updateCurrentEntries(currentEntryList);
+
+      archivedEntryList = [...archivedEntryList, changedElement];
+      updateArchiveEntries(archivedEntryList);
     }
   });
 
