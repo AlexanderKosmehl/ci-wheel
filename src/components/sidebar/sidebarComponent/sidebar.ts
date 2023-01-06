@@ -1,4 +1,5 @@
 import { updateSearchParams } from '../../../util/searchParamHelper';
+import { getArchiveEntries, updateArchiveEntries } from '../../modal/archiveModal/archiveModal.helper';
 import generateInputBar from '../inputBar/inputBar';
 import generateListComponent from '../list/listComponent/listComponent';
 import generateSidebarFooter from '../sidebarFooter/sidebarFooter';
@@ -47,6 +48,7 @@ export default function generateSidebar({
       entryRemovalCallback: (removedEntry: string) => {
         const newList = updatedEntries.filter((entry) => entry !== removedEntry);
         updateDependencies(newList);
+        updateArchiveEntries([...getArchiveEntries(), removedEntry]);
       },
     }));
 
