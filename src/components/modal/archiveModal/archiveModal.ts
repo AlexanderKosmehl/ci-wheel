@@ -1,6 +1,6 @@
-import interact from 'interactjs';
+import { Sortable } from '@shopify/draggable';
 import generateModal from '../modalBase/modalBase';
-import { getArchiveEntries } from './archiveModal.helper';
+import { getArchiveEntries, updateArchiveEntries } from './archiveModal.helper';
 import styles from './archiveModal.module.css';
 import texts from './archiveModal.text';
 
@@ -10,38 +10,13 @@ interface ArchiveModalProps {
   updateCurrentEntries: (newEntries: string[]) => void
 }
 
-function makeEntryDraggable(entry: HTMLElement, containerRef: HTMLElement) {
-  const position = { x: 0, y: 0 };
-  interact(entry).draggable({
-    origin: containerRef,
-    listeners: {
-      start(event) {
-        console.log(event);
-      },
-      move(event) {
-        position.x += event.dx;
-        position.y += event.dy;
+const dragClass = 'is-draggable';
 
-        // eslint-disable-next-line no-param-reassign
-        event.target.style.transform = `translate(${position.x}px, ${position.y}px)`;
-      },
-      end(event) {
-        console.log(event);
-
-        // eslint-disable-next-line no-param-reassign
-        event.target.style.transform = '';
-
-        if (!event.relatedTarget) return;
-
-        event.relatedTarget.appendChild(entry);
-        position.x = 0;
-        position.y = 0;
-      },
-    },
-  });
-}
-
-export default function generateArchiveModal({ onClose, currentEntries }: ArchiveModalProps) {
+export default function generateArchiveModal({
+  onClose,
+  currentEntries,
+  updateCurrentEntries,
+}: ArchiveModalProps) {
   const archiveModalContainer = document.createElement<'div'>('div');
   archiveModalContainer.classList.add(styles.archiveModalContainer);
 
@@ -52,7 +27,6 @@ export default function generateArchiveModal({ onClose, currentEntries }: Archiv
   currentHeader.textContent = 'Aktuell';
   const currentListContainer = document.createElement<'ul'>('ul');
   currentListContainer.classList.add(styles.listContainer);
-  interact(currentListContainer).dropzone({});
 
   currentColumn.appendChild(currentHeader);
   currentColumn.appendChild(currentListContainer);
@@ -66,7 +40,6 @@ export default function generateArchiveModal({ onClose, currentEntries }: Archiv
   archiveHeader.textContent = 'Alt';
   const archiveListContainer = document.createElement<'ul'>('ul');
   archiveListContainer.classList.add(styles.listContainer);
-  interact(archiveListContainer).dropzone({});
 
   archiveColumn.appendChild(archiveHeader);
   archiveColumn.appendChild(archiveListContainer);
@@ -74,10 +47,8 @@ export default function generateArchiveModal({ onClose, currentEntries }: Archiv
 
   currentEntries.forEach((entry) => {
     const newEntryElement = document.createElement<'li'>('li');
-    newEntryElement.classList.add(styles.entry);
+    newEntryElement.classList.add(styles.entry, dragClass);
     newEntryElement.textContent = entry;
-
-    makeEntryDraggable(newEntryElement, archiveModalContainer);
 
     currentListContainer.appendChild(newEntryElement);
   });
@@ -85,12 +56,31 @@ export default function generateArchiveModal({ onClose, currentEntries }: Archiv
   const archivedEntries = getArchiveEntries();
   archivedEntries.forEach((entry) => {
     const newEntryElement = document.createElement<'li'>('li');
-    newEntryElement.classList.add(styles.entry);
+    newEntryElement.classList.add(styles.entry, dragClass);
     newEntryElement.textContent = entry;
 
-    makeEntryDraggable(newEntryElement, archiveModalContainer);
-
     archiveListContainer.appendChild(newEntryElement);
+  });
+
+  const sortable = new Sortable([currentListContainer, archiveListContainer], {
+    draggable: `.${dragClass}`,
+  });
+
+  sortable.on('sortable:stop', (event) => {
+    if (event.oldContainer === event.newContainer) return;
+
+    const changedElement = event.dragEvent.source.textContent;
+    if (!changedElement) return;
+
+    if (event.newContainer === currentListContainer) {
+      // From archive to current
+      updateArchiveEntries(archivedEntries.filter((entry) => entry !== changedElement));
+      updateCurrentEntries([...currentEntries, changedElement]);
+    } else {
+      // From current to archive
+      updateArchiveEntries([...archivedEntries, changedElement]);
+      updateCurrentEntries(currentEntries.filter((entry) => entry !== changedElement));
+    }
   });
 
   const modal = generateModal({

@@ -8,7 +8,11 @@ interface SidebarProps {
   listEntries: string[];
   listChangeCallback: (updatedList: string[]) => void;
   openImportModal: (importCallback: (importedEntries: string[]) => void) => void;
-  openArchiveModal: (currentEntries: string[]) => void;
+  openArchiveModal:
+  (
+    currentEntries: string[],
+    updateCurrentEntries: (updatedEntries: string[]) => void
+  ) => void;
 }
 
 export default function generateSidebar({
@@ -54,7 +58,9 @@ export default function generateSidebar({
         });
       },
       archiveOnClick: () => {
-        openArchiveModal(updatedEntries);
+        openArchiveModal(updatedEntries, (newList) => {
+          updateDependencies(newList);
+        });
       },
     }));
   };
