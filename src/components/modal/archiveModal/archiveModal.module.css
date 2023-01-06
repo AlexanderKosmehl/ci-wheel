@@ -5,17 +5,28 @@
 }
 
 .header {
-
 }
 
 .list-container {
   background-color: aqua;
   height: 20rem;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: visible;
+  gap: 0.5rem;
 }
 
 .entry {
   background-color: white;
+  border: 2px solid black;
+  border-radius: 2rem;
+  padding: 0.25rem 0.5rem;
   touch-action: none;
   user-select: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  min-height: 2rem;
 }
