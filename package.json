@@ -41,7 +41,7 @@
     "vite": "^3.2.3"
   },
   "dependencies": {
-    "interactjs": "^1.10.17",
+    "@shopify/draggable": "^1.0.0-beta.12",
     "sanitize.css": "^13.0.0"
   }
 }
