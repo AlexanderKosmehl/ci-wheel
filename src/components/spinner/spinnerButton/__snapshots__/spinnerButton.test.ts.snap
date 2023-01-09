@@ -1,13 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`generateSpinnerButton generates component correctly 1`] = `
-<div
-  class="wrapper"
+<button
+  class="button"
 >
-  <button
-    class="button"
-  >
-    Spin
-  </button>
-</div>
+  Spin
+</button>
 `;

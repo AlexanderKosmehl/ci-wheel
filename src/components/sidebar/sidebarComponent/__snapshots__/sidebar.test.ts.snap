@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateSidebar generates component correctly 1`] = `
+<div
+  class="sidebar"
+  hidden=""
+  id="sidebar"
+>
+  <div
+    class="container"
+  >
+    <input
+      class="input"
+      placeholder="Neuer Eintrag"
+      type="text"
+    />
+    <button
+      class="button addButton"
+      disabled=""
+    >
+      <img
+        class="icon"
+        src="test-file-stub"
+      />
+    </button>
+  </div>
+  <ul
+    class="listContainer"
+  >
+    <li
+      class="container"
+    >
+      <span
+        class="label"
+      >
+        Test 1
+      </span>
+      <button
+        class="button deleteButton"
+      >
+        <img
+          class="icon"
+          src="test-file-stub"
+        />
+      </button>
+    </li>
+    <li
+      class="container"
+    >
+      <span
+        class="label"
+      >
+        Test 2
+      </span>
+      <button
+        class="button deleteButton"
+      >
+        <img
+          class="icon"
+          src="test-file-stub"
+        />
+      </button>
+    </li>
+  </ul>
+  <div
+    class="container"
+  >
+    <button
+      class="footerButton"
+    >
+      Import
+    </button>
+    <button
+      class="footerButton"
+    >
+      Archiv
+    </button>
+  </div>
+</div>
+`;

@@ -43,12 +43,17 @@ export default function generateModalContainer() {
     );
   }
 
-  function openArchiveModal() {
+  function openArchiveModal(
+    currentEntries: string[],
+    updateCurrentEntries: (updatedEntries: string[]) => void,
+  ) {
     closeModal();
 
     modalContainer.appendChild(
       generateArchiveModal({
         onClose: closeModal,
+        currentEntries,
+        updateCurrentEntries,
       }),
     );
   }

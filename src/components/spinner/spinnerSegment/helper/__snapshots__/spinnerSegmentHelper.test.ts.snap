@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`spinnerSegmentHelper calculateSufficientHightLocation calculates location correctly 1`] = `48`;
+
+exports[`spinnerSegmentHelper calculateSufficientHightLocation calculates location correctly 2`] = `48`;
+
+exports[`spinnerSegmentHelper calculateSufficientHightLocation calculates location correctly 3`] = `48`;
+
+exports[`spinnerSegmentHelper calculateSufficientHightLocation calculates location correctly 4`] = `48`;
+
+exports[`spinnerSegmentHelper calculateSufficientHightLocation calculates location correctly 5`] = `48`;
+
+exports[`spinnerSegmentHelper calculateSufficientHightLocation calculates location correctly 6`] = `56.80023279893367`;
+
+exports[`spinnerSegmentHelper calculateSufficientHightLocation calculates location correctly 7`] = `92.88393099705036`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 1`] = `"rotate(360deg)"`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 2`] = `"rotate(180deg)"`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 3`] = `"rotate(360deg)"`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 4`] = `"rotate(120deg)"`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 5`] = `"rotate(240deg)"`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 6`] = `"rotate(360deg)"`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 7`] = `"rotate(90deg)"`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 8`] = `"rotate(180deg)"`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 9`] = `"rotate(270deg)"`;
+
+exports[`spinnerSegmentHelper createSegmentRotationString creates correct rotation strings 10`] = `"rotate(360deg)"`;

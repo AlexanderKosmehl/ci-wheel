@@ -14,6 +14,7 @@ exports[`generateSpinnerSegments generates components correctly 1`] = `
     <span
       class="label"
       style="width: calc(50% - 1.5rem - 48px);"
+      title="Test"
     >
       Test
     </span>
@@ -30,6 +31,7 @@ exports[`generateSpinnerSegments generates components correctly 1`] = `
     <span
       class="label"
       style="width: calc(50% - 1.5rem - 48px);"
+      title="Test2"
     >
       Test2
     </span>

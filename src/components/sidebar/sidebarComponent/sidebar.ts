@@ -1,4 +1,5 @@
 import { updateSearchParams } from '../../../util/searchParamHelper';
+import { getArchiveEntries, updateArchiveEntries } from '../../modal/archiveModal/helper/archiveHelper';
 import generateInputBar from '../inputBar/inputBar';
 import generateListComponent from '../list/listComponent/listComponent';
 import generateSidebarFooter from '../sidebarFooter/sidebarFooter';
@@ -8,7 +9,11 @@ interface SidebarProps {
   listEntries: string[];
   listChangeCallback: (updatedList: string[]) => void;
   openImportModal: (importCallback: (importedEntries: string[]) => void) => void;
-  openArchiveModal: () => void;
+  openArchiveModal:
+  (
+    currentEntries: string[],
+    updateCurrentEntries: (updatedEntries: string[]) => void
+  ) => void;
 }
 
 export default function generateSidebar({
@@ -43,6 +48,7 @@ export default function generateSidebar({
       entryRemovalCallback: (removedEntry: string) => {
         const newList = updatedEntries.filter((entry) => entry !== removedEntry);
         updateDependencies(newList);
+        updateArchiveEntries([...getArchiveEntries(), removedEntry]);
       },
     }));
 
@@ -54,7 +60,9 @@ export default function generateSidebar({
         });
       },
       archiveOnClick: () => {
-        openArchiveModal();
+        openArchiveModal(updatedEntries, (newList) => {
+          updateDependencies(newList);
+        });
       },
     }));
   };
