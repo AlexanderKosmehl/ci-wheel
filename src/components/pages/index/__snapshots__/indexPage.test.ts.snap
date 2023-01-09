@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateIndexPage generates component correctly 1`] = `
+<div
+  class="indexPage"
+>
+  <header
+    class="header"
+  >
+    <div
+      class="logoTitleWrapper"
+    >
+      <img
+        class="headerLogo"
+        src="test-file-stub"
+      />
+      <h1
+        class="headerTitle"
+      >
+        Wheel
+      </h1>
+    </div>
+    <div
+      class="menuButtonWrapper"
+    >
+      <button
+        class="button sidebarToggle"
+      >
+        <img
+          class="icon"
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        class="button sidebarToggle hidden"
+      >
+        <img
+          class="icon"
+          src="test-file-stub"
+        />
+      </button>
+    </div>
+  </header>
+  <div
+    class="mainContainer"
+  >
+    <div
+      class="spinnerWrapper"
+    >
+      <div
+        class="container"
+      >
+        <span
+          class="placeholder"
+        >
+          Keine Einträge
+        </span>
+      </div>
+    </div>
+    <div
+      class="sidebar"
+      hidden=""
+      id="sidebar"
+    >
+      <div
+        class="container"
+      >
+        <input
+          class="input"
+          placeholder="Neuer Eintrag"
+          type="text"
+        />
+        <button
+          class="button addButton"
+          disabled=""
+        >
+          <img
+            class="icon"
+            src="test-file-stub"
+          />
+        </button>
+      </div>
+      <ul
+        class="listContainer"
+      />
+      <div
+        class="container"
+      >
+        <button
+          class="footerButton"
+        >
+          Import
+        </button>
+        <button
+          class="footerButton"
+        >
+          Archiv
+        </button>
+      </div>
+    </div>
+  </div>
+  <div />
+</div>
+`;

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateArchiveModal generates component correctly 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="content"
+  >
+    <div
+      class="header"
+    >
+      <h2
+        class="headerText"
+      >
+        Archiv
+      </h2>
+      <button
+        class="button closeIcon"
+      >
+        <img
+          class="icon"
+          src="test-file-stub"
+        />
+      </button>
+    </div>
+    <div
+      class="archiveModalContainer"
+    >
+      <div
+        class="column"
+      >
+        <h2
+          class="header"
+        >
+          Aktuell
+        </h2>
+        <ul
+          class="listContainer"
+        >
+          <li
+            class="entry is-draggable"
+          >
+            Test 1
+          </li>
+          <li
+            class="entry is-draggable"
+          >
+            Test 2
+          </li>
+        </ul>
+      </div>
+      <div
+        class="column"
+      >
+        <h2
+          class="header"
+        >
+          Alt
+        </h2>
+        <ul
+          class="listContainer"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

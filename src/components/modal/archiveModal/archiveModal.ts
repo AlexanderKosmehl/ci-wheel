@@ -1,6 +1,6 @@
 import { Sortable } from '@shopify/draggable';
 import generateModal from '../modalBase/modalBase';
-import { getArchiveEntries, updateArchiveEntries } from './archiveModal.helper';
+import { getArchiveEntries, updateArchiveEntries } from './helper/archiveHelper';
 import styles from './archiveModal.module.css';
 import texts from './archiveModal.text';
 
