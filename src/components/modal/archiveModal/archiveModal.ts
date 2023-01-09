@@ -24,7 +24,7 @@ export default function generateArchiveModal({
   currentColumn.classList.add(styles.column);
   const currentHeader = document.createElement<'h2'>('h2');
   currentHeader.classList.add(styles.header);
-  currentHeader.textContent = 'Aktuell';
+  currentHeader.textContent = texts.currentTitle;
   const currentListContainer = document.createElement<'ul'>('ul');
   currentListContainer.classList.add(styles.listContainer);
 
@@ -37,7 +37,7 @@ export default function generateArchiveModal({
   archiveColumn.classList.add(styles.column);
   const archiveHeader = document.createElement<'h2'>('h2');
   archiveHeader.classList.add(styles.header);
-  archiveHeader.textContent = 'Alt';
+  archiveHeader.textContent = texts.archiveTitle;
   const archiveListContainer = document.createElement<'ul'>('ul');
   archiveListContainer.classList.add(styles.listContainer);
 
