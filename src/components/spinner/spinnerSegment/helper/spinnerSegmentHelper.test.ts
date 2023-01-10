@@ -27,11 +27,11 @@ describe('spinnerSegmentHelper', () => {
 
   describe('createSegmentClipPathString', () => {
     it('creates correct clippath strings', () => {
-      expect(createSegmentClipPathString(1));
-      expect(createSegmentClipPathString(2));
-      expect(createSegmentClipPathString(3));
-      expect(createSegmentClipPathString(4));
-      expect(createSegmentClipPathString(5));
+      expect(createSegmentClipPathString(1)).toMatchSnapshot();
+      expect(createSegmentClipPathString(2)).toMatchSnapshot();
+      expect(createSegmentClipPathString(3)).toMatchSnapshot();
+      expect(createSegmentClipPathString(4)).toMatchSnapshot();
+      expect(createSegmentClipPathString(5)).toMatchSnapshot();
     });
   });
 

@@ -4,13 +4,13 @@
   flex-direction: column;
   flex: 1;
   min-height: 0;
-  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+  box-shadow: var(--drop-shadow-default);
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .sidebar[hidden] {

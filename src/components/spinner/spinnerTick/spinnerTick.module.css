@@ -1,17 +1,17 @@
 .tick {
-  width: 2rem;
-  height: 2rem;
-  background-color: #bbbbbb;
+  width: var(--spacing-3xl);
+  height: var(--spacing-3xl);
+  background-color: var(--color-button-background);
   clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
 }
 
 .tick-shadow {
-  filter: drop-shadow(0rem 0rem 0.125rem rgb(0 0 0 / 0.4));
-  width: 2rem;
-  height: 2rem;
+  filter: drop-shadow(var(--drop-shadow-strong));
+  width: var(--spacing-3xl);
+  height: var(--spacing-3xl);
   transform: translateY(-50%);
   position: absolute;
   top: 50%;
   bottom: 50%;
-  right: 0.5rem;
+  right: var(--spacing-xs);
 }

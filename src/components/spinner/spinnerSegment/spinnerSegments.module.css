@@ -1,17 +1,17 @@
 .segment {
   position: absolute;
-  top: 0rem;
-  left: 0rem;
-  right: 0rem;
-  bottom: 0rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   justify-content: end;
   align-items: center;
 }
 
 .label {
-  margin-right: 1.5rem;
-  font-size: 0.75rem;
+  margin-right: var(--spacing-xl);
+  font-size: var(--spacing-s);
   font-weight: bold;
   text-align: center;
   text-overflow: ellipsis;
@@ -23,12 +23,12 @@
 
 @media screen and (min-width: 720px) {
   .label {
-    font-size: 1.25rem;
+    font-size: var(--spacing-l);
   }
 }
 
 @media screen and (min-width: 1280px) {
   .label {
-    font-size: 1.75rem;
+    font-size: var(--spacing-2xl);
   }
 }

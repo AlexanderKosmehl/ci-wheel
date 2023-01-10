@@ -1,6 +1,6 @@
 .header {
   background-color: #fff;
-  padding: 0.5rem;
+  padding: var(--spacing-xs);
   box-shadow: 0 0 14px rgb(0 0 0 / 20%);
   z-index: 10;
   display: flex;
@@ -18,10 +18,10 @@
 }
 
 .header-title {
-  margin: 0.5rem 1rem 0.5rem 1rem;
-  color: #5f575a;
-  font-size: 1.5rem;
-  font-family: "AdelleSans Light";
+  margin: var(--spacing-xs) var(--spacing-default);
+  color: var(--color-secondary);
+  font-size: var(--spacing-xl);
+  font-family: var(--font-default);
   user-select: none;
 }
 

@@ -1,21 +1,20 @@
 .container {
-  background-color: #83777b;
+  background-color: var(--color-secondary);
   display: flex;
-  padding: 0.5rem 2rem;
+  padding: var(--spacing-xs) var(--spacing-3xl);
   z-index: 5;
-  gap: 1rem;
-  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
-  z-index: 5;
+  gap: var(--spacing-default);
+  box-shadow: var(--drop-shadow-default);
 }
 
 .footer-button {
-  padding: 0.5rem;
-  background-color: #fff;
-  border: 0.125rem solid black;
-  border-radius: 10rem;
+  padding: var(--spacing-xs);
+  background-color: var(--color-background-light);
+  border: var(--border-default);
+  border-radius: var(--border-radius-default);
   flex: 1;
 }
 
 .footer-button:hover {
-  background-color: #f4f4f4;
+  background-color: var(--color-button-background-hover);
 }

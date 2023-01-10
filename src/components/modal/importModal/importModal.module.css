@@ -1,7 +1,7 @@
 .importModalContainer {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-default);
 }
 
 .import-textarea {
@@ -14,12 +14,12 @@
 }
 
 .import-button {
-  padding: 0.5rem;
-  background-color: #fff;
-  border: 0.125rem solid black;
-  border-radius: 10rem;
+  padding: var(--spacing-xs);
+  background-color: var(--color-background-light);
+  border: var(--border-default);
+  border-radius: var(--border-radius-default);
 }
 
 .import-button:hover {
-  background-color: #f4f4f4;
+  background-color: var(--color-button-background-hover);
 }

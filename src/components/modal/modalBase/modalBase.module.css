@@ -1,12 +1,12 @@
 .container {
   display: flex;
   position: fixed;
-  top: 0rem;
-  left: 0rem;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, .4);
   overflow: auto;
   justify-content: center;
   align-items: center;
@@ -14,20 +14,20 @@
 
 .content {
   background-color: white;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-default);
   min-width: 20rem;
   max-width: 40rem;
-  padding: 1rem;
+  padding: var(--spacing-default);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--spacing-xs);
 }
 
 .close-icon {
   border: none;
   background-color: white;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: var(--spacing-5xl);
+  width: var(--spacing-5xl);
 }
 
 .header {

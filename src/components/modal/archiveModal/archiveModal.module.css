@@ -1,7 +1,7 @@
 .archive-modal-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: var(--spacing-3xl);
 }
 
 .column {
@@ -12,25 +12,26 @@
 
 .list-container {
   height: 20rem;
-  padding: 1rem;
+  padding: var(--spacing-default);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   overflow-x: visible;
-  gap: 0.5rem;
+  gap: var(--spacing-xs);
   border: black 2px dashed;
-  border-radius: 1rem;
+  border-radius: var(--border-radius-default);
 }
 
 .entry {
   background-color: white;
-  border: 2px solid black;
-  border-radius: 2rem;
-  padding: 0.25rem 0.5rem;
+  border: var(--border-default);
+  border-radius: var(--border-radius-default);
+  padding: var(--spacing-2xs) var(--spacing-xs);
+  cursor: grab;
   touch-action: none;
   user-select: none;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  min-height: 2rem;
+  min-height: var(--spacing-3xl);
 }

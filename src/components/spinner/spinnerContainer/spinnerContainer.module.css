@@ -3,7 +3,7 @@
   max-width: 40rem;
   flex-grow: 1;
   overflow: hidden;
-  padding: 1.25rem;
+  padding: var(--spacing-l);
   position: relative;
   margin: 0 auto;
   display: flex;
@@ -12,6 +12,6 @@
 
 .placeholder {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--spacing-5xl);
   font-weight: bold;
 }

@@ -1,4 +1,32 @@
 :root {
+  --border-default: 1px solid black;
+  --border-radius-default: 5px;
+
+  --font-default: "AdelleSans Light";
+  --font-medium: "AdelleSans";
+
+  --color-primary: #fce800;
+  --color-secondary: #5f575a;
+  --color-background-light: #fff;
+  --color-background-medium: #f6f6f6;
+  --color-background-dark: #83767B;
+  --color-button-background: #e2e2e2;
+  --color-button-background-hover: #f4f4f4;
+  --color-button-text-disabled: #a2a2a2;
+
+  --spacing-2xs: .25rem;
+  --spacing-xs: .5rem;
+  --spacing-s: .75rem;
+  --spacing-default: 1rem;
+  --spacing-l: 1.25rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 1.75rem;
+  --spacing-3xl: 2rem;
+  --spacing-4xl: 2.25rem;
+  --spacing-5xl: 2.5rem;
+
+  --drop-shadow-default: 0 0 14px rgb(0 0 0 / 20%);
+  --drop-shadow-strong: 0 0 .125rem rgb(0 0 0 / .4);
 }
 
 *,
@@ -17,6 +45,6 @@
 }
 
 body {
-  margin: 0rem;
-  font-family: "AdelleSans Light";
+  margin: 0;
+  font-family: var(--font-default);
 }

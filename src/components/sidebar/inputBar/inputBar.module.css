@@ -1,18 +1,18 @@
 .container {
   display: flex;
-  padding: 0.5rem 2rem;
-  background-color: #fce800;
-  box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+  padding: var(--spacing-xs) var(--spacing-2xl);
+  background-color: var(--color-primary);
+  box-shadow: var(--drop-shadow-default);
   z-index: 5;
 }
 
 .add-button {
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-xs);
   max-height: 3rem;
   aspect-ratio: 1 / 1;
   background-color: white;
-  border: 0.125rem solid black;
-  border-radius: 100%;
+  border: var(--border-default);
+  border-radius: var(--border-radius-default);
 }
 
 .add-button:disabled > * {
@@ -21,6 +21,6 @@
 
 @media screen and (min-width: 960px) {
   .container {
-    padding: 1rem 2rem;
+    padding: var(--spacing-default) var(--spacing-2xl);
   }
 }

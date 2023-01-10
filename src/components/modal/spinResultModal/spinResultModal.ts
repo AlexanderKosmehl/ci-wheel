@@ -1,8 +1,6 @@
-import styles from './spinResultModal.module.css';
-import deleteIcon from '../../../assets/trash-icon.svg';
-import generateIconButton from '../../atoms/iconButton/iconButton';
 import generateModal from '../modalBase/modalBase';
 import texts from './spinResultModal.text';
+import generateListEntry from '../../sidebar/list/listEntry/listEntry';
 
 interface SpinResultModalParams {
   label: string
@@ -15,21 +13,10 @@ export default function generateSpinResultModal({
   onClose,
   onDelete,
 }: SpinResultModalParams) {
-  const resultElement = document.createElement<'div'>('div');
-  resultElement.classList.add(styles.resultElement);
-
-  const resultLabel = document.createElement<'h3'>('h3');
-  resultLabel.classList.add(styles.resultLabel);
-  resultLabel.textContent = label;
-
-  const removeButton = generateIconButton({
-    iconURL: deleteIcon,
-    onClick: onDelete,
-    classes: [styles.deleteIcon],
+  const resultElement = generateListEntry({
+    label,
+    onDelete,
   });
-
-  resultElement.appendChild(resultLabel);
-  resultElement.appendChild(removeButton);
 
   const modal = generateModal({
     title: texts.resultHeader,

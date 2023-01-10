@@ -1,32 +1,36 @@
 .container {
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  background-color: #fff;
-  border: 0.125rem solid black;
-  border-radius: 10rem;
-  margin-top: 0.5rem;
+  padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) var(--spacing-default);
+  background-color: var(--color-background-light);
+  border: var(--border-default);
+  border-radius: var(--border-radius-default);
+  margin-top: var(--spacing-xs);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .label {
-  font-size: 1rem;
+  font-size: var(--spacing-default);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .delete-button {
-  height: 1.75rem;
-  width: 1.75rem;
-  border: black solid 2px;
-  border-radius: 50%;
-  background-color: #e2e2e2;
+  height: var(--spacing-2xl);
+  width: var(--spacing-2xl);
+  border: var(--border-default);
+  border-radius: var(--border-radius-default);
+  background-color: var(--color-button-background);
+}
+
+.delete-button:hover {
+  background-color: var(--color-button-background-hover);
 }
 
 @media screen and (min-width: 720px) {
   .label {
-    font-size: 1.25rem;
+    font-size: var(--spacing-l);
   }
 }
 

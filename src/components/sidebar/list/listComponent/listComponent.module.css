@@ -1,6 +1,6 @@
 .list-container {
   margin: 0;
-  padding: 0rem 2rem 0.5rem 2rem;
+  padding: 0 var(--spacing-2xl) var(--spacing-xs) var(--spacing-2xl);
   flex: 1;
   overflow: auto;
 }
