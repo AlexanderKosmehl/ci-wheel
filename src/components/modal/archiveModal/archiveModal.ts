@@ -21,8 +21,7 @@ export default function generateArchiveModal({
   archiveModalContainer.classList.add(styles.archiveModalContainer);
 
   const currentColumn = document.createElement<'div'>('div');
-  currentColumn.classList.add(styles.column);
-  const currentHeader = document.createElement<'h2'>('h2');
+  const currentHeader = document.createElement<'h3'>('h3');
   currentHeader.classList.add(styles.header);
   currentHeader.textContent = texts.currentTitle;
   const currentListContainer = document.createElement<'ul'>('ul');
@@ -35,9 +34,9 @@ export default function generateArchiveModal({
 
   const archiveColumn = document.createElement<'div'>('div');
   archiveColumn.classList.add(styles.column);
-  const archiveHeader = document.createElement<'h2'>('h2');
+  const archiveHeader = document.createElement<'h3'>('h3');
   archiveHeader.classList.add(styles.header);
-  archiveHeader.textContent = texts.archiveTitle;
+  archiveHeader.textContent = 'Alt';
   const archiveListContainer = document.createElement<'ul'>('ul');
   archiveListContainer.classList.add(styles.listContainer);
 

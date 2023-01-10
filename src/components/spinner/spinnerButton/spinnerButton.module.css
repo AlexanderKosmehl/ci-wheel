@@ -17,10 +17,10 @@
   font-family: var(--font-default);
 }
 
-.button:hover:not(:disabled) {
-  background-color: var(--color-button-background-hover);
-}
-
 .button:disabled {
   color: var(--color-button-text-disabled);
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--color-button-background-hover);
 }

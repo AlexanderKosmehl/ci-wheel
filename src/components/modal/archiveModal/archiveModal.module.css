@@ -4,10 +4,8 @@
   gap: var(--spacing-3xl);
 }
 
-.column {
-}
-
 .header {
+  margin: 0;
 }
 
 .list-container {

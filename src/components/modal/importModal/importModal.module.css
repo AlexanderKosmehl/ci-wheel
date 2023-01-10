@@ -1,4 +1,4 @@
-.importModalContainer {
+.import-modal-container {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-default);

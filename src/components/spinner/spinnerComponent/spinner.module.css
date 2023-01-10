@@ -5,7 +5,6 @@
   display: inline-block;
   border-radius: 50%;
   overflow: hidden;
-
   background-color: var(--color-background-light);
   filter: drop-shadow(var(--drop-shadow-strong));
 }
