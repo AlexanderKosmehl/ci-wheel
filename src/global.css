@@ -25,8 +25,8 @@
   --spacing-4xl: 2.25rem;
   --spacing-5xl: 2.5rem;
 
-  --drop-shadow-default: 0 0 14px rgb(0 0 0 / 20%);
-  --drop-shadow-strong: 0 0 .125rem rgb(0 0 0 / .4);
+  --drop-shadow-default: 0 0 14px rgb(0 0 0 / .2);
+  --drop-shadow-strong: 0 0 2px rgb(0 0 0 / .4);
 }
 
 *,

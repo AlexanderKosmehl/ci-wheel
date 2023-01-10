@@ -7,5 +7,5 @@
   overflow: hidden;
 
   background-color: var(--color-background-light);
-  filter: drop-shadow(--drop-shadow-strong);
+  filter: drop-shadow(var(--drop-shadow-strong));
 }
