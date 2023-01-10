@@ -18,17 +18,7 @@ permissions:
   id-token: write
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-
-  test:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-
   build:
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
