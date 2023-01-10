@@ -16,7 +16,7 @@ exports[`generateArchiveModal generates component correctly 1`] = `
         Archiv
       </h2>
       <button
-        class="button closeIcon"
+        class="button closeButton"
       >
         <img
           class="icon"
@@ -27,14 +27,12 @@ exports[`generateArchiveModal generates component correctly 1`] = `
     <div
       class="archiveModalContainer"
     >
-      <div
-        class="column"
-      >
-        <h2
+      <div>
+        <h3
           class="header"
         >
           Aktuell
-        </h2>
+        </h3>
         <ul
           class="listContainer"
         >
@@ -53,11 +51,11 @@ exports[`generateArchiveModal generates component correctly 1`] = `
       <div
         class="column"
       >
-        <h2
+        <h3
           class="header"
         >
           Alt
-        </h2>
+        </h3>
         <ul
           class="listContainer"
         />

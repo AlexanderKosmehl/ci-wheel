@@ -23,7 +23,7 @@
   gap: var(--spacing-xs);
 }
 
-.close-icon {
+.close-button {
   border: none;
   background-color: white;
   height: var(--spacing-5xl);

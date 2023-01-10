@@ -16,7 +16,7 @@ exports[`generateImportModal generates component correctly 1`] = `
         Import
       </h2>
       <button
-        class="button closeIcon"
+        class="button closeButton"
       >
         <img
           class="icon"

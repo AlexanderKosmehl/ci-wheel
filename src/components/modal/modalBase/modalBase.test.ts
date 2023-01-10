@@ -15,7 +15,7 @@ describe('generateModal', () => {
     onClose,
   });
 
-  const closeButton = modal.querySelector<HTMLButtonElement>('.closeIcon');
+  const closeButton = modal.querySelector<HTMLButtonElement>('.closeButton');
 
   it('generates component correctly', () => {
     expect(modal).toMatchSnapshot();

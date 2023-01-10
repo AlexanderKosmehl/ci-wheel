@@ -12,7 +12,7 @@ describe('generateImportModal', () => {
     onImport,
   });
 
-  const closeButton = importModal.querySelector<HTMLButtonElement>('.closeIcon');
+  const closeButton = importModal.querySelector<HTMLButtonElement>('.closeButton');
 
   const textArea = importModal.querySelector<HTMLTextAreaElement>('textarea');
   const importButton = importModal.querySelector<HTMLButtonElement>('.importButton');

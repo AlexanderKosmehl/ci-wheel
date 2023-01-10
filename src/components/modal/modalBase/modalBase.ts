@@ -27,7 +27,7 @@ export default function generateModal({ title, content, onClose }: ModalBasePara
   const closeButton = generateIconButton({
     iconURL: closeIcon,
     onClick: onClose,
-    classes: [styles.closeIcon],
+    classes: [styles.closeButton],
   });
   header.appendChild(closeButton);
   modalContent.appendChild(header);
