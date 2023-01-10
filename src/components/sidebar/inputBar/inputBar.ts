@@ -23,6 +23,9 @@ export default function generateInputBar({ newEntryCallback }: InputBarParams) {
 
     if (!addButton) return;
     addButton.disabled = true;
+
+    // Reselect input after sidebar rerender
+    document.querySelector('input')?.focus();
   }
 
   inputField = generateTextInput({
