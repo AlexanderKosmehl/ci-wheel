@@ -5,5 +5,7 @@ export default {
 };
 
 export const Default = () => generateArchiveModal({
+  currentEntries: ['Example 1', 'Example 2'],
   onClose: () => {},
+  updateCurrentEntries: () => {},
 });

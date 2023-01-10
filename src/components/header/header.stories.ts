@@ -4,6 +4,4 @@ export default {
   title: 'General/Header',
 };
 
-export const Default = () => generateHeader({
-  onSidebarToggle: () => {},
-});
+export const Default = () => generateHeader();
