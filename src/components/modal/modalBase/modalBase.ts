@@ -1,6 +1,6 @@
 import generateIconButton from '../../atoms/iconButton/iconButton';
 import styles from './modalBase.module.css';
-import closeIcon from '../../../assets/x-icon.svg';
+import closeIcon from '../../../assets/cross-icon.svg';
 
 interface ModalBaseParams {
   title: string

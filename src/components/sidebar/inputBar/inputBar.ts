@@ -2,7 +2,7 @@ import generateIconButton from '../../atoms/iconButton/iconButton';
 import styles from './inputBar.module.css';
 import texts from './inputBar.text';
 import generateTextInput from '../../atoms/textInput/textInput';
-import addIcon from '../../../assets/+-icon.svg';
+import addIcon from '../../../assets/plus-icon.svg';
 
 interface InputBarParams {
   newEntryCallback: (newElement: string) => void

@@ -1,5 +1,5 @@
 import generateIconButton from './iconButton';
-import plusIcon from '../../../assets/+-icon.svg';
+import plusIcon from '../../../assets/plus-icon.svg';
 
 export default {
   title: 'Atoms/IconButton',

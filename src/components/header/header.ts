@@ -1,6 +1,6 @@
 import styles from './header.module.css';
-import logoURL from '../../assets/CI Logo.png';
-import menuURL from '../../assets/menu.svg';
+import logoURL from '../../assets/ci-logo.png';
+import menuURL from '../../assets/menu-icon.svg';
 import closeURL from '../../assets/angle-right.svg';
 import texts from './header.text';
 import generateIconButton from '../atoms/iconButton/iconButton';
