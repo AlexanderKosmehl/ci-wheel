@@ -1,6 +1,6 @@
 .header {
+  padding: var(--spacing-default);
   background-color: #fff;
-  padding: var(--spacing-xs);
   box-shadow: 0 0 14px rgb(0 0 0 / 20%);
   z-index: 10;
   display: flex;
@@ -55,5 +55,9 @@
 @media screen and (min-width: 960px) {
   .sidebar-toggle {
     display: none !important;
+  }
+
+  .logo-title-wrapper {
+    margin-left: var(--spacing-s);
   }
 }

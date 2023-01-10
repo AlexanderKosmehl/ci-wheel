@@ -20,6 +20,11 @@ export default function generateHeader() {
   title.classList.add(styles.headerTitle);
   title.textContent = texts.title;
 
+  wrapper.appendChild(logo);
+  wrapper.appendChild(title);
+
+  header.appendChild(wrapper);
+
   let closeSidebarIcon: HTMLButtonElement;
   let openSidebarIcon: HTMLButtonElement;
 
@@ -50,10 +55,6 @@ export default function generateHeader() {
   menuButtonWrapper.appendChild(openSidebarIcon);
   menuButtonWrapper.appendChild(closeSidebarIcon);
 
-  wrapper.appendChild(logo);
-  wrapper.appendChild(title);
-
-  header.appendChild(wrapper);
   header.appendChild(menuButtonWrapper);
 
   return header;
