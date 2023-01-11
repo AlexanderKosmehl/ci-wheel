@@ -9,5 +9,8 @@ export function getArchiveEntries(): string[] {
 }
 
 export function updateArchiveEntries(currentEntries: string[]) {
-  window.localStorage.setItem(archiveKey, JSON.stringify(currentEntries));
+  // Filter duplicate entries
+  const uniqueEntries = [...new Set(currentEntries)];
+
+  window.localStorage.setItem(archiveKey, JSON.stringify(uniqueEntries));
 }

@@ -38,6 +38,8 @@ export default function generateSidebar({
 
     sidebar.appendChild(generateInputBar({
       newEntryCallback: (newEntry: string) => {
+        if (updatedEntries.includes(newEntry)) return;
+
         const newList = [...updatedEntries, newEntry];
         updateDependencies(newList);
       },
@@ -55,7 +57,9 @@ export default function generateSidebar({
     sidebar.append(generateSidebarFooter({
       importOnClick: () => {
         openImportModal((importedEntries) => {
-          const newList = [...updatedEntries, ...importedEntries];
+          const filteredImports = importedEntries
+            .filter((newEntry) => !updatedEntries.includes(newEntry));
+          const newList = [...updatedEntries, ...filteredImports];
           updateDependencies(newList);
         });
       },

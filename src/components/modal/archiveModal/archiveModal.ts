@@ -54,7 +54,9 @@ export default function generateArchiveModal({
     currentListContainer.appendChild(newEntryElement);
   });
 
-  let archivedEntryList = getArchiveEntries();
+  let archivedEntryList = getArchiveEntries()
+    .filter((archivedEntry) => !currentEntryList.includes(archivedEntry));
+
   archivedEntryList.forEach((entry) => {
     const newEntryElement = document.createElement<'li'>('li');
     newEntryElement.classList.add(styles.entry, dragClass);
