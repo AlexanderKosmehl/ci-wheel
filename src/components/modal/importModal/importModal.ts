@@ -17,6 +17,7 @@ export default function generateImportModal({
 
   const importTextarea = document.createElement<'textarea'>('textarea');
   importTextarea.classList.add(styles.importTextarea);
+  importTextarea.placeholder = texts.placeholder;
   importModalContainer.appendChild(importTextarea);
 
   const buttonWrapper = document.createElement<'div'>('div');
