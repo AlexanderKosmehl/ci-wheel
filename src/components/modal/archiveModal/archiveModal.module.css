@@ -1,23 +1,51 @@
 .archive-modal-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
+  grid-template-rows: 20rem 5rem;
+  gap: var(--spacing-l);
 }
 
 .header {
   margin: 0;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .list-container {
-  height: 20rem;
   padding: var(--spacing-default);
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   overflow-y: auto;
   overflow-x: visible;
   gap: var(--spacing-xs);
   border: black 2px dashed;
   border-radius: var(--border-radius-default);
+  margin: 0;
+}
+
+.removal-container {
+  border: red 2px dashed;
+  border-radius: var(--border-radius-default);
+  grid-column: 1 / span 2;
+  position: relative;
+}
+
+.removal-container > li {
+  display: none; /* Hide draggable element in trashcan */
+}
+
+.removal-image {
+  height: 2rem;
+  width: 2rem;
+  filter: opacity(20%) invert(17%) sepia(97%) saturate(5090%) hue-rotate(356deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .entry {

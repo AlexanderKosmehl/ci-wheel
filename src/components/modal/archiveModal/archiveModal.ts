@@ -4,6 +4,9 @@ import { getArchiveEntries, updateArchiveEntries } from './helper/archiveHelper'
 import styles from './archiveModal.module.css';
 import texts from './archiveModal.text';
 
+import trashIcon from '../../../assets/trash-icon.svg';
+import './archiveModal.css';
+
 interface ArchiveModalProps {
   onClose: () => void
   currentEntries: string[]
@@ -21,6 +24,7 @@ export default function generateArchiveModal({
   archiveModalContainer.classList.add(styles.archiveModalContainer);
 
   const currentColumn = document.createElement<'div'>('div');
+  currentColumn.classList.add(styles.column);
   const currentHeader = document.createElement<'h3'>('h3');
   currentHeader.classList.add(styles.header);
   currentHeader.textContent = texts.currentTitle;
@@ -29,20 +33,28 @@ export default function generateArchiveModal({
 
   currentColumn.appendChild(currentHeader);
   currentColumn.appendChild(currentListContainer);
-
   archiveModalContainer.appendChild(currentColumn);
 
   const archiveColumn = document.createElement<'div'>('div');
   archiveColumn.classList.add(styles.column);
   const archiveHeader = document.createElement<'h3'>('h3');
   archiveHeader.classList.add(styles.header);
-  archiveHeader.textContent = 'Alt';
+  archiveHeader.textContent = texts.archiveTitle;
   const archiveListContainer = document.createElement<'ul'>('ul');
   archiveListContainer.classList.add(styles.listContainer);
 
   archiveColumn.appendChild(archiveHeader);
   archiveColumn.appendChild(archiveListContainer);
   archiveModalContainer.appendChild(archiveColumn);
+
+  const removalContainer = document.createElement<'div'>('div');
+  removalContainer.classList.add(styles.removalContainer);
+  archiveModalContainer.appendChild(removalContainer);
+  const removalImage = document.createElement<'img'>('img');
+  removalImage.classList.add(styles.removalImage);
+  removalImage.src = trashIcon;
+
+  removalContainer.appendChild(removalImage);
 
   let currentEntryList = [...currentEntries];
 
@@ -65,7 +77,7 @@ export default function generateArchiveModal({
     archiveListContainer.appendChild(newEntryElement);
   });
 
-  const sortable = new Sortable([currentListContainer, archiveListContainer], {
+  const sortable = new Sortable([currentListContainer, archiveListContainer, removalContainer], {
     draggable: `.${dragClass}`,
   });
 
@@ -78,18 +90,19 @@ export default function generateArchiveModal({
     if (event.newContainer === currentListContainer) {
       // From archive to current
       currentEntryList = [...currentEntryList, changedElement];
-      updateCurrentEntries(currentEntryList);
-
       archivedEntryList = archivedEntryList.filter((entry) => entry !== changedElement);
-      updateArchiveEntries(archivedEntryList);
-    } else {
+    } else if (event.newContainer === archiveListContainer) {
       // From current to archive
       currentEntryList = currentEntryList.filter((entry) => entry !== changedElement);
-      updateCurrentEntries(currentEntryList);
-
       archivedEntryList = [...archivedEntryList, changedElement];
-      updateArchiveEntries(archivedEntryList);
+    } else if (event.newContainer === removalContainer) {
+      // From any to removal
+      currentEntryList = currentEntryList.filter((entry) => entry !== changedElement);
+      archivedEntryList = archivedEntryList.filter((entry) => entry !== changedElement);
+      event.newContainer.removeChild(event.dragEvent.source);
     }
+    updateCurrentEntries(currentEntryList);
+    updateArchiveEntries(archivedEntryList);
   });
 
   const modal = generateModal({
