@@ -5,4 +5,5 @@
 
 .draggable-mirror {
   z-index: 10;
+  width: 6.25rem;
 }
