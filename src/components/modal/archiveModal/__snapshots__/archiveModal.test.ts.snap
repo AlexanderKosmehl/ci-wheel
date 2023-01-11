@@ -27,7 +27,9 @@ exports[`generateArchiveModal generates component correctly 1`] = `
     <div
       class="archiveModalContainer"
     >
-      <div>
+      <div
+        class="column"
+      >
         <h3
           class="header"
         >
@@ -58,6 +60,14 @@ exports[`generateArchiveModal generates component correctly 1`] = `
         </h3>
         <ul
           class="listContainer"
+        />
+      </div>
+      <div
+        class="removalContainer"
+      >
+        <img
+          class="removalImage"
+          src="test-file-stub"
         />
       </div>
     </div>

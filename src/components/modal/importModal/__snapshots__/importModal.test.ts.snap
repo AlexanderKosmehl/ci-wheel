@@ -29,6 +29,7 @@ exports[`generateImportModal generates component correctly 1`] = `
     >
       <textarea
         class="importTextarea"
+        placeholder="Neue Einträge zeilenweise einfügen..."
       />
       <div
         class="importButtonWrapper"
