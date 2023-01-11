@@ -23,4 +23,5 @@
 
 .button:hover:not(:disabled) {
   background-color: var(--color-button-background-hover);
+  cursor: pointer;
 }

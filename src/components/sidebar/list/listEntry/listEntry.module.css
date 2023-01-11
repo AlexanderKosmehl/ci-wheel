@@ -26,6 +26,7 @@
 
 .delete-button:hover {
   background-color: var(--color-button-background-hover);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 720px) {

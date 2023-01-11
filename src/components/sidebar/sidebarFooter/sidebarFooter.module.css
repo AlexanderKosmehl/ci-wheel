@@ -17,4 +17,5 @@
 
 .footer-button:hover {
   background-color: var(--color-button-background-hover);
+  cursor: pointer;
 }

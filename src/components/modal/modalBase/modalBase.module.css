@@ -28,6 +28,7 @@
   background-color: white;
   height: var(--spacing-5xl);
   width: var(--spacing-5xl);
+  cursor: pointer;
 }
 
 .header {
