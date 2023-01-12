@@ -89,12 +89,12 @@ export default function generateArchiveModal({
 
     if (event.newContainer === currentListContainer) {
       // From archive to current
-      currentEntryList = [...currentEntryList, changedElement];
+      currentEntryList = [changedElement, ...currentEntryList];
       archivedEntryList = archivedEntryList.filter((entry) => entry !== changedElement);
     } else if (event.newContainer === archiveListContainer) {
       // From current to archive
       currentEntryList = currentEntryList.filter((entry) => entry !== changedElement);
-      archivedEntryList = [...archivedEntryList, changedElement];
+      archivedEntryList = [changedElement, ...archivedEntryList];
     } else if (event.newContainer === removalContainer) {
       // From any to removal
       currentEntryList = currentEntryList.filter((entry) => entry !== changedElement);

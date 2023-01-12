@@ -40,7 +40,7 @@ export default function generateSidebar({
       newEntryCallback: (newEntry: string) => {
         if (updatedEntries.includes(newEntry)) return;
 
-        const newList = [...updatedEntries, newEntry];
+        const newList = [newEntry, ...updatedEntries];
         updateDependencies(newList);
       },
     }));
@@ -50,7 +50,7 @@ export default function generateSidebar({
       entryRemovalCallback: (removedEntry: string) => {
         const newList = updatedEntries.filter((entry) => entry !== removedEntry);
         updateDependencies(newList);
-        updateArchiveEntries([...getArchiveEntries(), removedEntry]);
+        updateArchiveEntries([removedEntry, ...getArchiveEntries()]);
       },
     }));
 
@@ -59,7 +59,7 @@ export default function generateSidebar({
         openImportModal((importedEntries) => {
           const filteredImports = importedEntries
             .filter((newEntry) => !updatedEntries.includes(newEntry));
-          const newList = [...updatedEntries, ...filteredImports];
+          const newList = [...filteredImports, ...updatedEntries];
           updateDependencies(newList);
         });
       },
