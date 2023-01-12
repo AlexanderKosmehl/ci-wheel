@@ -5,9 +5,10 @@
   transform: translateX(-50%) translateY(-50%);
   height: 5rem;
   width: 5rem;
-  background-color: var(--color-background-light);
+  padding: .75rem;
+  background-color: var(--color-button-light);
   border-radius: 50%;
-  border: var(--border-default);
+  border: none;
   filter: drop-shadow(var(--drop-shadow-strong));
   display: flex;
   justify-content: center;
@@ -17,11 +18,11 @@
   font-family: var(--font-default);
 }
 
-.button:disabled {
-  color: var(--color-button-text-disabled);
+.button:disabled > * {
+  filter: opacity(20%);
 }
 
 .button:hover:not(:disabled) {
-  background-color: var(--color-button-background-hover);
+  background-color: var(--color-button-light-hover);
   cursor: pointer;
 }

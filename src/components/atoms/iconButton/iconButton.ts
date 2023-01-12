@@ -2,12 +2,16 @@ import generateButton from '../button/button';
 import styles from './iconButton.module.css';
 
 interface IconButtonParams {
-  iconURL: string
-  onClick: () => void
-  classes?: string[]
+  iconURL: string;
+  onClick?: () => void;
+  classes?: string[];
 }
 
-export default function generateIconButton({ iconURL, onClick, classes = [] }: IconButtonParams) {
+export default function generateIconButton({
+  iconURL,
+  onClick = () => {},
+  classes = [],
+}: IconButtonParams) {
   const deleteIcon = document.createElement<'img'>('img');
   deleteIcon.classList.add(styles.icon);
   deleteIcon.src = iconURL;
