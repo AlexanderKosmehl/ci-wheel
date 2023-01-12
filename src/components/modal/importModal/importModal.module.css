@@ -6,6 +6,8 @@
 
 .import-textarea {
   min-height: 10rem;
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-2xs);
 }
 
 .import-button-wrapper {
@@ -15,12 +17,12 @@
 
 .import-button {
   padding: var(--spacing-xs);
-  background-color: var(--color-background);
-  border: var(--border-default);
+  background-color: var(--color-button-primary);
+  border: none;
   border-radius: var(--border-radius-default);
 }
 
 .import-button:hover {
-  background-color: var(--color-button-background-hover);
+  background-color: var(--color-button-primary-hover);
   cursor: pointer;
 }

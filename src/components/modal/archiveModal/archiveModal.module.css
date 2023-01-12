@@ -15,7 +15,7 @@
 }
 
 .list-container {
-  padding: var(--spacing-default);
+  padding: var(--spacing-xs);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -51,7 +51,7 @@
 .entry {
   background-color: white;
   border: var(--border-default);
-  border-radius: var(--border-radius-default);
+  border-radius: var(--border-radius-small);
   padding: var(--spacing-2xs) var(--spacing-xs);
   cursor: grab;
   touch-action: none;
