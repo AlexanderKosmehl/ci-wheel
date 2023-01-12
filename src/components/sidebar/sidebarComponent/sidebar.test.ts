@@ -35,7 +35,7 @@ describe('generateSidebar', () => {
     inputButton.click();
 
     expect(listChangeCallback).toBeCalled();
-    expect(listChangeCallback).toBeCalledWith([...listEntries, newEntry]);
+    expect(listChangeCallback).toBeCalledWith([newEntry, ...listEntries]);
   });
 
   it('binds import callback correctly', () => {

@@ -13,7 +13,7 @@ describe('generateModal', () => {
     onDelete: onDeleteCallback,
   });
   const closeButton = modal.querySelector<HTMLButtonElement>('.closeButton');
-  const deleteButton = modal.querySelector<HTMLButtonElement>('.deleteButton');
+  const deleteButton = modal.querySelector<HTMLButtonElement>('.doneButton');
 
   it('generates component correctly', () => {
     expect(modal).toMatchSnapshot();
@@ -27,7 +27,7 @@ describe('generateModal', () => {
   });
 
   it('adds working onDelete callback', () => {
-    if (!deleteButton) throw Error('No deleteButton rendered!');
+    if (!deleteButton) throw Error('No doneButton rendered!');
 
     deleteButton.click();
     expect(onDeleteCallback).toBeCalled();

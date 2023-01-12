@@ -26,7 +26,7 @@ export default function generateSpinResultModal({
   const doneButton = generateIconButton({
     iconURL: doneIcon,
     onClick: onDelete,
-    classes: [styles.doneIcon],
+    classes: [styles.doneButton],
   });
   resultContainer.appendChild(doneButton);
 

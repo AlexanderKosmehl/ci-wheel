@@ -53,7 +53,10 @@ exports[`generateSpinnerComponent generates component correctly 1`] = `
   <button
     class="button"
   >
-    Spin
+    <img
+      class="icon"
+      src="test-file-stub"
+    />
   </button>
 </div>
 `;

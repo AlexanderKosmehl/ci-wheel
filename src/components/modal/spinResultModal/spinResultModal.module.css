@@ -14,7 +14,7 @@
   white-space: nowrap;
 }
 
-.done-icon {
+.done-button {
   height: var(--spacing-3xl);
   width: var(--spacing-3xl);
   border: none;
@@ -22,6 +22,6 @@
   background-color: var(--color-button-primary);
 }
 
-.done-icon:hover {
+.done-button:hover {
   background-color: var(--color-button-primary-hover);
 }

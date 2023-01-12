@@ -24,23 +24,23 @@ exports[`generateModal generates component correctly 1`] = `
         />
       </button>
     </div>
-    <li
-      class="container"
+    <div
+      class="resultContainer"
     >
       <span
-        class="label"
+        class="resultLabel"
       >
         Test
       </span>
       <button
-        class="button deleteButton"
+        class="button doneButton"
       >
         <img
           class="icon"
           src="test-file-stub"
         />
       </button>
-    </li>
+    </div>
   </div>
 </div>
 `;
