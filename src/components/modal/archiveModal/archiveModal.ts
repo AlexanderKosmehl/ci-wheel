@@ -4,7 +4,7 @@ import { getArchiveEntries, updateArchiveEntries } from './helper/archiveHelper'
 import styles from './archiveModal.module.css';
 import texts from './archiveModal.text';
 
-import trashIcon from '../../../assets/trash-icon.svg';
+import deleteIcon from '../../../assets/delete-icon.svg';
 import './archiveModal.css';
 
 interface ArchiveModalProps {
@@ -52,7 +52,7 @@ export default function generateArchiveModal({
   archiveModalContainer.appendChild(removalContainer);
   const removalImage = document.createElement<'img'>('img');
   removalImage.classList.add(styles.removalImage);
-  removalImage.src = trashIcon;
+  removalImage.src = deleteIcon;
 
   removalContainer.appendChild(removalImage);
 

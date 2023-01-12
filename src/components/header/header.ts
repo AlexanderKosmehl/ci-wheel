@@ -1,7 +1,7 @@
 import styles from './header.module.css';
 import logoURL from '../../assets/ci-logo.png';
 import menuURL from '../../assets/menu-icon.svg';
-import closeURL from '../../assets/angle-right.svg';
+import closeURL from '../../assets/arrow-back-icon.svg';
 import texts from './header.text';
 import generateIconButton from '../atoms/iconButton/iconButton';
 
