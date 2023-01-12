@@ -1,12 +1,12 @@
 .input {
   flex: 1;
   min-width: 0;
-  border: var(--border-default);
+  border: none;
   border-radius: var(--border-radius-default);
   padding: var(--spacing-xs) var(--spacing-default);
   font-size: var(--spacing-default);
   font-family: var(--font-default);
-  background-color: var(--color-background-light);
+  background-color: var(--color-background);
 }
 
 @media screen and (min-width: 720px) {

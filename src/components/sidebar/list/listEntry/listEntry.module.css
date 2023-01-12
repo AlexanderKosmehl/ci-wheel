@@ -1,6 +1,6 @@
 .container {
   padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) var(--spacing-default);
-  background-color: var(--color-background-light);
+  background-color: var(--color-background);
   border: var(--border-default);
   border-radius: var(--border-radius-default);
   margin-top: var(--spacing-xs);
@@ -19,13 +19,13 @@
 .delete-button {
   height: var(--spacing-2xl);
   width: var(--spacing-2xl);
-  border: var(--border-default);
-  border-radius: var(--border-radius-default);
-  background-color: var(--color-button-background);
+  border: none;
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-button-primary);
 }
 
 .delete-button:hover {
-  background-color: var(--color-button-background-hover);
+  background-color: var(--color-button-primary-hover);
   cursor: pointer;
 }
 

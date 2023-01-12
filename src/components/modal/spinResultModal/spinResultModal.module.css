@@ -1,0 +1,27 @@
+.result-container {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius-default);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) var(--spacing-default);
+}
+
+.result-label {
+  font-size: var(--spacing-l);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.done-icon {
+  height: var(--spacing-3xl);
+  width: var(--spacing-3xl);
+  border: none;
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-button-primary);
+}
+
+.done-icon:hover {
+  background-color: var(--color-button-primary-hover);
+}

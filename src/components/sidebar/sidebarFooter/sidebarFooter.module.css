@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--color-secondary);
+  background-color: var(--color-background-dark);
   display: flex;
   padding: var(--spacing-xs) var(--spacing-3xl);
   z-index: 5;
@@ -9,13 +9,13 @@
 
 .footer-button {
   padding: var(--spacing-xs);
-  background-color: var(--color-background-light);
-  border: var(--border-default);
+  background-color: var(--color-button-primary);
+  border: none;
   border-radius: var(--border-radius-default);
   flex: 1;
 }
 
 .footer-button:hover {
-  background-color: var(--color-button-background-hover);
+  background-color: var(--color-button-primary-hover);
   cursor: pointer;
 }

@@ -1,7 +1,7 @@
 .tick {
   width: var(--spacing-3xl);
   height: var(--spacing-3xl);
-  background-color: var(--color-button-background);
+  background-color: var(--color-surface);
   clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
 }
 

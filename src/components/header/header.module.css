@@ -19,7 +19,7 @@
 
 .header-title {
   margin: var(--spacing-xs) var(--spacing-default);
-  color: var(--color-secondary);
+  color: var(--color-font-dark);
   font-size: var(--spacing-xl);
   font-family: var(--font-default);
   user-select: none;
