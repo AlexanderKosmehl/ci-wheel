@@ -1,10 +1,19 @@
-import { defineConfig } from "vite";
+/// <reference types="vitest" />
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   css: {
     modules: {
-      localsConvention: "camelCase",
+      localsConvention: 'camelCase',
     },
   },
-  base: "./"
+  base: './',
+  test: {
+    environment: 'jsdom',
+    css: {
+      modules: {
+        classNameStrategy: 'non-scoped',
+      },
+    },
+  },
 });

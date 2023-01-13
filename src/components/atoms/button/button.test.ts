@@ -1,10 +1,10 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateButton from './button';
 
 describe('generateButton', () => {
-  const onClick = jest.fn(() => {});
+  const onClick = vi.fn(() => {});
 
   const button = generateButton({
     content: 'Text',

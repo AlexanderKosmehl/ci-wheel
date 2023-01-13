@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`generateModal generates component correctly 1`] = `
+exports[`generateModal > generates component correctly 1`] = `
 <div
   class="container"
 >
@@ -20,7 +20,7 @@ exports[`generateModal generates component correctly 1`] = `
       >
         <img
           class="icon"
-          src="test-file-stub"
+          src="/src/assets/close-icon.svg"
         />
       </button>
     </div>
@@ -37,7 +37,7 @@ exports[`generateModal generates component correctly 1`] = `
       >
         <img
           class="icon"
-          src="test-file-stub"
+          src="/src/assets/done-icon.svg"
         />
       </button>
     </div>

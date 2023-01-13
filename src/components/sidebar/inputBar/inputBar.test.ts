@@ -1,10 +1,10 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateInputBar from './inputBar';
 
 describe('generateButton', () => {
-  const newElementCallback = jest.fn((_newElement: string) => {});
+  const newElementCallback = vi.fn((_newElement: string) => {});
 
   const inputBar = generateInputBar({
     newEntryCallback: newElementCallback,

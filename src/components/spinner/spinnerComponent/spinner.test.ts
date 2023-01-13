@@ -1,6 +1,6 @@
 import {
   describe, expect, it,
-} from '@jest/globals';
+} from 'vitest';
 import generateSpinner from './spinner';
 
 describe('generateSpinner', () => {

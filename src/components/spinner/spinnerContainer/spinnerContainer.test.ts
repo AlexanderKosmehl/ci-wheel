@@ -1,11 +1,11 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import { SPIN_DURATION_IN_SEC } from '../../../config';
 import generateSpinnerComponent from './spinnerContainer';
 
 describe('generateSpinnerComponent', () => {
-  const spinCallback = jest.fn((_result: string) => {});
+  const spinCallback = vi.fn((_result: string) => {});
   const labels = ['Test', 'Test2'];
 
   const spinnerComponent = generateSpinnerComponent({
@@ -15,7 +15,7 @@ describe('generateSpinnerComponent', () => {
   const button = spinnerComponent.querySelector<HTMLButtonElement>('button');
 
   // Callback is called after a delay
-  jest.useFakeTimers();
+  vi.useFakeTimers();
 
   it('generates component correctly', () => {
     expect(spinnerComponent).toMatchSnapshot();
@@ -26,7 +26,7 @@ describe('generateSpinnerComponent', () => {
 
     button.click();
 
-    jest.advanceTimersByTime(SPIN_DURATION_IN_SEC * 1000);
+    vi.advanceTimersByTime(SPIN_DURATION_IN_SEC * 1000);
 
     expect(spinCallback).toBeCalled();
     expect(labels).toContain(spinCallback.mock.calls[0][0]);

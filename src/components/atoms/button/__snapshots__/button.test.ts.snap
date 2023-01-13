@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`generateButton generates a button component 1`] = `
+exports[`generateButton > generates a button component 1`] = `
 <button
   class="class class2"
 >

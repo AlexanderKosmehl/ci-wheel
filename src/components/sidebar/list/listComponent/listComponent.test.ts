@@ -1,10 +1,10 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateListComponent from './listComponent';
 
 describe('generateListComponent', () => {
-  const entryRemovalCallback = jest.fn((_removedEntry: string) => {});
+  const entryRemovalCallback = vi.fn((_removedEntry: string) => {});
   const listEntries = ['Test', 'Test2'];
 
   const listComponent = generateListComponent({

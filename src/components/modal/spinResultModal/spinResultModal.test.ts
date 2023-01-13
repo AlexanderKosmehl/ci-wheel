@@ -1,11 +1,11 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateModal from './spinResultModal';
 
 describe('generateModal', () => {
-  const onCloseCallback = jest.fn(() => {});
-  const onDeleteCallback = jest.fn(() => {});
+  const onCloseCallback = vi.fn(() => {});
+  const onDeleteCallback = vi.fn(() => {});
 
   const modal = generateModal({
     label: 'Test',
@@ -13,7 +13,7 @@ describe('generateModal', () => {
     onDelete: onDeleteCallback,
   });
   const closeButton = modal.querySelector<HTMLButtonElement>('.closeButton');
-  const deleteButton = modal.querySelector<HTMLButtonElement>('.doneButton');
+  const doneButton = modal.querySelector<HTMLButtonElement>('.doneButton');
 
   it('generates component correctly', () => {
     expect(modal).toMatchSnapshot();
@@ -27,9 +27,9 @@ describe('generateModal', () => {
   });
 
   it('adds working onDelete callback', () => {
-    if (!deleteButton) throw Error('No doneButton rendered!');
+    if (!doneButton) throw Error('No doneButton rendered!');
 
-    deleteButton.click();
+    doneButton.click();
     expect(onDeleteCallback).toBeCalled();
   });
 });

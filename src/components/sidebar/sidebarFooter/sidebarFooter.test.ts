@@ -1,11 +1,11 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateSidebarFooter from './sidebarFooter';
 
 describe('generateSidebarFooter', () => {
-  const onImportClick = jest.fn(() => {});
-  const onArchiveClick = jest.fn(() => {});
+  const onImportClick = vi.fn(() => {});
+  const onArchiveClick = vi.fn(() => {});
 
   const footer = generateSidebarFooter({
     importOnClick: onImportClick,

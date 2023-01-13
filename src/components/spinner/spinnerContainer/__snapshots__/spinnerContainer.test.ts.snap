@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`generateSpinnerComponent generates component correctly 1`] = `
+exports[`generateSpinnerComponent > generates component correctly 1`] = `
 <div
   class="container"
 >
@@ -55,7 +55,7 @@ exports[`generateSpinnerComponent generates component correctly 1`] = `
   >
     <img
       class="icon"
-      src="test-file-stub"
+      src="/src/assets/rotate-icon.svg"
     />
   </button>
 </div>

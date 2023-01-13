@@ -1,12 +1,12 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateSidebar from './sidebar';
 
 describe('generateSidebar', () => {
-  const listChangeCallback = jest.fn((_updatedEntries: string[]) => {});
-  const openImportCallback = jest.fn(() => {});
-  const openArchiveCallback = jest.fn(() => {});
+  const listChangeCallback = vi.fn((_updatedEntries: string[]) => {});
+  const openImportCallback = vi.fn(() => {});
+  const openArchiveCallback = vi.fn(() => {});
   const listEntries = ['Test 1', 'Test 2'];
 
   const sidebar = generateSidebar({
@@ -24,7 +24,7 @@ describe('generateSidebar', () => {
 
   it('adds new entries correctly', () => {
     const input = sidebar.querySelector<HTMLInputElement>('input');
-    const inputButton = sidebar.querySelector<HTMLButtonElement>('input + button');
+    const inputButton = sidebar.querySelector<HTMLButtonElement>('.addButton');
 
     if (!input || !inputButton) throw Error('Input not rendered correctly!');
 

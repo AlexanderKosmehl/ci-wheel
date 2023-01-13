@@ -1,11 +1,11 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateArchiveModal from './archiveModal';
 
 describe('generateArchiveModal', () => {
-  const onClose = jest.fn(() => {});
-  const updateCallback = jest.fn((_updatedEntries: string[]) => {});
+  const onClose = vi.fn(() => {});
+  const updateCallback = vi.fn((_updatedEntries: string[]) => {});
 
   const modal = generateArchiveModal({
     onClose,

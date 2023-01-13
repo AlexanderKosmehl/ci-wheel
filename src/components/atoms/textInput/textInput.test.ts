@@ -1,10 +1,10 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateTextInput from './textInput';
 
 describe('generateButton', () => {
-  const onKeyPress = jest.fn((_event: KeyboardEvent) => {});
+  const onKeyPress = vi.fn((_event: KeyboardEvent) => {});
 
   const inputBar = generateTextInput({
     classes: ['class', 'class2'],

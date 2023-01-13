@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`generateSpinnerSegments generates components correctly 1`] = `
+exports[`generateSpinnerSegments > generates components correctly 1`] = `
 [
   <div
     class="segment"

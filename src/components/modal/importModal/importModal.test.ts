@@ -1,11 +1,11 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateImportModal from './importModal';
 
 describe('generateImportModal', () => {
-  const onClose = jest.fn(() => {});
-  const onImport = jest.fn((_importText: string) => {});
+  const onClose = vi.fn(() => {});
+  const onImport = vi.fn((_importText: string) => {});
 
   const importModal = generateImportModal({
     onClose,

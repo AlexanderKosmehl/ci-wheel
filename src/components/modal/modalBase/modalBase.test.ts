@@ -1,13 +1,13 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateModal from './modalBase';
 
 describe('generateModal', () => {
   const content = document.createElement<'div'>('div');
   content.textContent = 'Content';
 
-  const onClose = jest.fn(() => {});
+  const onClose = vi.fn(() => {});
 
   const modal = generateModal({
     title: 'Title',

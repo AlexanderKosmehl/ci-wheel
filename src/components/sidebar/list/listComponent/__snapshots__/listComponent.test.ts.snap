@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`generateListComponent generates component correctly 1`] = `
+exports[`generateListComponent > generates component correctly 1`] = `
 <ul
   class="listContainer"
 >
@@ -17,7 +17,7 @@ exports[`generateListComponent generates component correctly 1`] = `
     >
       <img
         class="icon"
-        src="test-file-stub"
+        src="/src/assets/delete-icon.svg"
       />
     </button>
   </li>
@@ -34,7 +34,7 @@ exports[`generateListComponent generates component correctly 1`] = `
     >
       <img
         class="icon"
-        src="test-file-stub"
+        src="/src/assets/delete-icon.svg"
       />
     </button>
   </li>

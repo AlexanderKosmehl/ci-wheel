@@ -1,10 +1,10 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateListEntry from './listEntry';
 
 describe('generateListEntry', () => {
-  const onDelete = jest.fn(() => {});
+  const onDelete = vi.fn(() => {});
 
   const listEntry = generateListEntry({
     label: 'Test',

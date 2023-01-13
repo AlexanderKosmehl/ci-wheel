@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`generateSidebar generates component correctly 1`] = `
+exports[`generateSidebar > generates component correctly 1`] = `
 <div
   class="sidebar"
   hidden=""
@@ -20,7 +20,7 @@ exports[`generateSidebar generates component correctly 1`] = `
     >
       <img
         class="icon"
-        src="test-file-stub"
+        src="/src/assets/add-icon.svg"
       />
     </button>
   </div>
@@ -40,7 +40,7 @@ exports[`generateSidebar generates component correctly 1`] = `
       >
         <img
           class="icon"
-          src="test-file-stub"
+          src="/src/assets/delete-icon.svg"
         />
       </button>
     </li>
@@ -57,7 +57,7 @@ exports[`generateSidebar generates component correctly 1`] = `
       >
         <img
           class="icon"
-          src="test-file-stub"
+          src="/src/assets/delete-icon.svg"
         />
       </button>
     </li>

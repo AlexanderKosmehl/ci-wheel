@@ -1,11 +1,11 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateIconButton from './iconButton';
 import addIconUrl from '../../../assets/+-Icon.svg';
 
 describe('iconButton', () => {
-  const onClick = jest.fn(() => {});
+  const onClick = vi.fn(() => {});
 
   const button = generateIconButton({
     iconURL: addIconUrl,

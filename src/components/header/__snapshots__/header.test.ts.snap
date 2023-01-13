@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`generateHeader generates component correctly 1`] = `
+exports[`generateHeader > generates component correctly 1`] = `
 <header
   class="header"
 >
@@ -9,7 +9,7 @@ exports[`generateHeader generates component correctly 1`] = `
   >
     <img
       class="headerLogo"
-      src="test-file-stub"
+      src="/src/assets/ci-logo.png"
     />
     <h1
       class="headerTitle"
@@ -25,7 +25,7 @@ exports[`generateHeader generates component correctly 1`] = `
     >
       <img
         class="icon"
-        src="test-file-stub"
+        src="/src/assets/menu-icon.svg"
       />
     </button>
     <button
@@ -33,7 +33,7 @@ exports[`generateHeader generates component correctly 1`] = `
     >
       <img
         class="icon"
-        src="test-file-stub"
+        src="/src/assets/arrow-back-icon.svg"
       />
     </button>
   </div>

@@ -1,10 +1,10 @@
 import {
-  describe, expect, it, jest,
-} from '@jest/globals';
+  describe, expect, it, vi,
+} from 'vitest';
 import generateSpinnerButton from './spinnerButton';
 
 describe('generateSpinnerButton', () => {
-  const onClick = jest.fn(() => {});
+  const onClick = vi.fn(() => {});
   const buttonComponent = generateSpinnerButton({ onClick });
 
   it('generates component correctly', () => {

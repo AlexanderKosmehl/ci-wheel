@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`generateButton generates component correctly 1`] = `
+exports[`generateButton > generates component correctly 1`] = `
 <input
   class="class class2 input"
   placeholder="Placeholder"
