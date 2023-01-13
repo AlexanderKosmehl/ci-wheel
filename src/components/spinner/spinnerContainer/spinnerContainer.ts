@@ -23,7 +23,6 @@ export default function generateSpinnerComponent({
 }: SpinnerComponentParams) {
   const newSpinnerContainer = document.createElement<'div'>('div');
   newSpinnerContainer.classList.add(styles.container);
-
   newSpinnerContainer.textContent = '';
 
   const spinner = generateSpinner({

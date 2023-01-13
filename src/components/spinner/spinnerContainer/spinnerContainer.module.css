@@ -1,6 +1,6 @@
 .container {
-  max-height: 40rem;
-  max-width: 40rem;
+  max-height: min(45rem, var(--max-spinner-dimensions));
+  max-width: min(45rem, var(--max-spinner-dimensions));
   flex-grow: 1;
   overflow: hidden;
   padding: var(--spacing-l);

@@ -15,6 +15,7 @@ export default function generateIndexPage() {
   indexPage.appendChild(header);
 
   const mainContainer = document.createElement<'div'>('div');
+  mainContainer.id = 'spinner-container';
   mainContainer.classList.add(styles.mainContainer);
 
   const {
