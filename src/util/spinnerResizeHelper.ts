@@ -1,5 +1,4 @@
 function updateMaxSpinnerDimensions() {
-  console.log('called');
   const root = document.querySelector<HTMLBaseElement>(':root');
   const spinnerContainer = document.querySelector('#spinner-container');
   if (!spinnerContainer || !root) return;
