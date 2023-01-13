@@ -1,6 +1,6 @@
 .header {
   padding: var(--spacing-default);
-  background-color: #fff;
+  background-color: var(--color-background);
   box-shadow: 0 0 14px rgb(0 0 0 / 20%);
   z-index: 10;
   display: flex;
@@ -20,7 +20,7 @@
 .header-title {
   margin: var(--spacing-xs) var(--spacing-default);
   color: var(--color-font-dark);
-  font-size: var(--spacing-xl);
+  font-size: var(--text-2xl);
   font-family: var(--font-default);
   user-select: none;
 }

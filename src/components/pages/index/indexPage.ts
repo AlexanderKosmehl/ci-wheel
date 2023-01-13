@@ -18,7 +18,10 @@ export default function generateIndexPage() {
   mainContainer.classList.add(styles.mainContainer);
 
   const {
-    modalContainer, openSpinResultModal, openImportModal, openArchiveModal,
+    modalContainer,
+    openSpinResultModal,
+    openImportModal,
+    openArchiveModal,
   } = generateModalContainer();
 
   const spinnerContainer = document.createElement<'div'>('div');
@@ -26,26 +29,30 @@ export default function generateIndexPage() {
 
   const updateSpinner = (newEntries: string[]) => {
     spinnerContainer.textContent = '';
-    spinnerContainer.appendChild(generateSpinnerComponent({
-      labels: newEntries,
-      spinCallback: (result: string) => {
-        openSpinResultModal(result, () => {
-          updateSpinner(newEntries.filter((entry) => entry !== result));
-        });
-      },
-    }));
+    spinnerContainer.appendChild(
+      generateSpinnerComponent({
+        labels: newEntries,
+        spinCallback: (result: string) => {
+          openSpinResultModal(result, () => {
+            updateSpinner(newEntries.filter((entry) => entry !== result));
+          });
+        },
+      }),
+    );
   };
   mainContainer.appendChild(spinnerContainer);
   updateSpinner(initialValues);
 
-  mainContainer.appendChild(generateSidebar({
-    listEntries: initialValues,
-    listChangeCallback: (updatedList: string[]) => {
-      updateSpinner(updatedList);
-    },
-    openImportModal,
-    openArchiveModal,
-  }));
+  mainContainer.appendChild(
+    generateSidebar({
+      listEntries: initialValues,
+      listChangeCallback: (updatedList: string[]) => {
+        updateSpinner(updatedList);
+      },
+      openImportModal,
+      openArchiveModal,
+    }),
+  );
 
   indexPage.appendChild(mainContainer);
   indexPage.appendChild(modalContainer);

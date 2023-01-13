@@ -3,7 +3,7 @@ import generateSpinnerSegments from '../spinnerSegment/spinnerSegments';
 import styles from './spinner.module.css';
 
 interface SpinnerParams {
-  labels: string[]
+  labels: string[];
 }
 
 export default function generateSpinner({ labels }: SpinnerParams) {

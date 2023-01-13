@@ -13,8 +13,8 @@ function getLabelByAngle(labels: string[], angle: number) {
 }
 
 interface SpinnerComponentParams {
-  labels: string[]
-  spinCallback: (result: string) => void
+  labels: string[];
+  spinCallback: (result: string) => void;
 }
 
 export default function generateSpinnerComponent({

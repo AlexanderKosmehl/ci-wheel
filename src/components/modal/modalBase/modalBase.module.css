@@ -13,7 +13,7 @@
 }
 
 .content {
-  background-color: white;
+  background-color: var(--color-background);
   border-radius: var(--border-radius-default);
   min-width: 20rem;
   max-width: 40rem;
@@ -25,7 +25,7 @@
 
 .close-button {
   border: none;
-  background-color: white;
+  background-color: var(--color-background);
   height: var(--spacing-5xl);
   width: var(--spacing-5xl);
   cursor: pointer;

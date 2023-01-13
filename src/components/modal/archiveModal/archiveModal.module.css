@@ -41,7 +41,7 @@
 .removal-image {
   height: 2rem;
   width: 2rem;
-  filter: opacity(20%) invert(17%) sepia(97%) saturate(5090%) hue-rotate(356deg);
+  filter: opacity(20%) invert(17%) sepia(97%) saturate(5090%) hue-rotate(356deg); /* Turn black svg red */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -49,7 +49,7 @@
 }
 
 .entry {
-  background-color: white;
+  background-color: var(--color-background);
   border: var(--border-default);
   border-radius: var(--border-radius-small);
   padding: var(--spacing-2xs) var(--spacing-xs);

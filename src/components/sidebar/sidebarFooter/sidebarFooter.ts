@@ -2,8 +2,8 @@ import generateButton from '../../atoms/button/button';
 import styles from './sidebarFooter.module.css';
 
 interface SidebarFooterProps {
-  importOnClick: () => void
-  archiveOnClick: () => void
+  importOnClick: () => void;
+  archiveOnClick: () => void;
 }
 
 export default function generateSidebarFooter({
@@ -13,17 +13,21 @@ export default function generateSidebarFooter({
   const sidebarFooter = document.createElement<'div'>('div');
   sidebarFooter.classList.add(styles.container);
 
-  sidebarFooter.appendChild(generateButton({
-    content: 'Import',
-    onClick: importOnClick,
-    classes: [styles.footerButton],
-  }));
+  sidebarFooter.appendChild(
+    generateButton({
+      content: 'Import',
+      onClick: importOnClick,
+      classes: [styles.footerButton],
+    }),
+  );
 
-  sidebarFooter.appendChild(generateButton({
-    content: 'Archiv',
-    onClick: archiveOnClick,
-    classes: [styles.footerButton],
-  }));
+  sidebarFooter.appendChild(
+    generateButton({
+      content: 'Archiv',
+      onClick: archiveOnClick,
+      classes: [styles.footerButton],
+    }),
+  );
 
   return sidebarFooter;
 }

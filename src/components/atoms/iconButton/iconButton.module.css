@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--spacing-2xs);
   cursor: pointer;
 }
 

@@ -5,9 +5,9 @@ import generateIconButton from '../../atoms/iconButton/iconButton';
 import doneIcon from '../../../assets/done-icon.svg';
 
 interface SpinResultModalParams {
-  label: string
-  onClose: () => void
-  onDelete: () => void
+  label: string;
+  onClose: () => void;
+  onDelete: () => void;
 }
 
 export default function generateSpinResultModal({

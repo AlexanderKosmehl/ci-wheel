@@ -3,11 +3,14 @@ import generateIconButton from '../../../atoms/iconButton/iconButton';
 import deleteIconURL from '../../../../assets/delete-icon.svg';
 
 interface ListEntryParams {
-  label: string,
-  onDelete: () => void,
+  label: string;
+  onDelete: () => void;
 }
 
-export default function generateListEntry({ label, onDelete }: ListEntryParams) {
+export default function generateListEntry({
+  label,
+  onDelete,
+}: ListEntryParams) {
   const newListElement = document.createElement<'li'>('li');
   newListElement.classList.add(styles.container);
 

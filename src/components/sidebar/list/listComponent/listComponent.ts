@@ -2,8 +2,8 @@ import generateListEntry from '../listEntry/listEntry';
 import styles from './listComponent.module.css';
 
 interface ListComponentParams {
-  entryRemovalCallback: (removedElement: string) => void
-  listEntries: string[]
+  entryRemovalCallback: (removedElement: string) => void;
+  listEntries: string[];
 }
 
 export default function generateListComponent({

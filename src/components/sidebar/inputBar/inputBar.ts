@@ -5,7 +5,7 @@ import generateTextInput from '../../atoms/textInput/textInput';
 import addIcon from '../../../assets/add-icon.svg';
 
 interface InputBarParams {
-  newEntryCallback: (newElement: string) => void
+  newEntryCallback: (newElement: string) => void;
 }
 
 export default function generateInputBar({ newEntryCallback }: InputBarParams) {

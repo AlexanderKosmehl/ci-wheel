@@ -5,7 +5,7 @@ import styles from './spinnerButton.module.css';
 import rotateIcon from '../../../assets/rotate-icon.svg';
 
 interface SpinnerButtonProps {
-  onClick: () => void
+  onClick: () => void;
 }
 
 export default function generateSpinnerButton({ onClick }: SpinnerButtonProps) {

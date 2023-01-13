@@ -25,6 +25,13 @@
   --spacing-3xl: 2rem;
   --spacing-4xl: 2.25rem;
   --spacing-5xl: 2.5rem;
+  --text-sm: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
   --drop-shadow-default: 0 0 14px rgb(0 0 0 / 20%);
   --drop-shadow-strong: 0 0 2px rgb(0 0 0 / 40%);
   --border-default: 1px solid black;

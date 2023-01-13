@@ -1,4 +1,4 @@
-/* stylelint-disable-next-line selector-class-pattern */
+/* stylelint-disable selector-class-pattern */
 .draggable-container--over {
   background-color: rgba(0 0 0 / 5%);
 }

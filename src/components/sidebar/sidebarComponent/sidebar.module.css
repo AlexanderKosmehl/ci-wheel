@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: white;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   flex: 1;

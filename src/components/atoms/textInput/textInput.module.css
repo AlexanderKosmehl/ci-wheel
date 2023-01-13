@@ -4,7 +4,7 @@
   border: none;
   border-radius: var(--border-radius-default);
   padding: var(--spacing-xs) var(--spacing-default);
-  font-size: var(--spacing-default);
+  font-size: var(--text-base);
   font-family: var(--font-default);
   background-color: var(--color-background);
 }

@@ -4,8 +4,8 @@ import styles from './importModal.module.css';
 import texts from './importModal.text';
 
 interface ImportModalParams {
-  onClose: () => void
-  onImport: (importText: string) => void
+  onClose: () => void;
+  onImport: (importText: string) => void;
 }
 
 export default function generateImportModal({
@@ -23,11 +23,13 @@ export default function generateImportModal({
   const buttonWrapper = document.createElement<'div'>('div');
   buttonWrapper.classList.add(styles.importButtonWrapper);
 
-  buttonWrapper.appendChild(generateButton({
-    content: texts.button,
-    onClick: () => onImport(importTextarea.value),
-    classes: [styles.importButton],
-  }));
+  buttonWrapper.appendChild(
+    generateButton({
+      content: texts.button,
+      onClick: () => onImport(importTextarea.value),
+      classes: [styles.importButton],
+    }),
+  );
   importModalContainer.appendChild(buttonWrapper);
 
   const modal = generateModal({

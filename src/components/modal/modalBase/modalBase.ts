@@ -3,12 +3,16 @@ import styles from './modalBase.module.css';
 import closeIcon from '../../../assets/close-icon.svg';
 
 interface ModalBaseParams {
-  title: string
-  content: HTMLElement
-  onClose: () => void
+  title: string;
+  content: HTMLElement;
+  onClose: () => void;
 }
 
-export default function generateModal({ title, content, onClose }: ModalBaseParams) {
+export default function generateModal({
+  title,
+  content,
+  onClose,
+}: ModalBaseParams) {
   const modalContainer = document.createElement<'div'>('div');
   modalContainer.classList.add(styles.container);
 

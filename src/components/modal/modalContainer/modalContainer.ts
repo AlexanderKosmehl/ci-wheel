@@ -9,7 +9,10 @@ export default function generateModalContainer() {
     modalContainer.textContent = '';
   };
 
-  function openSpinResultModal(resultLabel: string, removalCallback: () => void) {
+  function openSpinResultModal(
+    resultLabel: string,
+    removalCallback: () => void,
+  ) {
     closeModal();
 
     modalContainer.appendChild(
@@ -24,7 +27,9 @@ export default function generateModalContainer() {
     );
   }
 
-  function openImportModal(importCallback: (importedEntries: string[]) => void) {
+  function openImportModal(
+    importCallback: (importedEntries: string[]) => void,
+  ) {
     closeModal();
 
     modalContainer.appendChild(

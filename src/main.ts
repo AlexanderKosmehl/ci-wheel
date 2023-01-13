@@ -5,5 +5,6 @@ import './global.css';
 
 import generateIndexPage from './components/pages/index/indexPage';
 
-const appContainer = document.querySelector<HTMLDivElement>('#app');
-appContainer?.appendChild(generateIndexPage());
+document
+  .querySelector<HTMLDivElement>('#app')
+  ?.appendChild(generateIndexPage());
