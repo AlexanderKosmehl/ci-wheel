@@ -3,8 +3,8 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  height: 5rem;
-  width: 5rem;
+  height: 4rem;
+  width: 4rem;
   padding: .75rem;
   background-color: var(--color-button-light);
   border-radius: 50%;
@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: var(--spacing-xl);
+  font-size: var(--text-3xl);
   font-family: var(--font-default);
 }
 
@@ -25,4 +25,11 @@
 .button:hover:not(:disabled) {
   background-color: var(--color-button-light-hover);
   cursor: pointer;
+}
+
+@media screen and (min-width: 960px) {
+  .button {
+    height: 5rem;
+    width: 5rem;
+  }
 }

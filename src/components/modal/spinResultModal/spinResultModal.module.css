@@ -8,7 +8,7 @@
 }
 
 .result-label {
-  font-size: var(--spacing-l);
+  font-size: var(--text-xl);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

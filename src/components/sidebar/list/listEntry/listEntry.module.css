@@ -10,7 +10,7 @@
 }
 
 .label {
-  font-size: var(--spacing-default);
+  font-size: var(--text-base);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -31,7 +31,7 @@
 
 @media screen and (min-width: 720px) {
   .label {
-    font-size: var(--spacing-l);
+    font-size: var(--text-xl);
   }
 }
 

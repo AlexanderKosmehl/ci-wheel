@@ -12,6 +12,6 @@
 
 .placeholder {
   text-align: center;
-  font-size: var(--spacing-5xl);
+  font-size: var(--text-4xl);
   font-weight: bold;
 }

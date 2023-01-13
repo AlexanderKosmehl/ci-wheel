@@ -11,7 +11,7 @@
 
 .label {
   margin-right: var(--spacing-xl);
-  font-size: var(--spacing-s);
+  font-size: var(--text-base);
   font-weight: bold;
   text-align: center;
   text-overflow: ellipsis;
@@ -23,12 +23,12 @@
 
 @media screen and (min-width: 720px) {
   .label {
-    font-size: var(--spacing-l);
+    font-size: var(--text-xl);
   }
 }
 
 @media screen and (min-width: 1280px) {
   .label {
-    font-size: var(--spacing-2xl);
+    font-size: var(--text-2xl);
   }
 }

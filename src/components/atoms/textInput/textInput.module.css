@@ -16,6 +16,6 @@
 
 @media screen and (min-width: 720px) {
   .input {
-    font-size: var(--spacing-l);
+    font-size: var(--text-xl);
   }
 }
