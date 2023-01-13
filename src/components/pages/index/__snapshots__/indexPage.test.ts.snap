@@ -43,6 +43,7 @@ exports[`generateIndexPage > generates component correctly 1`] = `
   </header>
   <div
     class="mainContainer"
+    id="spinner-container"
   >
     <div
       class="spinnerWrapper"
