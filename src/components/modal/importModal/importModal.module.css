@@ -20,6 +20,7 @@
   background-color: var(--color-button-primary);
   border: none;
   border-radius: var(--border-radius-default);
+  box-shadow: var(--button-shadow-default);
 }
 
 .import-button:hover {

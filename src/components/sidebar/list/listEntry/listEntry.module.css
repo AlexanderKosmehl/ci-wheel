@@ -22,6 +22,7 @@
   border: none;
   border-radius: var(--border-radius-small);
   background-color: var(--color-button-primary);
+  box-shadow: var(--button-shadow-default);
 }
 
 .delete-button:hover {

@@ -6,7 +6,7 @@
 }
 
 .tick-shadow {
-  filter: drop-shadow(var(--drop-shadow-strong));
+  filter: drop-shadow(var(--button-shadow-default));
   width: var(--spacing-3xl);
   height: var(--spacing-3xl);
   transform: translateY(-50%);

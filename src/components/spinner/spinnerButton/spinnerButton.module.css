@@ -16,6 +16,7 @@
   font-weight: bold;
   font-size: var(--text-3xl);
   font-family: var(--font-default);
+  box-shadow: var(--button-shadow-default);
 }
 
 .button:disabled > * {

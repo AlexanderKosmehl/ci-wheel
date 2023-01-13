@@ -7,6 +7,7 @@
   font-size: var(--text-base);
   font-family: var(--font-default);
   background-color: var(--color-background);
+  box-shadow: var(--button-shadow-default) inset;
 }
 
 .input:focus,
