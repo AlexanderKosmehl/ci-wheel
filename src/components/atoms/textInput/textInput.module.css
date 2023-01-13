@@ -9,6 +9,11 @@
   background-color: var(--color-background);
 }
 
+.input:focus,
+.input:active {
+  outline-style: inset;
+}
+
 @media screen and (min-width: 720px) {
   .input {
     font-size: var(--spacing-l);
