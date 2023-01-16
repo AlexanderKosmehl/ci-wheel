@@ -3,27 +3,26 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  max-height: 100%;
   min-height: 0;
+  max-width: 25rem;
   box-shadow: var(--drop-shadow-default);
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  width: 100%;
   right: 0;
-  transition: .3s;
+  transition: max-width .3s, transform .3s;
 }
 
 .sidebar[hidden] {
-  transform: translateX(100%);
+  max-width: 0;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 960px) {
   .sidebar {
     position: static;
-    transform: none;
-  }
-
-  .sidebar[hidden] {
     transform: none;
   }
 }

@@ -53,10 +53,6 @@
 }
 
 @media screen and (min-width: 960px) {
-  .sidebar-toggle {
-    display: none !important;
-  }
-
   .logo-title-wrapper {
     margin-left: var(--spacing-s);
   }

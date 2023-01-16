@@ -19,11 +19,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
 }
 
 @media screen and (min-width: 960px) {
   .main-container {
-    display: grid;
-    grid-template-columns: 1fr 25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 }
