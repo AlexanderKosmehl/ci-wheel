@@ -1,7 +1,7 @@
 import { getSearchParams } from '../../../util/searchParamHelper';
 import generateHeader from '../../header/header';
 import generateModalContainer from '../../modal/modalContainer/modalContainer';
-import generateSidebar from '../../sidebar/sidebarComponent/sidebar';
+import generateSidebar from '../../sidebar/sidebar';
 import generateSpinnerComponent from '../../spinner/spinnerContainer/spinnerContainer';
 import styles from './indexPage.module.css';
 

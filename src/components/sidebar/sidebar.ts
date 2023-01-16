@@ -1,11 +1,11 @@
-import { updateSearchParams } from '../../../util/searchParamHelper';
+import { updateSearchParams } from '../../util/searchParamHelper';
 import {
   getArchiveEntries,
   updateArchiveEntries,
-} from '../../modal/archiveModal/helper/archiveHelper';
-import generateInputBar from '../inputBar/inputBar';
-import generateListComponent from '../list/listComponent/listComponent';
-import generateSidebarFooter from '../sidebarFooter/sidebarFooter';
+} from '../modal/archiveModal/helper/archiveHelper';
+import generateInputBar from './inputBar/inputBar';
+import generateList from './list/list';
+import generateSidebarFooter from './sidebarFooter/sidebarFooter';
 import styles from './sidebar.module.css';
 
 interface SidebarProps {
@@ -52,7 +52,7 @@ export default function generateSidebar({
     );
 
     sidebar.appendChild(
-      generateListComponent({
+      generateList({
         listEntries: updatedEntries,
         entryRemovalCallback: (removedEntry: string) => {
           const newList = updatedEntries.filter(

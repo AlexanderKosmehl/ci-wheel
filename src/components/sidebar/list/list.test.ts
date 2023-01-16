@@ -1,13 +1,13 @@
 import {
   describe, expect, it, vi,
 } from 'vitest';
-import generateListComponent from './listComponent';
+import generateList from './list';
 
 describe('generateListComponent', () => {
   const entryRemovalCallback = vi.fn((_removedEntry: string) => {});
   const listEntries = ['Test', 'Test2'];
 
-  const listComponent = generateListComponent({
+  const listComponent = generateList({
     listEntries,
     entryRemovalCallback,
   });
