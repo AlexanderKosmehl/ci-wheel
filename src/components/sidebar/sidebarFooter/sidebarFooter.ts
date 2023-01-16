@@ -18,6 +18,7 @@ export default function generateSidebarFooter({
       content: 'Import',
       onClick: importOnClick,
       classes: [styles.footerButton],
+      testSelector: 'sidebarImportButton',
     }),
   );
 
@@ -26,6 +27,7 @@ export default function generateSidebarFooter({
       content: 'Archiv',
       onClick: archiveOnClick,
       classes: [styles.footerButton],
+      testSelector: 'sidebarArchiveButton',
     }),
   );
 

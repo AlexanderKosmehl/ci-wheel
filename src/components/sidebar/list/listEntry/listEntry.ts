@@ -23,6 +23,7 @@ export default function generateListEntry({
     iconURL: deleteIconURL,
     onClick: onDelete,
     classes: [styles.deleteButton],
+    testSelector: 'listEntryDeleteButton',
   });
   newListElement.appendChild(deleteButton);
 

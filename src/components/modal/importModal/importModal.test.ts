@@ -12,10 +12,10 @@ describe('generateImportModal', () => {
     onImport,
   });
 
-  const closeButton = importModal.querySelector<HTMLButtonElement>('.closeButton');
+  const closeButton = importModal.querySelector<HTMLButtonElement>('[data-test=modalCloseButton]');
 
-  const textArea = importModal.querySelector<HTMLTextAreaElement>('textarea');
-  const importButton = importModal.querySelector<HTMLButtonElement>('.importButton');
+  const textArea = importModal.querySelector<HTMLTextAreaElement>('[data-test=modalTextarea]');
+  const importButton = importModal.querySelector<HTMLButtonElement>('[data-test=modalImportButton]');
 
   it('generates component correctly', () => {
     expect(importModal).toMatchSnapshot();

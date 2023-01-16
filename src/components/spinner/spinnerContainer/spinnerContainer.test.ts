@@ -12,7 +12,6 @@ describe('generateSpinnerComponent', () => {
     labels,
     spinCallback,
   });
-  const button = spinnerComponent.querySelector<HTMLButtonElement>('button');
 
   // Callback is called after a delay
   vi.useFakeTimers();
@@ -22,6 +21,7 @@ describe('generateSpinnerComponent', () => {
   });
 
   it('adds working callback', () => {
+    const button = spinnerComponent.querySelector<HTMLButtonElement>('[data-test=spinnerButton]');
     if (!button) throw Error('No button rendered!');
 
     button.click();

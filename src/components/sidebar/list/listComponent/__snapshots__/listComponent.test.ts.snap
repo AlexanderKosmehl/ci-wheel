@@ -14,6 +14,7 @@ exports[`generateListComponent > generates component correctly 1`] = `
     </span>
     <button
       class="button deleteButton"
+      data-test="listEntryDeleteButton"
     >
       <img
         class="icon"
@@ -31,6 +32,7 @@ exports[`generateListComponent > generates component correctly 1`] = `
     </span>
     <button
       class="button deleteButton"
+      data-test="listEntryDeleteButton"
     >
       <img
         class="icon"

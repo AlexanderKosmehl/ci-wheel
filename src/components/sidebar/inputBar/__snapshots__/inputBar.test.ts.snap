@@ -6,11 +6,13 @@ exports[`generateButton > generates component correctly 1`] = `
 >
   <input
     class="input"
+    data-test="sidebarInput"
     placeholder="Neuer Eintrag"
     type="text"
   />
   <button
     class="button addButton"
+    data-test="sidebarInputButton"
     disabled=""
   >
     <img

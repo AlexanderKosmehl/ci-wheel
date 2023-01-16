@@ -21,7 +21,7 @@ describe('generateListComponent', () => {
 
     if (!listElement) throw Error('No list entries rendered!');
 
-    listElement.querySelector<HTMLButtonElement>('.deleteButton')?.click();
+    listElement.querySelector<HTMLButtonElement>('[data-test=listEntryDeleteButton]')?.click();
     expect(entryRemovalCallback).toBeCalled();
     expect(entryRemovalCallback).toBeCalledWith('Test');
   });

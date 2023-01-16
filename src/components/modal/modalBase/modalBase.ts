@@ -32,6 +32,7 @@ export default function generateModal({
     iconURL: closeIcon,
     onClick: onClose,
     classes: [styles.closeButton],
+    testSelector: 'modalCloseButton',
   });
   header.appendChild(closeButton);
   modalContent.appendChild(header);

@@ -16,15 +16,13 @@ describe('generateSidebar', () => {
     openArchiveModal: openArchiveCallback,
   });
 
-  const buttons = Array.from(sidebar.querySelectorAll('button'));
-
   it('generates component correctly', () => {
     expect(sidebar).toMatchSnapshot();
   });
 
   it('adds new entries correctly', () => {
-    const input = sidebar.querySelector<HTMLInputElement>('input');
-    const inputButton = sidebar.querySelector<HTMLButtonElement>('.addButton');
+    const input = sidebar.querySelector<HTMLInputElement>('[data-test=sidebarInput]');
+    const inputButton = sidebar.querySelector<HTMLButtonElement>('[data-test=sidebarInputButton]');
 
     if (!input || !inputButton) throw Error('Input not rendered correctly!');
 
@@ -39,7 +37,7 @@ describe('generateSidebar', () => {
   });
 
   it('binds import callback correctly', () => {
-    const importButton = buttons.find((button) => button.textContent === 'Import');
+    const importButton = sidebar.querySelector<HTMLButtonElement>('[data-test=sidebarImportButton]');
 
     if (!importButton) throw Error('No input button found!');
 
@@ -48,7 +46,7 @@ describe('generateSidebar', () => {
   });
 
   it('binds archive callback correctly', () => {
-    const archiveButton = buttons.find((button) => button.textContent === 'Archiv');
+    const archiveButton = sidebar.querySelector<HTMLButtonElement>('[data-test=sidebarArchiveButton]');
 
     if (!archiveButton) throw Error('No archive button found!');
 

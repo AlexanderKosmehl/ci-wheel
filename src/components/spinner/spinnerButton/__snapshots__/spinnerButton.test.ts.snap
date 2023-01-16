@@ -3,6 +3,7 @@
 exports[`generateSpinnerButton > generates component correctly 1`] = `
 <button
   class="button"
+  data-test="spinnerButton"
 >
   <img
     class="icon"

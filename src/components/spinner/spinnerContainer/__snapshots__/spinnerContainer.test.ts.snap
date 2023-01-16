@@ -52,6 +52,7 @@ exports[`generateSpinnerComponent > generates component correctly 1`] = `
   </div>
   <button
     class="button"
+    data-test="spinnerButton"
   >
     <img
       class="icon"

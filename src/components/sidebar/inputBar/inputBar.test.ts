@@ -9,8 +9,8 @@ describe('generateButton', () => {
   const inputBar = generateInputBar({
     newEntryCallback: newElementCallback,
   });
-  const inputField = inputBar.querySelector<HTMLInputElement>('div > input');
-  const inputButton = inputBar.querySelector<HTMLButtonElement>('div > button');
+  const inputField = inputBar.querySelector<HTMLInputElement>('[data-test=sidebarInput]');
+  const inputButton = inputBar.querySelector<HTMLButtonElement>('[data-test=sidebarInputButton]');
 
   it('generates component correctly', () => {
     expect(inputBar).toMatchSnapshot();

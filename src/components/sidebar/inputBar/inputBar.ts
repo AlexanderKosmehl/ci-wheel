@@ -39,12 +39,14 @@ export default function generateInputBar({ newEntryCallback }: InputBarParams) {
       addButton.disabled = inputField.value === '';
     },
   });
+  inputField.dataset.test = 'sidebarInput';
   newInputBar.appendChild(inputField);
 
   addButton = generateIconButton({
     iconURL: addIcon,
     onClick: addItem,
     classes: [styles.addButton],
+    testSelector: 'sidebarInputButton',
   });
   addButton.disabled = true;
   newInputBar.appendChild(addButton);

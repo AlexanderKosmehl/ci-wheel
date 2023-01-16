@@ -17,6 +17,7 @@ exports[`generateImportModal > generates component correctly 1`] = `
       </h2>
       <button
         class="button closeButton"
+        data-test="modalCloseButton"
       >
         <img
           class="icon"
@@ -29,6 +30,7 @@ exports[`generateImportModal > generates component correctly 1`] = `
     >
       <textarea
         class="importTextarea"
+        data-test="modalTextarea"
         placeholder="Neue Einträge zeilenweise einfügen..."
       />
       <div
@@ -36,6 +38,7 @@ exports[`generateImportModal > generates component correctly 1`] = `
       >
         <button
           class="importButton"
+          data-test="modalImportButton"
         >
           Importieren
         </button>

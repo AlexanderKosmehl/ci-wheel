@@ -12,7 +12,8 @@ describe('generateSidebarFooter', () => {
     archiveOnClick: onArchiveClick,
   });
 
-  const [importButton, archiveButton] = footer.querySelectorAll<HTMLButtonElement>('button');
+  const importButton = footer.querySelector<HTMLButtonElement>('[data-test=sidebarImportButton]');
+  const archiveButton = footer.querySelector<HTMLButtonElement>('[data-test=sidebarArchiveButton]');
 
   it('generates component correctly', () => {
     expect(footer).toMatchSnapshot();

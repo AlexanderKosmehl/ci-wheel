@@ -17,6 +17,7 @@ exports[`generateArchiveModal > generates component correctly 1`] = `
       </h2>
       <button
         class="button closeButton"
+        data-test="modalCloseButton"
       >
         <img
           class="icon"

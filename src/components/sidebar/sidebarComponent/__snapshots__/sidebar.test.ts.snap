@@ -11,11 +11,13 @@ exports[`generateSidebar > generates component correctly 1`] = `
   >
     <input
       class="input"
+      data-test="sidebarInput"
       placeholder="Neuer Eintrag"
       type="text"
     />
     <button
       class="button addButton"
+      data-test="sidebarInputButton"
       disabled=""
     >
       <img
@@ -37,6 +39,7 @@ exports[`generateSidebar > generates component correctly 1`] = `
       </span>
       <button
         class="button deleteButton"
+        data-test="listEntryDeleteButton"
       >
         <img
           class="icon"
@@ -54,6 +57,7 @@ exports[`generateSidebar > generates component correctly 1`] = `
       </span>
       <button
         class="button deleteButton"
+        data-test="listEntryDeleteButton"
       >
         <img
           class="icon"
@@ -67,11 +71,13 @@ exports[`generateSidebar > generates component correctly 1`] = `
   >
     <button
       class="footerButton"
+      data-test="sidebarImportButton"
     >
       Import
     </button>
     <button
       class="footerButton"
+      data-test="sidebarArchiveButton"
     >
       Archiv
     </button>

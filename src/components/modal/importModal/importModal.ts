@@ -18,6 +18,7 @@ export default function generateImportModal({
   const importTextarea = document.createElement<'textarea'>('textarea');
   importTextarea.classList.add(styles.importTextarea);
   importTextarea.placeholder = texts.placeholder;
+  importTextarea.dataset.test = 'modalTextarea';
   importModalContainer.appendChild(importTextarea);
 
   const buttonWrapper = document.createElement<'div'>('div');
@@ -28,6 +29,7 @@ export default function generateImportModal({
       content: texts.button,
       onClick: () => onImport(importTextarea.value),
       classes: [styles.importButton],
+      testSelector: 'modalImportButton',
     }),
   );
   importModalContainer.appendChild(buttonWrapper);

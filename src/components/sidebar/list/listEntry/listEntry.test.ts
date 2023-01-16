@@ -10,7 +10,7 @@ describe('generateListEntry', () => {
     label: 'Test',
     onDelete,
   });
-  const deleteButton = listEntry.querySelector<HTMLButtonElement>('li > button');
+  const deleteButton = listEntry.querySelector<HTMLButtonElement>('[data-test=listEntryDeleteButton]');
 
   it('generates component correctly', () => {
     expect(listEntry).toMatchSnapshot();

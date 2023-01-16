@@ -12,6 +12,7 @@ export default function generateSpinnerButton({ onClick }: SpinnerButtonProps) {
   const button = generateIconButton({
     iconURL: rotateIcon,
     classes: [styles.button],
+    testSelector: 'spinnerButton',
   });
 
   function onClickWrapper() {
