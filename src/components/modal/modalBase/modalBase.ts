@@ -16,6 +16,18 @@ export default function generateModal({
   const modalContainer = document.createElement<'div'>('div');
   modalContainer.classList.add(styles.container);
 
+  modalContainer.addEventListener('click', (event: MouseEvent) => {
+    if (event.target !== modalContainer) return;
+
+    onClose();
+  });
+
+  window.addEventListener('keydown', (event: KeyboardEvent) => {
+    if (event.key !== 'Escape') return;
+
+    onClose();
+  });
+
   const modalContent = document.createElement<'div'>('div');
   modalContent.classList.add(styles.content);
   modalContainer.appendChild(modalContent);
