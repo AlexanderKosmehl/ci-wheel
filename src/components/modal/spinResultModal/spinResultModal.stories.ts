@@ -7,5 +7,4 @@ export default {
 export const Default = () => generateSpinResultModal({
   label: 'Result Label',
   onClose: () => {},
-  onDelete: () => {},
 });
