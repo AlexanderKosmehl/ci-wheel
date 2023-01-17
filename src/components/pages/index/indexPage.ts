@@ -35,6 +35,11 @@ export default function generateIndexPage() {
         labels: newEntries,
         spinCallback: (result: string) => {
           openSpinResultModal(result, () => {
+            const listEntryElements = Array.from(document.querySelectorAll<HTMLSpanElement>('#entryLabel'));
+            const correspondingListEntry = listEntryElements
+              .find((element) => element.textContent === result);
+            if (correspondingListEntry) correspondingListEntry.style.textDecoration = 'line-through';
+
             updateSpinner(newEntries.filter((entry) => entry !== result));
           });
         },

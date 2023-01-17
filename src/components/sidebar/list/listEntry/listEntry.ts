@@ -17,6 +17,7 @@ export default function generateListEntry({
   const elementLabel = document.createElement<'span'>('span');
   elementLabel.classList.add(styles.label);
   elementLabel.textContent = label;
+  elementLabel.id = 'entryLabel';
   newListElement.appendChild(elementLabel);
 
   const deleteButton = generateIconButton({
