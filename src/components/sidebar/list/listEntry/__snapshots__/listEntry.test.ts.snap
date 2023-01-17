@@ -6,6 +6,7 @@ exports[`generateListEntry > generates component correctly 1`] = `
 >
   <span
     class="label"
+    id="entryLabel"
   >
     Test
   </span>

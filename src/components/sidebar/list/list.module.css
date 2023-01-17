@@ -3,4 +3,6 @@
   padding: 0 var(--spacing-2xl) var(--spacing-xs) var(--spacing-2xl);
   flex: 1;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }

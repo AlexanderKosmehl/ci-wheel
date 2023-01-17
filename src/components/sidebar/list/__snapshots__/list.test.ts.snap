@@ -9,6 +9,7 @@ exports[`generateListComponent > generates component correctly 1`] = `
   >
     <span
       class="label"
+      id="entryLabel"
     >
       Test
     </span>
@@ -27,6 +28,7 @@ exports[`generateListComponent > generates component correctly 1`] = `
   >
     <span
       class="label"
+      id="entryLabel"
     >
       Test2
     </span>

@@ -36,9 +36,14 @@ export default function generateIndexPage() {
         spinCallback: (result: string) => {
           openSpinResultModal(result, () => {
             const listEntryElements = Array.from(document.querySelectorAll<HTMLSpanElement>('#entryLabel'));
-            const correspondingListEntry = listEntryElements
+            const entryElement = listEntryElements
               .find((element) => element.textContent === result);
-            if (correspondingListEntry) correspondingListEntry.style.textDecoration = 'line-through';
+            if (entryElement) {
+              entryElement.style.textDecoration = 'line-through';
+
+              const entryParent = entryElement.parentElement;
+              if (entryParent) entryParent.style.order = '1';
+            }
 
             updateSpinner(newEntries.filter((entry) => entry !== result));
           });
