@@ -18,8 +18,7 @@ export default function generateModalContainer() {
     modalContainer.appendChild(
       generateSpinResultModal({
         label: resultLabel,
-        onClose: closeModal,
-        onDelete: () => {
+        onClose: () => {
           removalCallback();
           closeModal();
         },

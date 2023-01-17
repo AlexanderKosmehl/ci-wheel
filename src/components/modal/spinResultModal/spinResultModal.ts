@@ -1,19 +1,15 @@
 import generateModal from '../modalBase/modalBase';
 import texts from './spinResultModal.text';
 import styles from './spinResultModal.module.css';
-import generateIconButton from '../../atoms/iconButton/iconButton';
-import doneIcon from '../../../assets/done-icon.svg';
 
 interface SpinResultModalParams {
   label: string;
   onClose: () => void;
-  onDelete: () => void;
 }
 
 export default function generateSpinResultModal({
   label,
   onClose,
-  onDelete,
 }: SpinResultModalParams) {
   const resultContainer = document.createElement<'div'>('div');
   resultContainer.classList.add(styles.resultContainer);
@@ -22,14 +18,6 @@ export default function generateSpinResultModal({
   resultLabel.classList.add(styles.resultLabel);
   resultLabel.textContent = label;
   resultContainer.appendChild(resultLabel);
-
-  const doneButton = generateIconButton({
-    iconURL: doneIcon,
-    onClick: onDelete,
-    classes: [styles.doneButton],
-    testSelector: 'modalDoneButton',
-  });
-  resultContainer.appendChild(doneButton);
 
   const modal = generateModal({
     title: texts.resultHeader,

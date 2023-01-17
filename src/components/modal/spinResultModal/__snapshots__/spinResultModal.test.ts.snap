@@ -33,15 +33,6 @@ exports[`generateModal > generates component correctly 1`] = `
       >
         Test
       </span>
-      <button
-        class="button doneButton"
-        data-test="modalDoneButton"
-      >
-        <img
-          class="icon"
-          src="/src/assets/done-icon.svg"
-        />
-      </button>
     </div>
   </div>
 </div>

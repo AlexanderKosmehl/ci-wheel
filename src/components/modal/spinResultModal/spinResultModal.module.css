@@ -13,16 +13,3 @@
   overflow: hidden;
   white-space: nowrap;
 }
-
-.done-button {
-  height: var(--spacing-3xl);
-  width: var(--spacing-3xl);
-  border: none;
-  border-radius: var(--border-radius-small);
-  background-color: var(--color-button-primary);
-  box-shadow: var(--button-shadow-default);
-}
-
-.done-button:hover {
-  background-color: var(--color-button-primary-hover);
-}
