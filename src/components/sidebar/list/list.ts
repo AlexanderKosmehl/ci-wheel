@@ -1,24 +1,25 @@
 import generateListEntry from './listEntry/listEntry';
 import styles from './list.module.css';
+import { Entry } from '../../../util/Entry';
 
 interface ListComponentParams {
-  entryRemovalCallback: (removedElement: string) => void;
-  listEntries: string[];
+  entryRemovalCallback: (removedEntry: Entry) => void;
+  entries: Entry[];
 }
 
 export default function generateList({
   entryRemovalCallback,
-  listEntries,
+  entries,
 }: ListComponentParams) {
   const listContainer = document.createElement<'ul'>('ul');
   listContainer.classList.add(styles.listContainer);
 
-  listEntries.forEach((element) => {
+  entries.forEach((entry) => {
     listContainer.appendChild(
       generateListEntry({
-        label: element,
+        entry,
         onDelete: () => {
-          entryRemovalCallback(element);
+          entryRemovalCallback(entry);
         },
       }),
     );

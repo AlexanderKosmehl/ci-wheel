@@ -1,3 +1,4 @@
+import { Entry } from '../../../util/Entry';
 import { getSearchParams } from '../../../util/searchParamHelper';
 import generateHeader from '../../header/header';
 import generateModalContainer from '../../modal/modalContainer/modalContainer';
@@ -7,6 +8,10 @@ import styles from './indexPage.module.css';
 
 export default function generateIndexPage() {
   const initialValues = getSearchParams();
+  const entries: Entry[] = initialValues.map((value) => ({
+    name: value,
+    isDone: false,
+  }));
 
   const indexPage = document.createElement<'div'>('div');
   indexPage.classList.add(styles.indexPage);
@@ -28,27 +33,32 @@ export default function generateIndexPage() {
   const spinnerContainer = document.createElement<'div'>('div');
   spinnerContainer.classList.add(styles.spinnerWrapper);
 
-  const updateSpinner = (newEntries: string[]) => {
+  const updateSpinner = () => {
     spinnerContainer.textContent = '';
     spinnerContainer.appendChild(
       generateSpinnerComponent({
-        labels: newEntries,
+        entries,
         spinCallback: (result: string) => {
           openSpinResultModal(result, () => {
-            updateSpinner(newEntries.filter((entry) => entry !== result));
+            const updatedEntry = entries.find((entry) => entry.name === result);
+            if (!updatedEntry) throw Error('No Entry found!');
+
+            updatedEntry.isDone = !updatedEntry.isDone;
+            updateSpinner();
           });
         },
       }),
     );
   };
   mainContainer.appendChild(spinnerContainer);
-  updateSpinner(initialValues);
+  updateSpinner();
 
   mainContainer.appendChild(
     generateSidebar({
       listEntries: initialValues,
-      listChangeCallback: (updatedList: string[]) => {
-        updateSpinner(updatedList);
+      listChangeCallback: (updatedList: Entry[]) => {
+        entries = [...updatedList];
+        updateSpinner();
       },
       openImportModal,
       openArchiveModal,

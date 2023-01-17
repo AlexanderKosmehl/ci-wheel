@@ -16,6 +16,10 @@
   white-space: nowrap;
 }
 
+.is-done {
+  text-decoration: line-through;
+}
+
 .delete-button {
   height: var(--spacing-2xl);
   width: var(--spacing-2xl);

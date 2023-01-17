@@ -7,10 +7,11 @@ import generateInputBar from './inputBar/inputBar';
 import generateList from './list/list';
 import generateSidebarFooter from './sidebarFooter/sidebarFooter';
 import styles from './sidebar.module.css';
+import { Entry } from '../../util/Entry';
 
 interface SidebarProps {
-  listEntries: string[];
-  listChangeCallback: (updatedList: string[]) => void;
+  entries: Entry[];
+  listChangeCallback: (updatedEntries: Entry[]) => void;
   openImportModal: (
     importCallback: (importedEntries: string[]) => void
   ) => void;
@@ -21,7 +22,7 @@ interface SidebarProps {
 }
 
 export default function generateSidebar({
-  listEntries,
+  entries,
   listChangeCallback,
   openImportModal,
   openArchiveModal,
@@ -31,21 +32,24 @@ export default function generateSidebar({
   sidebar.toggleAttribute('hidden');
   sidebar.id = 'sidebar';
 
-  const updateSidebar = (updatedEntries: string[]) => {
+  const updateSidebar = (updatedEntries: Entry[]) => {
     sidebar.textContent = '';
 
-    const updateDependencies = (newList: string[]) => {
-      updateSearchParams(newList);
-      updateSidebar(newList);
-      listChangeCallback(newList);
+    const updateDependencies = (changedEntries: Entry[]) => {
+      updateSearchParams(changedEntries.map((entry) => entry.name));
+      updateSidebar(changedEntries);
+      listChangeCallback(changedEntries);
     };
 
     sidebar.appendChild(
       generateInputBar({
         newEntryCallback: (newEntry: string) => {
-          if (updatedEntries.includes(newEntry)) return;
+          if (updatedEntries.some((entry) => entry.name === newEntry)) return;
 
-          const newList = [newEntry, ...updatedEntries];
+          const newList = [
+            { name: newEntry, isDone: false },
+            ...updatedEntries.map((oldEntry) => ({ name: oldEntry.name, isDone: false })),
+          ];
           updateDependencies(newList);
         },
       }),
@@ -53,13 +57,13 @@ export default function generateSidebar({
 
     sidebar.appendChild(
       generateList({
-        listEntries: updatedEntries,
-        entryRemovalCallback: (removedEntry: string) => {
-          const newList = updatedEntries.filter(
-            (entry) => entry !== removedEntry,
-          );
+        entries: updatedEntries,
+        entryRemovalCallback: (removedEntry: Entry) => {
+          const newList = updatedEntries
+            .filter((oldEntry) => oldEntry.name !== removedEntry.name)
+            .map((oldEntry) => ({ name: oldEntry.name, isDone: false }));
           updateDependencies(newList);
-          updateArchiveEntries([removedEntry, ...getArchiveEntries()]);
+          updateArchiveEntries([removedEntry.name, ...getArchiveEntries()]);
         },
       }),
     );
@@ -69,21 +73,24 @@ export default function generateSidebar({
         importOnClick: () => {
           openImportModal((importedEntries) => {
             const filteredImports = importedEntries.filter(
-              (newEntry) => !updatedEntries.includes(newEntry),
+              (newEntry) => !updatedEntries.some((oldEntry) => oldEntry.name === newEntry),
             );
-            const newList = [...filteredImports, ...updatedEntries];
+            const newList = [
+              ...filteredImports.map((importedEntry) => ({ name: importedEntry, isDone: false })),
+              ...updatedEntries,
+            ];
             updateDependencies(newList);
           });
         },
         archiveOnClick: () => {
-          openArchiveModal(updatedEntries, (newList) => {
+          openArchiveModal(updatedEntries.map((entry) => entry.name), (newList) => {
             updateDependencies(newList);
           });
         },
       }),
     );
   };
-  updateSidebar(listEntries);
+  updateSidebar(entries);
 
   return sidebar;
 }

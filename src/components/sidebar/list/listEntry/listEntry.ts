@@ -1,14 +1,15 @@
 import styles from './listEntry.module.css';
 import generateIconButton from '../../../atoms/iconButton/iconButton';
 import deleteIconURL from '../../../../assets/delete-icon.svg';
+import { Entry } from '../../../../util/Entry';
 
 interface ListEntryParams {
-  label: string;
+  entry: Entry;
   onDelete: () => void;
 }
 
 export default function generateListEntry({
-  label,
+  entry,
   onDelete,
 }: ListEntryParams) {
   const newListElement = document.createElement<'li'>('li');
@@ -16,7 +17,9 @@ export default function generateListEntry({
 
   const elementLabel = document.createElement<'span'>('span');
   elementLabel.classList.add(styles.label);
-  elementLabel.textContent = label;
+  if (entry.isDone) elementLabel.classList.add(styles.isDone);
+  elementLabel.textContent = entry.name;
+
   newListElement.appendChild(elementLabel);
 
   const deleteButton = generateIconButton({

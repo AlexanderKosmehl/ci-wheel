@@ -1,4 +1,5 @@
 import { MIN_SPINS_IN_DEG, SPIN_DURATION_IN_SEC } from '../../../config';
+import { Entry } from '../../../util/Entry';
 import generateSpinner from '../spinner';
 import generateSpinnerButton from '../spinnerButton/spinnerButton';
 import generateSpinnerTick from '../spinnerTick/spinnerTick';
@@ -13,20 +14,24 @@ function getLabelByAngle(labels: string[], angle: number) {
 }
 
 interface SpinnerComponentParams {
-  labels: string[];
+  entries: Entry[];
   spinCallback: (result: string) => void;
 }
 
 export default function generateSpinnerComponent({
-  labels,
+  entries,
   spinCallback,
 }: SpinnerComponentParams) {
+  const labels = entries
+    .filter((entry) => !entry.isDone)
+    .map((entry) => entry.name);
+
   const newSpinnerContainer = document.createElement<'div'>('div');
   newSpinnerContainer.classList.add(styles.container);
   newSpinnerContainer.textContent = '';
 
   const spinner = generateSpinner({
-    labels,
+    labels: entries.map((entry) => entry.name),
   });
   let currentAngle = 0;
 
