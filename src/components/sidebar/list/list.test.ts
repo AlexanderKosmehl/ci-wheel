@@ -1,5 +1,5 @@
 import {
-  describe, expect, it, vi,
+  describe, expect, it,
 } from 'vitest';
 import { addEntries } from '../../../util/entryManager';
 import generateList from './list';

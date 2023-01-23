@@ -4,7 +4,4 @@ export default {
   title: 'Sidebar/Footer',
 };
 
-export const Default = () => generateSidebarFooter({
-  importOnClick: () => {},
-  archiveOnClick: () => {},
-});
+export const Default = () => generateSidebarFooter();

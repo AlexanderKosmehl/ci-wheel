@@ -4,6 +4,4 @@ export default {
   title: 'Sidebar/InputBar',
 };
 
-export const Default = () => generateInputBar({
-  newEntryCallback: () => {},
-});
+export const Default = () => generateInputBar();
