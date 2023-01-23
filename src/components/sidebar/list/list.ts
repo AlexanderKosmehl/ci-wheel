@@ -1,28 +1,32 @@
 import generateListEntry from './listEntry/listEntry';
 import styles from './list.module.css';
+import { Entry } from '../../../util/Entry';
+import { EntryEvents } from '../../../util/EntryEvents';
+import { removeEntry } from '../../../util/entryManager';
 
-interface ListComponentParams {
-  entryRemovalCallback: (removedElement: string) => void;
-  listEntries: string[];
-}
-
-export default function generateList({
-  entryRemovalCallback,
-  listEntries,
-}: ListComponentParams) {
+export default function generateList() {
   const listContainer = document.createElement<'ul'>('ul');
   listContainer.classList.add(styles.listContainer);
 
-  listEntries.forEach((element) => {
-    listContainer.appendChild(
-      generateListEntry({
-        label: element,
-        onDelete: () => {
-          entryRemovalCallback(element);
-        },
-      }),
-    );
-  });
+  const updateList = (listEntries: Entry[]) => {
+    listContainer.textContent = '';
+
+    listEntries.forEach((entry) => {
+      listContainer.appendChild(
+        generateListEntry({
+          label: entry.name,
+          isDone: entry.isDone,
+          onDelete: () => {
+            removeEntry(entry.name);
+          },
+        }),
+      );
+    });
+  };
+
+  window.addEventListener(EntryEvents.UPDATE, ((event: CustomEvent<Entry[]>) => {
+    updateList(event.detail);
+  }) as EventListener);
 
   return listContainer;
 }

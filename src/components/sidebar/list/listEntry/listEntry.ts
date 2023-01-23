@@ -4,11 +4,13 @@ import deleteIconURL from '../../../../assets/delete-icon.svg';
 
 interface ListEntryParams {
   label: string;
+  isDone: boolean;
   onDelete: () => void;
 }
 
 export default function generateListEntry({
   label,
+  isDone,
   onDelete,
 }: ListEntryParams) {
   const newListElement = document.createElement<'li'>('li');
@@ -16,6 +18,7 @@ export default function generateListEntry({
 
   const elementLabel = document.createElement<'span'>('span');
   elementLabel.classList.add(styles.label);
+  if (isDone) elementLabel.classList.add(styles.isDone);
   elementLabel.textContent = label;
   elementLabel.id = 'entryLabel';
   newListElement.appendChild(elementLabel);
@@ -27,6 +30,8 @@ export default function generateListEntry({
     testSelector: 'listEntryDeleteButton',
   });
   newListElement.appendChild(deleteButton);
+
+  if (isDone) newListElement.style.order = '1';
 
   return newListElement;
 }

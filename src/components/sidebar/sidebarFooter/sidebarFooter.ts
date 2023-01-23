@@ -1,22 +1,15 @@
+import { openArchiveModal, openImportModal } from '../../../util/modalManager';
 import generateButton from '../../atoms/button/button';
 import styles from './sidebarFooter.module.css';
 
-interface SidebarFooterProps {
-  importOnClick: () => void;
-  archiveOnClick: () => void;
-}
-
-export default function generateSidebarFooter({
-  importOnClick,
-  archiveOnClick,
-}: SidebarFooterProps) {
+export default function generateSidebarFooter() {
   const sidebarFooter = document.createElement<'div'>('div');
   sidebarFooter.classList.add(styles.container);
 
   sidebarFooter.appendChild(
     generateButton({
       content: 'Import',
-      onClick: importOnClick,
+      onClick: openImportModal,
       classes: [styles.footerButton],
       testSelector: 'sidebarImportButton',
     }),
@@ -25,7 +18,7 @@ export default function generateSidebarFooter({
   sidebarFooter.appendChild(
     generateButton({
       content: 'Archiv',
-      onClick: archiveOnClick,
+      onClick: openArchiveModal,
       classes: [styles.footerButton],
       testSelector: 'sidebarArchiveButton',
     }),

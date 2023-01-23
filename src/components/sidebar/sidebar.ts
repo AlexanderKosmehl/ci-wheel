@@ -1,89 +1,19 @@
-import { updateSearchParams } from '../../util/searchParamHelper';
-import {
-  getArchiveEntries,
-  updateArchiveEntries,
-} from '../modal/archiveModal/helper/archiveHelper';
 import generateInputBar from './inputBar/inputBar';
 import generateList from './list/list';
 import generateSidebarFooter from './sidebarFooter/sidebarFooter';
 import styles from './sidebar.module.css';
 
-interface SidebarProps {
-  listEntries: string[];
-  listChangeCallback: (updatedList: string[]) => void;
-  openImportModal: (
-    importCallback: (importedEntries: string[]) => void
-  ) => void;
-  openArchiveModal: (
-    currentEntries: string[],
-    updateCurrentEntries: (updatedEntries: string[]) => void
-  ) => void;
-}
-
-export default function generateSidebar({
-  listEntries,
-  listChangeCallback,
-  openImportModal,
-  openArchiveModal,
-}: SidebarProps) {
+export default function generateSidebar() {
   const sidebar = document.createElement<'div'>('div');
   sidebar.classList.add(styles.sidebar);
   sidebar.toggleAttribute('hidden');
   sidebar.id = 'sidebar';
 
-  const updateSidebar = (updatedEntries: string[]) => {
-    sidebar.textContent = '';
+  sidebar.appendChild(generateInputBar());
 
-    const updateDependencies = (newList: string[]) => {
-      updateSearchParams(newList);
-      updateSidebar(newList);
-      listChangeCallback(newList);
-    };
+  sidebar.appendChild(generateList());
 
-    sidebar.appendChild(
-      generateInputBar({
-        newEntryCallback: (newEntry: string) => {
-          if (updatedEntries.includes(newEntry)) return;
-
-          const newList = [newEntry, ...updatedEntries];
-          updateDependencies(newList);
-        },
-      }),
-    );
-
-    sidebar.appendChild(
-      generateList({
-        listEntries: updatedEntries,
-        entryRemovalCallback: (removedEntry: string) => {
-          const newList = updatedEntries.filter(
-            (entry) => entry !== removedEntry,
-          );
-          updateDependencies(newList);
-          updateArchiveEntries([removedEntry, ...getArchiveEntries()]);
-        },
-      }),
-    );
-
-    sidebar.append(
-      generateSidebarFooter({
-        importOnClick: () => {
-          openImportModal((importedEntries) => {
-            const filteredImports = importedEntries.filter(
-              (newEntry) => !updatedEntries.includes(newEntry),
-            );
-            const newList = [...filteredImports, ...updatedEntries];
-            updateDependencies(newList);
-          });
-        },
-        archiveOnClick: () => {
-          openArchiveModal(updatedEntries, (newList) => {
-            updateDependencies(newList);
-          });
-        },
-      }),
-    );
-  };
-  updateSidebar(listEntries);
+  sidebar.appendChild(generateSidebarFooter());
 
   return sidebar;
 }
