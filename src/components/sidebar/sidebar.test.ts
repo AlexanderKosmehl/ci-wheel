@@ -1,20 +1,12 @@
 import {
-  describe, expect, it, vi,
+  describe, expect, it,
 } from 'vitest';
+import { addEntries } from '../../util/entryManager';
 import generateSidebar from './sidebar';
 
 describe('generateSidebar', () => {
-  const listChangeCallback = vi.fn((_updatedEntries: string[]) => {});
-  const openImportCallback = vi.fn(() => {});
-  const openArchiveCallback = vi.fn(() => {});
-  const listEntries = ['Test 1', 'Test 2'];
-
-  const sidebar = generateSidebar({
-    listEntries,
-    listChangeCallback,
-    openImportModal: openImportCallback,
-    openArchiveModal: openArchiveCallback,
-  });
+  const sidebar = generateSidebar();
+  addEntries(['Test 1', 'Test 2']);
 
   it('generates component correctly', () => {
     expect(sidebar).toMatchSnapshot();
@@ -32,25 +24,7 @@ describe('generateSidebar', () => {
 
     inputButton.click();
 
-    expect(listChangeCallback).toBeCalled();
-    expect(listChangeCallback).toBeCalledWith([newEntry, ...listEntries]);
-  });
-
-  it('binds import callback correctly', () => {
-    const importButton = sidebar.querySelector<HTMLButtonElement>('[data-test=sidebarImportButton]');
-
-    if (!importButton) throw Error('No input button found!');
-
-    importButton.click();
-    expect(openImportCallback).toBeCalled();
-  });
-
-  it('binds archive callback correctly', () => {
-    const archiveButton = sidebar.querySelector<HTMLButtonElement>('[data-test=sidebarArchiveButton]');
-
-    if (!archiveButton) throw Error('No archive button found!');
-
-    archiveButton.click();
-    expect(openArchiveCallback).toBeCalled();
+    const entries = sidebar.querySelectorAll<HTMLSpanElement>('[data-test=listEntryLabel]');
+    expect(entries.length).toBe(3);
   });
 });

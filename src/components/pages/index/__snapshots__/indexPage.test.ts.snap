@@ -50,13 +50,7 @@ exports[`generateIndexPage > generates component correctly 1`] = `
     >
       <div
         class="container"
-      >
-        <span
-          class="placeholder"
-        >
-          Keine Einträge
-        </span>
-      </div>
+      />
     </div>
     <div
       class="sidebar"
@@ -104,6 +98,8 @@ exports[`generateIndexPage > generates component correctly 1`] = `
       </div>
     </div>
   </div>
-  <div />
+  <div
+    id="modal-container"
+  />
 </div>
 `;

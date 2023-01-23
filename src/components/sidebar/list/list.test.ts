@@ -1,28 +1,25 @@
 import {
   describe, expect, it, vi,
 } from 'vitest';
+import { addEntries } from '../../../util/entryManager';
 import generateList from './list';
 
 describe('generateListComponent', () => {
-  const entryRemovalCallback = vi.fn((_removedEntry: string) => {});
-  const listEntries = ['Test', 'Test2'];
-
-  const listComponent = generateList({
-    listEntries,
-    entryRemovalCallback,
-  });
+  const listComponent = generateList();
+  addEntries(['Test', 'Test2']);
 
   it('generates component correctly', () => {
     expect(listComponent).toMatchSnapshot();
   });
 
-  it('adds working removal callback', () => {
+  it('removes entries correctly', () => {
     const listElement = listComponent.querySelector<HTMLLIElement>('li');
 
     if (!listElement) throw Error('No list entries rendered!');
 
     listElement.querySelector<HTMLButtonElement>('[data-test=listEntryDeleteButton]')?.click();
-    expect(entryRemovalCallback).toBeCalled();
-    expect(entryRemovalCallback).toBeCalledWith('Test');
+
+    const remainingEntries = listComponent.querySelectorAll<HTMLSpanElement>('[data-test=listEntryLabel]');
+    expect(remainingEntries.length).toBe(1);
   });
 });

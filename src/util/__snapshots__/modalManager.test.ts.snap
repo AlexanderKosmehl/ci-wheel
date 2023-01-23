@@ -1,0 +1,164 @@
+// Vitest Snapshot v1
+
+exports[`modalManager > can open the archive modal 1`] = `
+<div
+  id="modal-container"
+>
+  <div
+    class="container"
+  >
+    <div
+      class="content"
+    >
+      <div
+        class="header"
+      >
+        <h2
+          class="headerText"
+        >
+          Archiv
+        </h2>
+        <button
+          class="button closeButton"
+          data-test="modalCloseButton"
+        >
+          <img
+            class="icon"
+            src="/src/assets/close-icon.svg"
+          />
+        </button>
+      </div>
+      <div
+        class="archiveModalContainer"
+      >
+        <div
+          class="column"
+        >
+          <h3
+            class="header"
+          >
+            Aktuell
+          </h3>
+          <ul
+            class="listContainer"
+          />
+        </div>
+        <div
+          class="column"
+        >
+          <h3
+            class="header"
+          >
+            Alt
+          </h3>
+          <ul
+            class="listContainer"
+          />
+        </div>
+        <div
+          class="removalContainer"
+        >
+          <img
+            class="removalImage"
+            src="/src/assets/delete-icon.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`modalManager > can open the import modal 1`] = `
+<div
+  id="modal-container"
+>
+  <div
+    class="container"
+  >
+    <div
+      class="content"
+    >
+      <div
+        class="header"
+      >
+        <h2
+          class="headerText"
+        >
+          Import
+        </h2>
+        <button
+          class="button closeButton"
+          data-test="modalCloseButton"
+        >
+          <img
+            class="icon"
+            src="/src/assets/close-icon.svg"
+          />
+        </button>
+      </div>
+      <div
+        class="importModalContainer"
+      >
+        <textarea
+          class="importTextarea"
+          data-test="modalTextarea"
+          placeholder="Neue Einträge zeilenweise einfügen..."
+        />
+        <div
+          class="importButtonWrapper"
+        >
+          <button
+            class="importButton"
+            data-test="modalImportButton"
+          >
+            Importieren
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`modalManager > can open the spinResult modal 1`] = `
+<div
+  id="modal-container"
+>
+  <div
+    class="container"
+  >
+    <div
+      class="content"
+    >
+      <div
+        class="header"
+      >
+        <h2
+          class="headerText"
+        >
+          Ergebnis:
+        </h2>
+        <button
+          class="button closeButton"
+          data-test="modalCloseButton"
+        >
+          <img
+            class="icon"
+            src="/src/assets/close-icon.svg"
+          />
+        </button>
+      </div>
+      <div
+        class="resultContainer"
+      >
+        <span
+          class="resultLabel"
+        >
+          Test
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -20,7 +20,7 @@ export default function generateListEntry({
   elementLabel.classList.add(styles.label);
   if (isDone) elementLabel.classList.add(styles.isDone);
   elementLabel.textContent = label;
-  elementLabel.id = 'entryLabel';
+  elementLabel.dataset.test = 'listEntryLabel';
   newListElement.appendChild(elementLabel);
 
   const deleteButton = generateIconButton({

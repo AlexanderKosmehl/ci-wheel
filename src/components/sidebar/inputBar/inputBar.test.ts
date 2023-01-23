@@ -1,14 +1,11 @@
 import {
   describe, expect, it, vi,
 } from 'vitest';
+import { getCurrentEntries } from '../../../util/entryManager';
 import generateInputBar from './inputBar';
 
 describe('generateButton', () => {
-  const newElementCallback = vi.fn((_newElement: string) => {});
-
-  const inputBar = generateInputBar({
-    newEntryCallback: newElementCallback,
-  });
+  const inputBar = generateInputBar();
   const inputField = inputBar.querySelector<HTMLInputElement>('[data-test=sidebarInput]');
   const inputButton = inputBar.querySelector<HTMLButtonElement>('[data-test=sidebarInputButton]');
 
@@ -26,7 +23,6 @@ describe('generateButton', () => {
     inputButton.click();
 
     expect(inputField.textContent).toBe('');
-    expect(newElementCallback).toBeCalled();
-    expect(newElementCallback).toBeCalledWith(testValue);
+    expect(getCurrentEntries()).toEqual([{ name: 'test', isDone: false }]);
   });
 });

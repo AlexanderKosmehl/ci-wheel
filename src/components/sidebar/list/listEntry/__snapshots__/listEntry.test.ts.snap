@@ -1,12 +1,35 @@
 // Vitest Snapshot v1
 
+exports[`generateListEntry > adds isDone changes 1`] = `
+<li
+  class="container"
+  style="order: 1;"
+>
+  <span
+    class="label isDone"
+    data-test="listEntryLabel"
+  >
+    Test
+  </span>
+  <button
+    class="button deleteButton"
+    data-test="listEntryDeleteButton"
+  >
+    <img
+      class="icon"
+      src="/src/assets/delete-icon.svg"
+    />
+  </button>
+</li>
+`;
+
 exports[`generateListEntry > generates component correctly 1`] = `
 <li
   class="container"
 >
   <span
     class="label"
-    id="entryLabel"
+    data-test="listEntryLabel"
   >
     Test
   </span>

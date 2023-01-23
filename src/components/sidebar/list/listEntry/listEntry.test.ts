@@ -8,12 +8,23 @@ describe('generateListEntry', () => {
 
   const listEntry = generateListEntry({
     label: 'Test',
+    isDone: false,
     onDelete,
   });
   const deleteButton = listEntry.querySelector<HTMLButtonElement>('[data-test=listEntryDeleteButton]');
 
   it('generates component correctly', () => {
     expect(listEntry).toMatchSnapshot();
+  });
+
+  it('adds isDone changes', () => {
+    const doneEntry = generateListEntry({
+      label: 'Test',
+      isDone: true,
+      onDelete,
+    });
+
+    expect(doneEntry).toMatchSnapshot();
   });
 
   it('adds working callback', () => {
