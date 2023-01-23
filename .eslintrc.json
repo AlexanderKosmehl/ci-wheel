@@ -28,6 +28,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "import/no-cycle": "off"
+        "import/no-cycle": "off",
+        "import/prefer-default-export": "off"
     }
 }
