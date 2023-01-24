@@ -1,0 +1,17 @@
+// Vitest Snapshot v1
+
+exports[`generateShareWidget > generates component correctly 1`] = `
+<div>
+  <button
+    class="_button_6c4ac5"
+  >
+    <img
+      class="_shareIcon_6c4ac5"
+      src="/src/assets/share-icon.svg"
+    />
+    <span>
+      Teilen
+    </span>
+  </button>
+</div>
+`;
