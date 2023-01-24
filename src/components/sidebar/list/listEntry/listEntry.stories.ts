@@ -7,11 +7,9 @@ export default {
 export const Default = () => generateListEntry({
   label: 'Example',
   isDone: false,
-  onDelete: () => {},
 });
 
 export const Done = () => generateListEntry({
   label: 'Example',
   isDone: true,
-  onDelete: () => {},
 });
