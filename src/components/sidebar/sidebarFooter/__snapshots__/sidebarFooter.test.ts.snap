@@ -2,16 +2,16 @@
 
 exports[`generateSidebarFooter > generates component correctly 1`] = `
 <div
-  class="container"
+  class="_container_168f0e"
 >
   <button
-    class="footerButton"
+    class="_footerButton_168f0e"
     data-test="sidebarImportButton"
   >
     Import
   </button>
   <button
-    class="footerButton"
+    class="_footerButton_168f0e"
     data-test="sidebarArchiveButton"
   >
     Archiv

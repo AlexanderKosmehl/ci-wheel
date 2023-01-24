@@ -2,21 +2,21 @@
 
 exports[`generateButton > generates component correctly 1`] = `
 <div
-  class="container"
+  class="_container_fc15b0"
 >
   <input
-    class="input"
+    class="_input_6ed02a"
     data-test="sidebarInput"
     placeholder="Neuer Eintrag"
     type="text"
   />
   <button
-    class="button addButton"
+    class="_button_7c1f96 _addButton_fc15b0"
     data-test="sidebarInputButton"
     disabled=""
   >
     <img
-      class="icon"
+      class="_icon_7c1f96"
       src="/src/assets/add-icon.svg"
     />
   </button>

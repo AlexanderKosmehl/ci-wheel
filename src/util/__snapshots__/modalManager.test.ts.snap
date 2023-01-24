@@ -5,61 +5,61 @@ exports[`modalManager > can open the archive modal 1`] = `
   id="modal-container"
 >
   <div
-    class="container"
+    class="_container_0360d7"
   >
     <div
-      class="content"
+      class="_content_0360d7"
     >
       <div
-        class="header"
+        class="_header_0360d7"
       >
         <h2
-          class="headerText"
+          class="_headerText_0360d7"
         >
           Archiv
         </h2>
         <button
-          class="button closeButton"
+          class="_button_7c1f96 _closeButton_0360d7"
           data-test="modalCloseButton"
         >
           <img
-            class="icon"
+            class="_icon_7c1f96"
             src="/src/assets/close-icon.svg"
           />
         </button>
       </div>
       <div
-        class="archiveModalContainer"
+        class="_archiveModalContainer_6def5c"
       >
         <div
-          class="column"
+          class="_column_6def5c"
         >
           <h3
-            class="header"
+            class="_header_6def5c"
           >
             Aktuell
           </h3>
           <ul
-            class="listContainer"
+            class="_listContainer_6def5c"
           />
         </div>
         <div
-          class="column"
+          class="_column_6def5c"
         >
           <h3
-            class="header"
+            class="_header_6def5c"
           >
             Alt
           </h3>
           <ul
-            class="listContainer"
+            class="_listContainer_6def5c"
           />
         </div>
         <div
-          class="removalContainer"
+          class="_removalContainer_6def5c"
         >
           <img
-            class="removalImage"
+            class="_removalImage_6def5c"
             src="/src/assets/delete-icon.svg"
           />
         </div>
@@ -74,42 +74,42 @@ exports[`modalManager > can open the import modal 1`] = `
   id="modal-container"
 >
   <div
-    class="container"
+    class="_container_0360d7"
   >
     <div
-      class="content"
+      class="_content_0360d7"
     >
       <div
-        class="header"
+        class="_header_0360d7"
       >
         <h2
-          class="headerText"
+          class="_headerText_0360d7"
         >
           Import
         </h2>
         <button
-          class="button closeButton"
+          class="_button_7c1f96 _closeButton_0360d7"
           data-test="modalCloseButton"
         >
           <img
-            class="icon"
+            class="_icon_7c1f96"
             src="/src/assets/close-icon.svg"
           />
         </button>
       </div>
       <div
-        class="importModalContainer"
+        class="_importModalContainer_e2444d"
       >
         <textarea
-          class="importTextarea"
+          class="_importTextarea_e2444d"
           data-test="modalTextarea"
           placeholder="Neue Einträge zeilenweise einfügen..."
         />
         <div
-          class="importButtonWrapper"
+          class="_importButtonWrapper_e2444d"
         >
           <button
-            class="importButton"
+            class="_importButton_e2444d"
             data-test="modalImportButton"
           >
             Importieren
@@ -126,34 +126,34 @@ exports[`modalManager > can open the spinResult modal 1`] = `
   id="modal-container"
 >
   <div
-    class="container"
+    class="_container_0360d7"
   >
     <div
-      class="content"
+      class="_content_0360d7"
     >
       <div
-        class="header"
+        class="_header_0360d7"
       >
         <h2
-          class="headerText"
+          class="_headerText_0360d7"
         >
           Ergebnis:
         </h2>
         <button
-          class="button closeButton"
+          class="_button_7c1f96 _closeButton_0360d7"
           data-test="modalCloseButton"
         >
           <img
-            class="icon"
+            class="_icon_7c1f96"
             src="/src/assets/close-icon.svg"
           />
         </button>
       </div>
       <div
-        class="resultContainer"
+        class="_resultContainer_7299e4"
       >
         <span
-          class="resultLabel"
+          class="_resultLabel_7299e4"
         >
           Test
         </span>

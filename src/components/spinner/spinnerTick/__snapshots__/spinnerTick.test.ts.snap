@@ -2,10 +2,10 @@
 
 exports[`generateSpinnerTick > generates component correctly 1`] = `
 <div
-  class="tickShadow"
+  class="_tickShadow_d1a4e4"
 >
   <div
-    class="tick"
+    class="_tick_d1a4e4"
   />
 </div>
 `;

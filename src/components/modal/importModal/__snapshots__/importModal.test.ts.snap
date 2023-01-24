@@ -2,42 +2,42 @@
 
 exports[`generateImportModal > generates component correctly 1`] = `
 <div
-  class="container"
+  class="_container_0360d7"
 >
   <div
-    class="content"
+    class="_content_0360d7"
   >
     <div
-      class="header"
+      class="_header_0360d7"
     >
       <h2
-        class="headerText"
+        class="_headerText_0360d7"
       >
         Import
       </h2>
       <button
-        class="button closeButton"
+        class="_button_7c1f96 _closeButton_0360d7"
         data-test="modalCloseButton"
       >
         <img
-          class="icon"
+          class="_icon_7c1f96"
           src="/src/assets/close-icon.svg"
         />
       </button>
     </div>
     <div
-      class="importModalContainer"
+      class="_importModalContainer_e2444d"
     >
       <textarea
-        class="importTextarea"
+        class="_importTextarea_e2444d"
         data-test="modalTextarea"
         placeholder="Neue Einträge zeilenweise einfügen..."
       />
       <div
-        class="importButtonWrapper"
+        class="_importButtonWrapper_e2444d"
       >
         <button
-          class="importButton"
+          class="_importButton_e2444d"
           data-test="modalImportButton"
         >
           Importieren

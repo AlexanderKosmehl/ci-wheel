@@ -2,10 +2,10 @@
 
 exports[`iconButton > generates the component 1`] = `
 <button
-  class="button class class2"
+  class="_button_7c1f96 class class2"
 >
   <img
-    class="icon"
+    class="_icon_7c1f96"
     src="/assets/+-Icon.svg"
   />
 </button>

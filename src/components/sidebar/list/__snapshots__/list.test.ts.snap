@@ -2,45 +2,53 @@
 
 exports[`generateListComponent > generates component correctly 1`] = `
 <ul
-  class="listContainer"
+  class="_listContainer_d42e02"
 >
   <li
-    class="container"
+    class="_container_1761de"
   >
     <span
-      class="label"
+      class="_label_1761de"
       data-test="listEntryLabel"
     >
       Test
     </span>
-    <button
-      class="button deleteButton"
-      data-test="listEntryDeleteButton"
+    <div
+      class="_buttonWrapper_1761de"
     >
-      <img
-        class="icon"
-        src="/src/assets/delete-icon.svg"
-      />
-    </button>
+      <button
+        class="_button_7c1f96 _button_1761de"
+        data-test="listEntryDeleteButton"
+      >
+        <img
+          class="_icon_7c1f96"
+          src="/src/assets/delete-icon.svg"
+        />
+      </button>
+    </div>
   </li>
   <li
-    class="container"
+    class="_container_1761de"
   >
     <span
-      class="label"
+      class="_label_1761de"
       data-test="listEntryLabel"
     >
       Test2
     </span>
-    <button
-      class="button deleteButton"
-      data-test="listEntryDeleteButton"
+    <div
+      class="_buttonWrapper_1761de"
     >
-      <img
-        class="icon"
-        src="/src/assets/delete-icon.svg"
-      />
-    </button>
+      <button
+        class="_button_7c1f96 _button_1761de"
+        data-test="listEntryDeleteButton"
+      >
+        <img
+          class="_icon_7c1f96"
+          src="/src/assets/delete-icon.svg"
+        />
+      </button>
+    </div>
   </li>
 </ul>
 `;

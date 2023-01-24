@@ -2,11 +2,11 @@
 
 exports[`generateSpinner > generates component correctly 1`] = `
 <div
-  class="spinner"
+  class="_spinner_5021d3"
   style="transition: 2s;"
 >
   <div
-    class="segment"
+    class="_segment_1f8024"
     style="transform: rotate(0deg); clip-path: polygon(
       calc(50% + 5px) 0%,
       100% 0%,
@@ -15,7 +15,7 @@ exports[`generateSpinner > generates component correctly 1`] = `
     ); background-color: rgb(0, 190, 255);"
   >
     <span
-      class="label"
+      class="_label_1f8024"
       style="width: calc(50% - 1.5rem - 48px);"
       title="Test"
     >
@@ -23,7 +23,7 @@ exports[`generateSpinner > generates component correctly 1`] = `
     </span>
   </div>
   <div
-    class="segment"
+    class="_segment_1f8024"
     style="transform: rotate(180deg); clip-path: polygon(
       calc(50% + 5px) 0%,
       100% 0%,
@@ -32,7 +32,7 @@ exports[`generateSpinner > generates component correctly 1`] = `
     ); background-color: rgb(255, 19, 20);"
   >
     <span
-      class="label"
+      class="_label_1f8024"
       style="width: calc(50% - 1.5rem - 48px);"
       title="Test2"
     >

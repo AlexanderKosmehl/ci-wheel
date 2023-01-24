@@ -2,100 +2,115 @@
 
 exports[`generateIndexPage > generates component correctly 1`] = `
 <div
-  class="indexPage"
+  class="_indexPage_e6c9d1"
 >
   <header
-    class="header"
+    class="_header_503ab9"
   >
     <div
-      class="logoTitleWrapper"
+      class="_logoTitleWrapper_503ab9"
     >
       <img
-        class="headerLogo"
+        class="_headerLogo_503ab9"
         src="/src/assets/ci-logo.png"
       />
       <h1
-        class="headerTitle"
+        class="_headerTitle_503ab9"
       >
         Wheel
       </h1>
     </div>
     <div
-      class="menuButtonWrapper"
+      class="_menuButtonWrapper_503ab9"
     >
       <button
-        class="button sidebarToggle"
+        class="_button_7c1f96 _sidebarToggle_503ab9"
       >
         <img
-          class="icon"
+          class="_icon_7c1f96"
           src="/src/assets/menu-icon.svg"
         />
       </button>
       <button
-        class="button sidebarToggle hidden"
+        class="_button_7c1f96 _sidebarToggle_503ab9 _hidden_503ab9"
       >
         <img
-          class="icon"
+          class="_icon_7c1f96"
           src="/src/assets/arrow-back-icon.svg"
         />
       </button>
     </div>
   </header>
   <div
-    class="mainContainer"
+    class="_mainContainer_e6c9d1"
     id="spinner-container"
   >
     <div
-      class="spinnerWrapper"
+      class="_spinnerWrapper_e6c9d1"
     >
       <div
-        class="container"
+        class="_container_fdda09"
       />
     </div>
     <div
-      class="sidebar"
+      class="_sidebar_18b422"
       hidden=""
       id="sidebar"
     >
       <div
-        class="container"
+        class="_container_fc15b0"
       >
         <input
-          class="input"
+          class="_input_6ed02a"
           data-test="sidebarInput"
           placeholder="Neuer Eintrag"
           type="text"
         />
         <button
-          class="button addButton"
+          class="_button_7c1f96 _addButton_fc15b0"
           data-test="sidebarInputButton"
           disabled=""
         >
           <img
-            class="icon"
+            class="_icon_7c1f96"
             src="/src/assets/add-icon.svg"
           />
         </button>
       </div>
       <ul
-        class="listContainer"
+        class="_listContainer_d42e02"
       />
       <div
-        class="container"
+        class="_container_168f0e"
       >
         <button
-          class="footerButton"
+          class="_footerButton_168f0e"
           data-test="sidebarImportButton"
         >
           Import
         </button>
         <button
-          class="footerButton"
+          class="_footerButton_168f0e"
           data-test="sidebarArchiveButton"
         >
           Archiv
         </button>
       </div>
+    </div>
+    <div
+      class="_shareWidget_e6c9d1"
+    >
+      <button
+        class="_button_6c4ac5"
+      >
+        <img
+          class="_shareIcon_6c4ac5"
+          src="/src/assets/share-icon.svg"
+        />
+        <span>
+          Teilen
+        </span>
+      </button>
     </div>
   </div>
   <div

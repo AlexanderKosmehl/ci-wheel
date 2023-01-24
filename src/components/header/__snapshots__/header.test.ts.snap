@@ -2,37 +2,37 @@
 
 exports[`generateHeader > generates component correctly 1`] = `
 <header
-  class="header"
+  class="_header_503ab9"
 >
   <div
-    class="logoTitleWrapper"
+    class="_logoTitleWrapper_503ab9"
   >
     <img
-      class="headerLogo"
+      class="_headerLogo_503ab9"
       src="/src/assets/ci-logo.png"
     />
     <h1
-      class="headerTitle"
+      class="_headerTitle_503ab9"
     >
       Wheel
     </h1>
   </div>
   <div
-    class="menuButtonWrapper"
+    class="_menuButtonWrapper_503ab9"
   >
     <button
-      class="button sidebarToggle"
+      class="_button_7c1f96 _sidebarToggle_503ab9"
     >
       <img
-        class="icon"
+        class="_icon_7c1f96"
         src="/src/assets/menu-icon.svg"
       />
     </button>
     <button
-      class="button sidebarToggle hidden"
+      class="_button_7c1f96 _sidebarToggle_503ab9 _hidden_503ab9"
     >
       <img
-        class="icon"
+        class="_icon_7c1f96"
         src="/src/assets/arrow-back-icon.svg"
       />
     </button>

@@ -2,7 +2,7 @@
 
 exports[`generateButton > generates component correctly 1`] = `
 <input
-  class="class class2 input"
+  class="class class2 _input_6ed02a"
   placeholder="Placeholder"
   type="text"
 />

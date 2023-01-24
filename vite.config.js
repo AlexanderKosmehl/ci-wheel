@@ -10,10 +10,5 @@ export default defineConfig({
   base: './',
   test: {
     environment: 'jsdom',
-    css: {
-      modules: {
-        classNameStrategy: 'non-scoped',
-      },
-    },
   },
 });

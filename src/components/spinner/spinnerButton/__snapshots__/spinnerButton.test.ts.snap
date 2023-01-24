@@ -2,11 +2,11 @@
 
 exports[`generateSpinnerButton > generates component correctly 1`] = `
 <button
-  class="button"
+  class="_button_7c1f96 _button_cf71b4"
   data-test="spinnerButton"
 >
   <img
-    class="icon"
+    class="_icon_7c1f96"
     src="/src/assets/rotate-icon.svg"
   />
 </button>
