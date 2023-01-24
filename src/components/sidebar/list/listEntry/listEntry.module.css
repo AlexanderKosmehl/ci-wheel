@@ -20,7 +20,13 @@
   text-decoration: line-through;
 }
 
-.delete-button {
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-xs);
+}
+
+.button {
   height: var(--spacing-2xl);
   width: var(--spacing-2xl);
   border: none;
@@ -29,7 +35,7 @@
   box-shadow: var(--button-shadow-default);
 }
 
-.delete-button:hover {
+.button:hover {
   background-color: var(--color-button-primary-hover);
   cursor: pointer;
 }
@@ -41,11 +47,11 @@
 }
 
 @media (hover: hover) {
-  .delete-button {
+  .button {
     visibility: hidden;
   }
 
-  .container:hover .delete-button {
+  .container:hover .button {
     visibility: visible;
   }
 }

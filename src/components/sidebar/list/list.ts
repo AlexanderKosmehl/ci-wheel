@@ -2,7 +2,6 @@ import generateListEntry from './listEntry/listEntry';
 import styles from './list.module.css';
 import { Entry } from '../../../util/Entry';
 import { EntryEvents } from '../../../util/EntryEvents';
-import { removeEntry } from '../../../util/entryManager';
 
 export default function generateList() {
   const listContainer = document.createElement<'ul'>('ul');
@@ -16,9 +15,6 @@ export default function generateList() {
         generateListEntry({
           label: entry.name,
           isDone: entry.isDone,
-          onDelete: () => {
-            removeEntry(entry.name);
-          },
         }),
       );
     });
