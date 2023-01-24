@@ -1,0 +1,45 @@
+.wrapper {
+  position: relative;
+}
+
+.button {
+  padding: var(--spacing-xs);
+  width: 6rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-button-primary);
+  border: none;
+  border-radius: var(--border-radius-default);
+  box-shadow: var(--button-shadow-default);
+}
+
+.button:hover {
+  background-color: var(--color-button-primary-hover);
+}
+
+@keyframes copy-message-animation {
+  0% {
+    filter: opacity(0%);
+  }
+
+  20% {
+    filter: opacity(100%);
+  }
+
+  90% {
+    filter: opacity(100%);
+  }
+
+  100% {
+    filter: opacity(0%);
+  }
+}
+
+.copy-message {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  animation: copy-message-animation;
+}

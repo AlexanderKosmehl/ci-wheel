@@ -15,6 +15,12 @@
   justify-content: center;
 }
 
+.share-widget {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  left: var(--spacing-xl);
+}
+
 .spinner-wrapper {
   display: flex;
   justify-content: center;

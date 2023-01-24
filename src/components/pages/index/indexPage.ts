@@ -1,3 +1,4 @@
+import generateShareWidget from '../../atoms/shareWidget/shareWidget';
 import generateHeader from '../../header/header';
 import generateSidebar from '../../sidebar/sidebar';
 import generateSpinnerComponent from '../../spinner/spinnerContainer/spinnerContainer';
@@ -21,6 +22,10 @@ export default function generateIndexPage() {
   mainContainer.appendChild(spinnerContainer);
 
   mainContainer.appendChild(generateSidebar());
+
+  const shareWidget = generateShareWidget();
+  shareWidget.classList.add(styles.shareWidget);
+  mainContainer.appendChild(shareWidget);
 
   indexPage.appendChild(mainContainer);
 
