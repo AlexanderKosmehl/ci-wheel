@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  describe, expect, it, vi,
+  describe, expect, it,
 } from 'vitest';
 import {
   addEntries, getCurrentEntries, initEntryManager, removeEntry, toggleIsDone,
