@@ -1,14 +1,38 @@
 import {
-  describe, expect, it,
+  beforeEach,
+  describe, expect, it, vi,
 } from 'vitest';
-import { addEntries } from '../../../util/entryManager';
-import generateSpinnerComponent from './spinnerContainer';
+import {
+  addEntries, getCurrentEntries, initEntryManager, removeEntry, toggleIsDone,
+} from '../../../util/entryManager';
+import generateSpinnerContainer from './spinnerContainer';
 
 describe('generateSpinnerComponent', () => {
-  const spinnerComponent = generateSpinnerComponent();
-  addEntries(['Test', 'Test2']);
+  beforeEach(() => {
+    // Clear all entries
+    getCurrentEntries().forEach((entry) => {
+      removeEntry(entry.name);
+    });
+  });
+
+  const spinnerComponent = generateSpinnerContainer();
+
+  it('generates placeholder correctly', () => {
+    initEntryManager();
+
+    expect(spinnerComponent).toMatchSnapshot();
+  });
 
   it('generates component correctly', () => {
+    addEntries(['Test', 'Test2']);
+
+    expect(spinnerComponent).toMatchSnapshot();
+  });
+
+  it('correctly displays restart helper', () => {
+    addEntries(['Test']);
+    toggleIsDone('Test');
+
     expect(spinnerComponent).toMatchSnapshot();
   });
 });

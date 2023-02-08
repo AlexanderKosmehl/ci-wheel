@@ -1,5 +1,26 @@
 // Vitest Snapshot v1
 
+exports[`generateSpinnerComponent > correctly displays restart helper 1`] = `
+<div
+  class="_container_fdda09"
+>
+  <div
+    class="_restartContainer_fdda09"
+  >
+    <span
+      class="_placeholder_fdda09"
+    >
+      Keine verbleibenden Einträge
+    </span>
+    <button
+      class="_restartButton_fdda09"
+    >
+      Neustarten
+    </button>
+  </div>
+</div>
+`;
+
 exports[`generateSpinnerComponent > generates component correctly 1`] = `
 <div
   class="_container_fdda09"
@@ -59,5 +80,17 @@ exports[`generateSpinnerComponent > generates component correctly 1`] = `
       src="/src/assets/rotate-icon.svg"
     />
   </button>
+</div>
+`;
+
+exports[`generateSpinnerComponent > generates placeholder correctly 1`] = `
+<div
+  class="_container_fdda09"
+>
+  <span
+    class="_placeholder_fdda09"
+  >
+    Keine Einträge
+  </span>
 </div>
 `;

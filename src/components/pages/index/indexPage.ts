@@ -1,7 +1,7 @@
 import generateShareWidget from '../../atoms/shareWidget/shareWidget';
 import generateHeader from '../../header/header';
 import generateSidebar from '../../sidebar/sidebar';
-import generateSpinnerComponent from '../../spinner/spinnerContainer/spinnerContainer';
+import generateSpinnerContainer from '../../spinner/spinnerContainer/spinnerContainer';
 import styles from './indexPage.module.css';
 
 export default function generateIndexPage() {
@@ -18,7 +18,7 @@ export default function generateIndexPage() {
   const spinnerContainer = document.createElement<'div'>('div');
   spinnerContainer.classList.add(styles.spinnerWrapper);
 
-  spinnerContainer.appendChild(generateSpinnerComponent());
+  spinnerContainer.appendChild(generateSpinnerContainer());
   mainContainer.appendChild(spinnerContainer);
 
   mainContainer.appendChild(generateSidebar());

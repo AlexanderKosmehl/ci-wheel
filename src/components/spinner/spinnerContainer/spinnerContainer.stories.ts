@@ -1,7 +1,7 @@
-import generateSpinnerComponent from './spinnerContainer';
+import generateSpinnerContainer from './spinnerContainer';
 
 export default {
   title: 'Spinner/SpinnerContainer',
 };
 
-export const Default = () => generateSpinnerComponent();
+export const Default = () => generateSpinnerContainer();
