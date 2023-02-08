@@ -25,14 +25,16 @@ exports[`generateModal > generates component correctly 1`] = `
         />
       </button>
     </div>
-    <div
-      class="_resultContainer_7299e4"
-    >
-      <span
-        class="_resultLabel_7299e4"
+    <div>
+      <div
+        class="_resultContainer_7299e4"
       >
-        Test
-      </span>
+        <span
+          class="_resultLabel_7299e4"
+        >
+          Test
+        </span>
+      </div>
     </div>
   </div>
 </div>

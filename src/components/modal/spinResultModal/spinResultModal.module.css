@@ -13,3 +13,22 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
+.button-bar {
+  margin-top: var(--spacing-default);
+  display: flex;
+  justify-content: end;
+}
+
+.button {
+  padding: var(--spacing-xs) var(--spacing-l);
+  background-color: var(--color-button-primary);
+  border: none;
+  border-radius: var(--border-radius-default);
+  box-shadow: var(--button-shadow-default);
+}
+
+.button:hover {
+  background-color: var(--color-button-primary-hover);
+  cursor: pointer;
+}
