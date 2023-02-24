@@ -1,3 +1,4 @@
+import { getArchiveEntries, updateArchiveEntries } from '../components/modal/archiveModal/helper/archiveHelper';
 import { Entry } from './Entry';
 import { EntryEvents } from './EntryEvents';
 import { getSearchParams, updateSearchParams } from './searchParamHelper';
@@ -55,6 +56,9 @@ export function removeEntry(removedEntryName: string) {
   entries = entries.filter((entry) => entry.name !== removedEntryName);
 
   updateSearchParams(entries.map((entry) => entry.name));
+
+  const archivedEntries = getArchiveEntries();
+  updateArchiveEntries([removedEntryName, ...archivedEntries]);
 
   dispatchUpdate();
 }
